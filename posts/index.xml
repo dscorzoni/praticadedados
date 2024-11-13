@@ -30,7 +30,52 @@
       <pubDate>Wed, 13 Nov 2024 00:00:00 +0000</pubDate>
       <author>danilo.scorzoni@gmail.com (Danilo Scorzoni Ré)</author>
       <guid>/posts/r_basico/</guid>
-      <description>&lt;p&gt;Neste artigo vamos abordar alguns conceitos básicos sobre o R e como instalá-lo em seu computador.&lt;/p&gt;
+      <description>&lt;br /&gt;
+&lt;p&gt;Se você está começando a explorar o mundo dos dados, provavelmente já ouviu falar sobre o R, um dos softwares estatísticos mais utilizados para análise de dados. Este post é uma introdução ao R, explicando o que ele é, para que serve e por que você, como estudante de graduação, deveria considerar usá-lo em seus estudos. Mesmo que você ainda não tenha um conhecimento avançado em estatística, o R pode se tornar uma ferramenta poderosa e acessível no seu dia a dia acadêmico.&lt;/p&gt;
+&lt;br /&gt;
+&lt;h2 id=&#34;o-que-é-o-r&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#o-que-%c3%a9-o-r&#34;&gt;
+        #
+    &lt;/a&gt;
+    O que é o R?
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;O R é um software livre e de código aberto, criado especificamente para manipulação de dados, análise estatística e visualização de informações. Ele foi desenvolvido em 1993 e, desde então, vem ganhando popularidade entre pesquisadores, cientistas de dados e profissionais de várias áreas. Uma das principais razões para essa popularidade é a flexibilidade do R, que permite realizar desde análises básicas até métodos estatísticos avançados, além de gerar gráficos de alta qualidade.&lt;/p&gt;
+&lt;h2 id=&#34;por-que-aprender-r&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#por-que-aprender-r&#34;&gt;
+        #
+    &lt;/a&gt;
+    Por que aprender R?
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;É Gratuito e de Código Aberto:&lt;/strong&gt; O R pode ser baixado e utilizado gratuitamente, o que facilita o acesso para estudantes e instituições de ensino. Sendo de código aberto, ele também possui uma comunidade ativa que constantemente cria e compartilha pacotes (conjuntos de funcionalidades) para estender suas capacidades.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Focado em análise estatística e visualização de dados:&lt;/strong&gt; O R foi criado especificamente para análise de dados e estatística. Ele possui uma série de funções embutidas para cálculos estatísticos e pacotes dedicados para visualização de dados, como o popular ggplot2, que permite criar gráficos personalizados e de alta qualidade com facilidade.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ampla gama de pacotes:&lt;/strong&gt; Com mais de 18 mil pacotes disponíveis (e crescendo!), o R oferece soluções para praticamente qualquer necessidade analítica, desde testes estatísticos básicos até modelos preditivos avançados e aprendizado de máquina.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Comunidade ativa:&lt;/strong&gt; A comunidade do R é grande e receptiva, com fóruns, grupos de discussão e redes sociais onde você pode encontrar ajuda para dúvidas e aprender com os desafios enfrentados por outros usuários.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;como-instalar-o-r&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#como-instalar-o-r&#34;&gt;
+        #
+    &lt;/a&gt;
+    Como instalar o R?
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;Para começar, basta fazer o download do R no site oficial do &lt;a href=&#34;https://www.r-project.org/&#34;&gt;CRAN (The Comprehensive R Archive Network)&lt;/a&gt;, que é o repositório oficial do R. Recomenda-se também baixar o RStudio, uma interface gráfica que facilita muito o uso do R e é amplamente utilizada por iniciantes e usuários avançados. O RStudio organiza o ambiente de trabalho de maneira intuitiva, com áreas dedicadas para scripts, visualização de gráficos e histórico de comandos, o que facilita a execução de análises. No guia abaixo você consegue ver com mais detalhes como fazer o Download e a instalação do R e do RStudio.&lt;/p&gt;
+&lt;br /&gt;
+
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/qD2hdd5A00I?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;br /&gt;
+&lt;p&gt;Fique atento aos próximos conteúdos publicados onde você encontrará o passo a passo para se tornar um expert em R.&lt;/p&gt;
 </description>
     </item>
     

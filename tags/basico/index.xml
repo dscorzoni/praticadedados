@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Prática de Dados</title>
-    <link>/</link>
-    <description>Prática de Dados</description>
+    <title>Basico on Prática de Dados</title>
+    <link>/tags/basico/</link>
+    <description>Prática de Dados (Basico)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     
@@ -21,25 +21,8 @@
     
     <lastBuildDate>Wed, 13 Nov 2024 00:00:00 +0000</lastBuildDate>
     
-    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/basico/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Sobre</title>
-      <link>/about/</link>
-      <pubDate>Wed, 13 Nov 2024 00:00:00 +0000</pubDate>
-      <author>danilo.scorzoni@gmail.com (Danilo Scorzoni Ré)</author>
-      <guid>/about/</guid>
-      <description>&lt;p&gt;O prática de dados é um canal no YouTube sobre análise de dados e R.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#57c7ff&#34;&gt;library&lt;/span&gt;(tidyverse)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dados &lt;span style=&#34;color:#ff6ac1&#34;&gt;%&amp;gt;%&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#57c7ff&#34;&gt;filter&lt;/span&gt;(idade &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;5&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Equações:&lt;/p&gt;
-&lt;p&gt;\begin{equation}
-\sigma^{2} = \frac{1}{n} \sum_{i=1}^{n} (x_{i} - \mu)^{2}
-\end{equation}&lt;/p&gt;
-</description>
-    </item>
     
     <item>
       <title>Introdução ao R</title>

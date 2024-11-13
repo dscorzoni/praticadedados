@@ -5,7 +5,13 @@
         <loc>https://praticadedados.dsre.dev/about/</loc>
         <lastmod>2024-11-13T00:00:00+00:00</lastmod>
       </url><url>
+        <loc>https://praticadedados.dsre.dev/tags/basico/</loc>
+        <lastmod>2024-11-13T00:00:00+00:00</lastmod>
+      </url><url>
         <loc>https://praticadedados.dsre.dev/posts/r_basico/</loc>
+        <lastmod>2024-11-13T00:00:00+00:00</lastmod>
+      </url><url>
+        <loc>https://praticadedados.dsre.dev/tags/pessoal/</loc>
         <lastmod>2024-11-13T00:00:00+00:00</lastmod>
       </url><url>
         <loc>https://praticadedados.dsre.dev/posts/</loc>
@@ -14,10 +20,14 @@
         <loc>https://praticadedados.dsre.dev/</loc>
         <lastmod>2024-11-13T00:00:00+00:00</lastmod>
       </url><url>
+        <loc>https://praticadedados.dsre.dev/tags/sobre/</loc>
+        <lastmod>2024-11-13T00:00:00+00:00</lastmod>
+      </url><url>
+        <loc>https://praticadedados.dsre.dev/tags/</loc>
+        <lastmod>2024-11-13T00:00:00+00:00</lastmod>
+      </url><url>
         <loc>https://praticadedados.dsre.dev/authors/</loc>
       </url><url>
         <loc>https://praticadedados.dsre.dev/categories/</loc>
-      </url><url>
-        <loc>https://praticadedados.dsre.dev/tags/</loc>
       </url>
 </urlset>
