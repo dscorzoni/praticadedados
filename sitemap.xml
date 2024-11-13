@@ -2,22 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-        <loc>https://praticadedados.github.io/about/</loc>
+        <loc>https://dscorzoni.github.io/praticadedados/about/</loc>
         <lastmod>2024-11-13T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://praticadedados.github.io/posts/r_basico/</loc>
+        <loc>https://dscorzoni.github.io/praticadedados/posts/r_basico/</loc>
         <lastmod>2024-11-13T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://praticadedados.github.io/posts/</loc>
+        <loc>https://dscorzoni.github.io/praticadedados/posts/</loc>
         <lastmod>2024-11-13T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://praticadedados.github.io/</loc>
+        <loc>https://dscorzoni.github.io/praticadedados/</loc>
         <lastmod>2024-11-13T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://praticadedados.github.io/authors/</loc>
+        <loc>https://dscorzoni.github.io/praticadedados/authors/</loc>
       </url><url>
-        <loc>https://praticadedados.github.io/categories/</loc>
+        <loc>https://dscorzoni.github.io/praticadedados/categories/</loc>
       </url><url>
-        <loc>https://praticadedados.github.io/tags/</loc>
+        <loc>https://dscorzoni.github.io/praticadedados/tags/</loc>
       </url>
 </urlset>
