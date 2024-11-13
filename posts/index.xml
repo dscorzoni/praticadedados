@@ -79,5 +79,20 @@
 </description>
     </item>
     
+    <item>
+      <title>Introdução ao R</title>
+      <link>/posts/r_basico_2/</link>
+      <pubDate>Wed, 13 Nov 2024 00:00:00 +0000</pubDate>
+      <author>danilo.scorzoni@gmail.com (Danilo Scorzoni Ré)</author>
+      <guid>/posts/r_basico_2/</guid>
+      <description>&lt;p&gt;Neste artigo vamos entender:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Como os dados se organizam dentro do R e quais os principais tipos de valores suportados?&lt;/li&gt;
+&lt;li&gt;O que são vetores e data-frames?&lt;/li&gt;
+&lt;li&gt;Como filtrar linhas e colunas em data-frames?&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
