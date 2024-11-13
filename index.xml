@@ -25,19 +25,42 @@
     
     
     <item>
-      <title>Sobre</title>
+      <title>Sobre o Prática de Dados</title>
       <link>/about/</link>
       <pubDate>Wed, 13 Nov 2024 00:00:00 +0000</pubDate>
       <author>danilo.scorzoni@gmail.com (Danilo Scorzoni Ré)</author>
       <guid>/about/</guid>
-      <description>&lt;p&gt;O prática de dados é um canal no YouTube sobre análise de dados e R.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#57c7ff&#34;&gt;library&lt;/span&gt;(tidyverse)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dados &lt;span style=&#34;color:#ff6ac1&#34;&gt;%&amp;gt;%&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#57c7ff&#34;&gt;filter&lt;/span&gt;(idade &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;5&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Equações:&lt;/p&gt;
-&lt;p&gt;\begin{equation}
-\sigma^{2} = \frac{1}{n} \sum_{i=1}^{n} (x_{i} - \mu)^{2}
-\end{equation}&lt;/p&gt;
+      <description>&lt;p&gt;O &lt;a href=&#34;https://www.youtube.com/c/Pr%C3%A1ticadeDados&#34;&gt;Prática de Dados&lt;/a&gt; é um canal do YouTube com o objetivo de compartilhar conhecimento sobre análise de dados, de maneira geral, e com foco no software R. O canal começou como um projeto durante a pandemia da COVID-19 e conta com vídeos diversos publicados ao longo do tempo.&lt;/p&gt;
+&lt;br /&gt;
+
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/I7oMYGE5rsw?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;h2 id=&#34;sobre-o-autor&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#sobre-o-autor&#34;&gt;
+        #
+    &lt;/a&gt;
+    Sobre o Autor
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;img src=&#34;https://dsre.dev/sobre/danilo_coliseu.jpg&#34;&gt;
+&lt;br /&gt;
+&lt;p&gt;Sou engenheiro florestal por formação mas atuo há mais de 12 anos na área de Ciência de Dados nos ramos de tecnologia e serviços financeiros. Passei por empresas como Serasa Experian, Facebook e Instagram, no Brasil e nos Estados Unidos.&lt;/p&gt;
+&lt;br /&gt;
+&lt;p&gt;Atuando em posições estratégicas realizando análises utilizando ferramentas de análise de dados como R, RStudio, Python e ferramentas de visualização de dados como ggplot2, Tableau dentre outras.&lt;/p&gt;
+&lt;br /&gt;
+&lt;p&gt;Dentre as metodologias estatísticas, tenho experiência com: teste A/B, análise de regressão, algoritmos de segmentação/agrupamento, modelos de classificação como regressão logística e random forest, modelos de inferência causal como propensity score matching, dentre outras.&lt;/p&gt;
+&lt;br /&gt;
+&lt;p&gt;Nas áreas de negócio, tive a oportunidade de trabalhar com projetos em Analytics durante a minha experiência na Serasa Experian, com o desenvolvimento de variáveis baseadas em dados não estruturados, bem como desenvolvimento de modelos de risco com aplicações em marketing, seguros e fraude. Já durante a minha experiência na Meta, tive a oportunidade de trabalhar nas áreas de Parcerias de Mídia e Vendas para Pequenas e Médias Empresas, bem como nas áreas de desenvolvimento de produtos (Instagram e WhatsApp).&lt;/p&gt;
+&lt;br /&gt;
+&lt;p&gt;Mais informações sobre mim, bem como link para minhas redes, você pode encontrar no meu &lt;a href=&#34;https://dsre.dev&#34;&gt;site principal&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
