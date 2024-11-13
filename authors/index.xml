@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Authors on Prática de Dados</title>
+    <link>/authors/</link>
+    <description>Prática de Dados (Authors)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    
+      
+        <managingEditor>danilo.scorzoni@gmail.com
+          
+            (Danilo Scorzoni Ré)
+          
+        </managingEditor>
+      
+
+      
+    
+
+    
+    
+    <atom:link href="/authors/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>

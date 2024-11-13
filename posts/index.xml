@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Prática de Dados</title>
+    <link>/posts/</link>
+    <description>Prática de Dados (Posts)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    
+      
+        <managingEditor>danilo.scorzoni@gmail.com
+          
+            (Danilo Scorzoni Ré)
+          
+        </managingEditor>
+      
+
+      
+    
+
+    
+    <lastBuildDate>Wed, 13 Nov 2024 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Introdução ao R</title>
+      <link>/posts/r_basico/</link>
+      <pubDate>Wed, 13 Nov 2024 00:00:00 +0000</pubDate>
+      <author>danilo.scorzoni@gmail.com (Danilo Scorzoni Ré)</author>
+      <guid>/posts/r_basico/</guid>
+      <description>&lt;p&gt;Neste artigo vamos abordar alguns conceitos básicos sobre o R e como instalá-lo em seu computador.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
