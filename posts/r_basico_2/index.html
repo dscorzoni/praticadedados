@@ -2,46 +2,43 @@
 
 
 <html lang="pt-br" data-theme="">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
     
         
-<meta charset="utf-8">
-<meta name="HandheldFriendly" content="True">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="referrer" content="no-referrer-when-downgrade">
+<meta charset="utf-8" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8461386780086405"
-     crossorigin="anonymous"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8461386780086405" crossorigin="anonymous"></script>
+
+<script defer src="https://cloud.umami.is/script.js" data-website-id="16f92f2c-a24c-464e-883a-628f95af4fe2"></script>
 
 <title>Dados, vetores e data-frames - Prática de Dados</title>
 
-<meta name="description" content="Neste artigo vamos entender:
+<meta
+  name="description"
+  content="Neste artigo vamos entender:
 
+Como utilizar o R como uma calculadora?
 Como os dados se organizam dentro do R e quais os principais tipos de valores suportados?
 O que são vetores e data-frames?
 Como filtrar linhas e colunas em data-frames?
-">
-
-
-
-
-
-<link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.ico">
-<link rel="apple-touch-icon-precomposed" href="http://localhost:1313/favicon.png">
-
-
-
 
 
 
     
-
-
-
+        #
     
+    O R como uma calculadora
 
 
+A primeira coisa que podemos fazer ao iniciar o R é começar a brincar com o terminal, para entender como operações matemáticas podem ser feitas. Portanto, se você digitar no terminal 3&#43;3 e der enter, verá o seguinte resultado:"
+/>
 
+  <link rel="icon" type="image/x-icon" href="https://praticadedados.dsre.dev/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://praticadedados.dsre.dev/favicon.png">
+         
 <style>
   body {
     visibility: hidden;
@@ -57,9 +54,7 @@ Como filtrar linhas e colunas em data-frames?
     }
   </style>
 </noscript>
-
-
-
+ 
 
     
 
@@ -69,33 +64,16 @@ Como filtrar linhas e colunas em data-frames?
 
     
     
-    
-
-    
-        <link rel="stylesheet" href="/css/style.03df79c682b91915c7cd261ecd1a6ec4d0fe668c98fa46310d0fbade319b11bd.css" integrity="sha256-A995xoK5GRXHzSYezRpuxND&#43;ZoyY&#43;kYxDQ&#43;63jGbEb0=">
-    
-
-
-
-
-
-    
-
-
-
-
-
-    
+        
     
     
 
     
-        <link rel="stylesheet" href="/css/style.9c1888ebff42c0224ce04dac10cb2c401f1b77f54f78e8d87d73c3bed781c263.css" integrity="sha256-nBiI6/9CwCJM4E2sEMssQB8bd/VPeOjYfXPDvteBwmM=">
+        <link rel="stylesheet" href="/css/style.min.184a655c5ad8596648622468e6696abf0cf0a2cf8266df17b4f7a36fe9c97551.css" integrity="sha256-GEplXFrYWWZIYiRo5mlqvwzwos&#43;CZt8XtPejb&#43;nJdVE=">
     
 
 
-
-
+ 
 
     
 
@@ -105,24 +83,16 @@ Como filtrar linhas e colunas em data-frames?
 
     
     
+        
+    
     
 
     
-        <link rel="stylesheet" href="/css/style.acd606c0fce58853afe0248d37bb41acbbcdd8b1aca2412b6c0fa760da0137f3.css" integrity="sha256-rNYGwPzliFOv4CSNN7tBrLvN2LGsokErbA&#43;nYNoBN/M=">
+        <link rel="stylesheet" href="/css/style.min.c4c04b3ef88e3d619ad4c7ee5e03048422bc55c4fefdc1f07657c1133670aa22.css" integrity="sha256-xMBLPviOPWGa1MfuXgMEhCK8VcT&#43;/cHwdlfBEzZwqiI=">
     
 
 
-
-
-
-
-
-
-
-
-
-
-    
+ 
 
     
 
@@ -132,33 +102,43 @@ Como filtrar linhas e colunas em data-frames?
 
     
     
+        
+    
     
 
     
-        <script src="/js/script.672e2309c296e07c18bcd08b28d797a56222ff941d65f308fba3158c44885b14.js" type="text/javascript" charset="utf-8" integrity="sha256-Zy4jCcKW4HwYvNCLKNeXpWIi/5QdZfMI&#43;6MVjESIWxQ="></script>
+        <link rel="stylesheet" href="/css/style.min.21c5d8fe0a79d623b0adc1ce4bd4f6dd2c05cd939c9aaaa966ba7186b1464f4d.css" integrity="sha256-IcXY/gp51iOwrcHOS9T23SwFzZOcmqqpZrpxhrFGT00=">
     
 
 
+     
 
-
-
-
-
-
-
-
+    
 
 
 
 
 
     
+    
+        
+    
+    
 
-<script async defer data-website-id="16f92f2c-a24c-464e-883a-628f95af4fe2" data-cache="false" data-do-not-track="false" src="https://umami.xtra.science/script.js"></script>
+    
+        <script src="/js/script.min.08f04d96386c73c9bf4d160333f8f448c05a6e01c06770542ee0e013954ce930.js" type="text/javascript" charset="utf-8" integrity="sha256-CPBNljhsc8m/TRYDM/j0SMBabgHAZ3BULuDgE5VM6TA="></script>
+    
+
+
+   
 
 
 
 
+  
+
+<script async defer data-website-id="16f92f2c-a24c-464e-883a-628f95af4fe2" data-cache="false" data-do-not-track="false" src="https://cloud.umami.is/script.js"></script>
+  
 
 
     
@@ -390,11 +370,11 @@ Como filtrar linhas e colunas em data-frames?
     <nav class="noselect">
         
         
-        <a class="" href="http://localhost:1313/" title="">Home</a>
+        <a class="" href="https://praticadedados.dsre.dev/" title="">Home</a>
         
-        <a class="" href="http://localhost:1313/tags/" title="">Tags</a>
+        <a class="" href="https://praticadedados.dsre.dev/tags/" title="">Tags</a>
         
-        <a class="" href="http://localhost:1313/about/" title="Sobre">Sobre</a>
+        <a class="" href="https://praticadedados.dsre.dev/about/" title="Sobre">Sobre</a>
         
     </nav>
 
@@ -453,7 +433,7 @@ Como filtrar linhas e colunas em data-frames?
     
 
     <a class="post-hidden-url u-url" href="/posts/r_basico_2/">/posts/r_basico_2/</a>
-    <a href="http://localhost:1313/" class="p-name p-author post-hidden-author h-card" rel="me">map[email:danilo.scorzoni@gmail.com location:São Paulo/SP name:Danilo Scorzoni Ré]</a>
+    <a href="https://praticadedados.dsre.dev/" class="p-name p-author post-hidden-author h-card" rel="me">map[email:danilo.scorzoni@gmail.com location:São Paulo/SP name:Danilo Scorzoni Ré]</a>
 
 
     <div class="post-taxonomies">
@@ -481,6 +461,28 @@ Como filtrar linhas e colunas em data-frames?
 
   
   
+  
+  <details class="toc noselect">
+    <summary>Table of Contents</summary>
+    <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#o-r-como-uma-calculadora">O R como uma calculadora</a></li>
+    <li><a href="#dados-e-estrutura-interna">Dados e estrutura interna</a></li>
+    <li><a href="#vetores">Vetores</a>
+      <ul>
+        <li><a href="#como-retornar-elementos-de-um-vetor">Como retornar elementos de um vetor?</a></li>
+      </ul>
+    </li>
+    <li><a href="#data-frames">Data Frames</a>
+      <ul>
+        <li><a href="#utilizando-índices-no-data-frame">Utilizando Índices no Data Frame</a></li>
+      </ul>
+    </li>
+    <li><a href="#próximos-passos">Próximos Passos</a></li>
+  </ul>
+</nav></div>
+  </details>
+  
 
 
 
@@ -505,10 +507,181 @@ Como filtrar linhas e colunas em data-frames?
         <div class="content e-content">
             <p>Neste artigo vamos entender:</p>
 <ul>
+<li>Como utilizar o R como uma calculadora?</li>
 <li>Como os dados se organizam dentro do R e quais os principais tipos de valores suportados?</li>
 <li>O que são vetores e data-frames?</li>
 <li>Como filtrar linhas e colunas em data-frames?</li>
 </ul>
+<h2 id="o-r-como-uma-calculadora" >
+<div>
+    <a href="#o-r-como-uma-calculadora">
+        #
+    </a>
+    O R como uma calculadora
+</div>
+</h2>
+<p>A primeira coisa que podemos fazer ao iniciar o R é começar a brincar com o terminal, para entender como operações matemáticas podem ser feitas. Portanto, se você digitar no terminal 3+3 e der enter, verá o seguinte resultado:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff9f43">3+3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[1] <span style="color:#ff9f43">6</span>
+</span></span></code></pre></div><blockquote>
+<p>Detalhe: o <code>[1]</code> indica a linha de retorno do processamento do R, ela sempre se inicia em [1]. Nesse caso, apenas um elemento é retornado, pois estamos somando dos escalares e este elemento é o número 6, resultado da soma de 3 + 3.</p>
+</blockquote>
+<p>De forma análoga, temos as operações de subtração, multiplicação e divisão:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff9f43">5-3</span>
+</span></span><span style="display:flex;"><span>[1] <span style="color:#ff9f43">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">2</span><span style="color:#ff6ac1">*</span><span style="color:#ff9f43">10</span>
+</span></span><span style="display:flex;"><span>[1] <span style="color:#ff9f43">20</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">10</span><span style="color:#ff6ac1">/</span><span style="color:#ff9f43">2</span>
+</span></span><span style="display:flex;"><span>[5]
+</span></span></code></pre></div><p>Potenciação e raiz quadrada também são possíveis:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff9f43">2</span>^4 <span style="color:#78787e"># Dois elevado a quatro</span>
+</span></span><span style="display:flex;"><span>[1] <span style="color:#ff9f43">16</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#57c7ff">sqrt</span>(<span style="color:#ff9f43">9</span>) <span style="color:#78787e"># Raíz quadrada (square root) de 9</span>
+</span></span><span style="display:flex;"><span>[3]
+</span></span></code></pre></div><p>Agora que já entendemos o R como uma calculadora, vamos prosseguir para compreender melhor como o R armazena e estrutura os dados.</p>
+<h2 id="dados-e-estrutura-interna" >
+<div>
+    <a href="#dados-e-estrutura-interna">
+        #
+    </a>
+    Dados e estrutura interna
+</div>
+</h2>
+<p>Dentro do R, os dados são organizados em estruturas chamadas objetos. Para simplificar o entendimento, tanto variáveis, como tabelas inteiras, e até mesmo saídas de funções são consideradas objetos dentro do R.</p>
+<p>Quando criamos variáveis, elas podem assumir os tipos básicos character (para caracteres), numeric (para números) ou lógico (verdadeiro/falso). Por exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>texto <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;Danilo&#34;</span>
+</span></span><span style="display:flex;"><span>numero <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">38</span>
+</span></span><span style="display:flex;"><span>mora_em_sp <span style="color:#ff6ac1">=</span> <span style="color:#ff6ac1">TRUE</span>
+</span></span></code></pre></div><p>Após criar essas variáveis, você pode verificar quais são os tipos (classes) dela utilizando a função <code>class()</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#57c7ff">class</span>(texto)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[1] <span style="color:#5af78e">&#34;character&#34;</span>
+</span></span></code></pre></div><blockquote>
+<p>Detalhe: o <code>[1]</code> indica a linha de retorno do processamento do R, ou seja, como chamamos a função <code>class()</code>, a única coisa que ela retornou foi o tipo do valor da variável. O <code>[1]</code> indica qual linha de saída se refere aquela informação. Isso é útil para quando você tem listas gigantescas de dados.</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#57c7ff">class</span>(numero)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[1] <span style="color:#5af78e">&#34;numeric&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#57c7ff">class</span>(mora_em_sp)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[1] <span style="color:#5af78e">&#34;logical&#34;</span>
+</span></span></code></pre></div><p>Desta forma, o R faz a tipagem automática para nós de acordo com o tipo de informação que é associada à variável. Isso é importante pois alguns tipos de objetos não suportam múltiplas classes, como os vetores, por exemplo.</p>
+<h2 id="vetores" >
+<div>
+    <a href="#vetores">
+        #
+    </a>
+    Vetores
+</div>
+</h2>
+<p>Os vetores são estruturas mais complexas de objetos que armazenam múltiplos valores. Conforme dito, os vetores precisam ter os valores de mesma classe idealmente e eles são criados utilizando a função <code>c()</code> (concatenar), separando cada elemento por vírgula. Vamos ao exemplo a seguir:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>idades <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">c</span>(<span style="color:#ff9f43">10</span>, <span style="color:#ff9f43">12</span>, <span style="color:#ff9f43">15</span>, <span style="color:#ff9f43">16</span>)
+</span></span><span style="display:flex;"><span><span style="color:#57c7ff">class</span>(idades)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[1] <span style="color:#5af78e">&#34;numeric&#34;</span>
+</span></span></code></pre></div><p>Se você misturar tipos, o R faz a conversão automática para garantir que todos os elementos existam. Por exemplo, se numa lista de <code>numbers</code> um <code>character</code> for adicionado, todos os números serão convertidos em caracteres:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>idades_mistura <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">c</span>(<span style="color:#ff9f43">10</span>, <span style="color:#ff9f43">13</span>, <span style="color:#5af78e">&#34;erro&#34;</span>, <span style="color:#ff9f43">10</span>)
+</span></span><span style="display:flex;"><span>idades_mistura
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[1] <span style="color:#5af78e">&#34;10&#34;</span>   <span style="color:#5af78e">&#34;13&#34;</span>   <span style="color:#5af78e">&#34;erro&#34;</span> <span style="color:#5af78e">&#34;10&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#57c7ff">class</span>(idades_mistura)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[1] <span style="color:#5af78e">&#34;character&#34;</span>
+</span></span></code></pre></div><p>Se você tem uma sequência de números e adiciona um valor <code>logical</code> esse valor é convertido em 0 se for <code>FALSE</code> ou 1 se for <code>TRUE</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>numeros <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">c</span>(<span style="color:#ff9f43">10</span>, <span style="color:#ff9f43">20</span>, <span style="color:#ff6ac1">TRUE</span>, <span style="color:#ff6ac1">FALSE</span>)
+</span></span><span style="display:flex;"><span>numeros
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[1]  <span style="color:#ff9f43">10</span> <span style="color:#ff9f43">20</span>  <span style="color:#ff9f43">1</span>  <span style="color:#ff9f43">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#57c7ff">class</span>(numeros)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[1] <span style="color:#5af78e">&#34;numeric&#34;</span>
+</span></span></code></pre></div><p>Portanto, é sempre importante manter a consistência ao se criar vetores para não ter erros e problemas em qualidade de dados.</p>
+<h3 id="como-retornar-elementos-de-um-vetor" >
+<div>
+    <a href="#como-retornar-elementos-de-um-vetor">
+        ##
+    </a>
+    Como retornar elementos de um vetor?
+</div>
+</h3>
+<p>Essa é uma pergunta importante pois vai nos ajudar adiante quando falarmos sobre Data Frames. O vetor permite acesso a elementos específicos dele através dos índices. Veja o exemplo abaixo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>cidades <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">c</span>(<span style="color:#5af78e">&#34;São Paulo&#34;</span>, <span style="color:#5af78e">&#34;Rio de Janeiro&#34;</span>, <span style="color:#5af78e">&#34;Curitiba&#34;</span>)
+</span></span><span style="display:flex;"><span>cidades[2]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[1] Rio de Janeiro
+</span></span></code></pre></div><p>No R, diferente de muitas linguagens de programação, o índice sempre se inicia no 1, retornando o primeiro elemento do vetor. Nesse caso, colocamos o índice 2 dentro de colchetes e retornamos o segundo elemento <code>Rio de Janeiro</code>. É possível também solicitar ao vetor que retorne um intervalo de índices utilizando <code>inicio:fim</code>, veja o exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>cidades[2<span style="color:#ff6ac1">:</span><span style="color:#ff9f43">3</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[1] <span style="color:#5af78e">&#34;Rio de Janeiro&#34;</span> <span style="color:#5af78e">&#34;Curitiba&#34;</span>
+</span></span></code></pre></div><h2 id="data-frames" >
+<div>
+    <a href="#data-frames">
+        #
+    </a>
+    Data Frames
+</div>
+</h2>
+<p>Por fim, podemos entender os data frames como estruturas de dados de 2 dimensões (linhas e colunas) ou conjuntos de vetores lado a lado. Vamos imaginar uma situação de uma tabela que contem nomes e idades. Vamos construí-la a partir de vetores:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>nomes <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">c</span>(<span style="color:#5af78e">&#34;Maria&#34;</span>, <span style="color:#5af78e">&#34;João&#34;</span>, <span style="color:#5af78e">&#34;Alice&#34;</span>, <span style="color:#5af78e">&#34;Ricardo&#34;</span>)
+</span></span><span style="display:flex;"><span>idades <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">c</span>(<span style="color:#ff9f43">30</span>, <span style="color:#ff9f43">34</span>, <span style="color:#ff9f43">27</span>, <span style="color:#ff9f43">22</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>tabela <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">data.frame</span>(nomes, idades)
+</span></span><span style="display:flex;"><span>tabela
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    nomes idades
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">1</span>   Maria     <span style="color:#ff9f43">30</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">2</span>    João     <span style="color:#ff9f43">34</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">3</span>   Alice     <span style="color:#ff9f43">27</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">4</span> Ricardo     <span style="color:#ff9f43">22</span>
+</span></span></code></pre></div><p>A função <code>data.frame()</code> cria uma tabela, ou data frame, utilizando os vetores de valores. Temos uma função interessante aqui que nos ajuda a identificar qual o tipo de dado cada coluna possui, como no exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#57c7ff">str</span>(tabela)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#5af78e">&#39;data.frame&#39;</span><span style="color:#ff6ac1">:</span>	<span style="color:#ff9f43">4</span> obs. of  <span style="color:#ff9f43">2</span> variables<span style="color:#ff6ac1">:</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ff6ac1">$</span> nomes <span style="color:#ff6ac1">:</span> chr  <span style="color:#5af78e">&#34;Maria&#34;</span> <span style="color:#5af78e">&#34;João&#34;</span> <span style="color:#5af78e">&#34;Alice&#34;</span> <span style="color:#5af78e">&#34;Ricardo&#34;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ff6ac1">$</span> idades<span style="color:#ff6ac1">:</span> num  <span style="color:#ff9f43">30</span> <span style="color:#ff9f43">34</span> <span style="color:#ff9f43">27</span> <span style="color:#ff9f43">22</span>
+</span></span></code></pre></div><p>A função <code>str()</code> nos mostra a estrutura de objetos no R. Nesse caso, o retorno da função nos diz que esse objeto é um <code>data.frame</code> que possui 4 observações e 2 variáveis. A variável <code>nomes</code> é do tipo <code>chr</code> (character) e a variável <code>idades</code> é do tipo <code>num</code> (numeric). Segue também uma amostra dos valores para ilustrar o tipo de cada coluna. Note que como essa tabela que fizemos é pequena, todos os valores são mostrados.</p>
+<h3 id="utilizando-índices-no-data-frame" >
+<div>
+    <a href="#utilizando-%c3%adndices-no-data-frame">
+        ##
+    </a>
+    Utilizando Índices no Data Frame
+</div>
+</h3>
+<p>Para finalizar esse artigo, vamos fazer seleção de elementos no Data Frame como fizemos no vetor, caso queiramos utilizar os índices para retornar os valores. A estrutura é uma dupla de índices, cujo primeiro indica a linha e o segundo indica a coluna. Por tanto, digamos que queremos retornar a 4a linha com a 2a coluna:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>tabela[4,<span style="color:#ff9f43">2</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[1] <span style="color:#ff9f43">22</span>
+</span></span></code></pre></div><p>O número 22 é a idade do Ricardo, ultima linha da nossa tabela. A mesma lógica vale para o intervalo de valores dos vetores utilizando os dois-pontos. No entanto, um outro modo interessante aqui é, por exemplo, retornar todas as colunas de uma determinada linha, podemos fazer da seguinte forma:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>tabela[2,]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  nomes idades
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">2</span>  João     <span style="color:#ff9f43">34</span>
+</span></span></code></pre></div><p>Deixando o índice sem preencher significa que ele retornará tudo referente àquela dimensão. Preenchendo apenas o índice da linha, veremos todas as colunas daquela determinada linha. O contrário também funciona:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>tabela[,<span style="color:#ff9f43">2</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[1] <span style="color:#ff9f43">30</span> <span style="color:#ff9f43">34</span> <span style="color:#ff9f43">27</span> <span style="color:#ff9f43">22</span>
+</span></span></code></pre></div><p>No exemplo acima todas as idades (coluna 2) são apresentadas. Uma forma alternativa de retornar uma coluna é utilizando o <code>$</code> e o nome da coluna após o nome do objeto data frame, como nesse exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>tabela<span style="color:#ff6ac1">$</span>nomes
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[1] <span style="color:#5af78e">&#34;Maria&#34;</span>   <span style="color:#5af78e">&#34;João&#34;</span>    <span style="color:#5af78e">&#34;Alice&#34;</span>   <span style="color:#5af78e">&#34;Ricardo&#34;</span>
+</span></span></code></pre></div><p>Simplificando um pouco o uso pois não é necessário saber exatamente qual é o número da coluna que se deseja retornar.</p>
+<h2 id="próximos-passos" >
+<div>
+    <a href="#pr%c3%b3ximos-passos">
+        #
+    </a>
+    Próximos Passos
+</div>
+</h2>
+<p>No próximo artigo, vamos ver como realizar operações com vetores e data-frames como por exemplo, aplicar uma fórmula sobre colunas numéricas, calcular somas, médias, entre outras coisas.</p>
 
         </div>
 
@@ -581,8 +754,6 @@ Como filtrar linhas e colunas em data-frames?
         <div style="display: flex; align-items: center; gap:8px">
             ©  Danilo Scorzoni Ré,  2024
             
-            <a aria-label="Check statistics data" style="display: flex; align-items: center; border-bottom: none; cursor: pointer; color: var(--pagination-link-color)" href="https://umami.xtra.science/share/Fy0goUn0b9rrxxGe/hugo-theme-anubis2.netlify.app"><svg xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-report-analytics"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2" /><path d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z" /><path d="M9 17v-5" /><path d="M12 17v-1" /><path d="M15 17v-3" /></svg></a>
-            
         </div>
         <div style="display:flex;align-items: center">
             
@@ -601,7 +772,7 @@ Como filtrar linhas e colunas em data-frames?
 
     <p class="h-card vcard">
 
-    <a href=http://localhost:1313/ class="p-name u-url url fn" rel="me">map[email:danilo.scorzoni@gmail.com location:São Paulo/SP name:Danilo Scorzoni Ré]</a>
+    <a href=https://praticadedados.dsre.dev/ class="p-name u-url url fn" rel="me">map[email:danilo.scorzoni@gmail.com location:São Paulo/SP name:Danilo Scorzoni Ré]</a>
 
     
 

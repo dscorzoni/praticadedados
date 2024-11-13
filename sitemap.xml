@@ -2,35 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-        <loc>http://localhost:1313/about/</loc>
+        <loc>https://praticadedados.dsre.dev/about/</loc>
         <lastmod>2024-11-13T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>http://localhost:1313/tags/basico/</loc>
+        <loc>https://praticadedados.dsre.dev/tags/basico/</loc>
         <lastmod>2024-11-13T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>http://localhost:1313/posts/r_basico/</loc>
+        <loc>https://praticadedados.dsre.dev/posts/r_basico_2/</loc>
         <lastmod>2024-11-13T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>http://localhost:1313/posts/r_basico_2/</loc>
+        <loc>https://praticadedados.dsre.dev/posts/r_basico/</loc>
         <lastmod>2024-11-13T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>http://localhost:1313/tags/pessoal/</loc>
+        <loc>https://praticadedados.dsre.dev/tags/pessoal/</loc>
         <lastmod>2024-11-13T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>http://localhost:1313/posts/</loc>
+        <loc>https://praticadedados.dsre.dev/posts/</loc>
         <lastmod>2024-11-13T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>http://localhost:1313/</loc>
+        <loc>https://praticadedados.dsre.dev/</loc>
         <lastmod>2024-11-13T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>http://localhost:1313/tags/sobre/</loc>
+        <loc>https://praticadedados.dsre.dev/tags/sobre/</loc>
         <lastmod>2024-11-13T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>http://localhost:1313/tags/</loc>
+        <loc>https://praticadedados.dsre.dev/tags/</loc>
         <lastmod>2024-11-13T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>http://localhost:1313/authors/</loc>
+        <loc>https://praticadedados.dsre.dev/authors/</loc>
       </url><url>
-        <loc>http://localhost:1313/categories/</loc>
+        <loc>https://praticadedados.dsre.dev/categories/</loc>
       </url>
 </urlset>
