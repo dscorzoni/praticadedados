@@ -18,7 +18,12 @@
 
 <meta
   name="description"
-  content="Neste artigo vamos entender:
+  content="
+      
+    
+
+
+Neste artigo vamos entender:
 
 Como utilizar o R como uma calculadora?
 Como os dados se organizam dentro do R e quais os principais tipos de valores suportados?
@@ -505,7 +510,16 @@ A primeira coisa que podemos fazer ao iniciar o R é começar a brincar com o te
 </script>
 
         <div class="content e-content">
-            <p>Neste artigo vamos entender:</p>
+            
+
+    
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/LC9bbcIzUaE?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
+      ></iframe>
+    </div>
+
+<br />
+<p>Neste artigo vamos entender:</p>
 <ul>
 <li>Como utilizar o R como uma calculadora?</li>
 <li>Como os dados se organizam dentro do R e quais os principais tipos de valores suportados?</li>
@@ -521,26 +535,25 @@ A primeira coisa que podemos fazer ao iniciar o R é começar a brincar com o te
 </div>
 </h2>
 <p>A primeira coisa que podemos fazer ao iniciar o R é começar a brincar com o terminal, para entender como operações matemáticas podem ser feitas. Portanto, se você digitar no terminal 3+3 e der enter, verá o seguinte resultado:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff9f43">3+3</span>
-</span></span><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#ff9f43">3+3</span>
 </span></span><span style="display:flex;"><span>[1] <span style="color:#ff9f43">6</span>
 </span></span></code></pre></div><blockquote>
 <p>Detalhe: o <code>[1]</code> indica a linha de retorno do processamento do R, ela sempre se inicia em [1]. Nesse caso, apenas um elemento é retornado, pois estamos somando dos escalares e este elemento é o número 6, resultado da soma de 3 + 3.</p>
 </blockquote>
 <p>De forma análoga, temos as operações de subtração, multiplicação e divisão:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff9f43">5-3</span>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#ff9f43">5-3</span>
 </span></span><span style="display:flex;"><span>[1] <span style="color:#ff9f43">2</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ff9f43">2</span><span style="color:#ff6ac1">*</span><span style="color:#ff9f43">10</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#ff9f43">2</span><span style="color:#ff6ac1">*</span><span style="color:#ff9f43">10</span>
 </span></span><span style="display:flex;"><span>[1] <span style="color:#ff9f43">20</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ff9f43">10</span><span style="color:#ff6ac1">/</span><span style="color:#ff9f43">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#ff9f43">10</span><span style="color:#ff6ac1">/</span><span style="color:#ff9f43">2</span>
 </span></span><span style="display:flex;"><span>[5]
 </span></span></code></pre></div><p>Potenciação e raiz quadrada também são possíveis:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff9f43">2</span>^4 <span style="color:#78787e"># Dois elevado a quatro</span>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#ff9f43">2</span>^4 <span style="color:#78787e"># Dois elevado a quatro</span>
 </span></span><span style="display:flex;"><span>[1] <span style="color:#ff9f43">16</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#57c7ff">sqrt</span>(<span style="color:#ff9f43">9</span>) <span style="color:#78787e"># Raíz quadrada (square root) de 9</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">sqrt</span>(<span style="color:#ff9f43">9</span>) <span style="color:#78787e"># Raíz quadrada (square root) de 9</span>
 </span></span><span style="display:flex;"><span>[3]
 </span></span></code></pre></div><p>Agora que já entendemos o R como uma calculadora, vamos prosseguir para compreender melhor como o R armazena e estrutura os dados.</p>
 <h2 id="dados-e-estrutura-interna" >
@@ -553,22 +566,19 @@ A primeira coisa que podemos fazer ao iniciar o R é começar a brincar com o te
 </h2>
 <p>Dentro do R, os dados são organizados em estruturas chamadas objetos. Para simplificar o entendimento, tanto variáveis, como tabelas inteiras, e até mesmo saídas de funções são consideradas objetos dentro do R.</p>
 <p>Quando criamos variáveis, elas podem assumir os tipos básicos character (para caracteres), numeric (para números) ou lógico (verdadeiro/falso). Por exemplo:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>texto <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;Danilo&#34;</span>
-</span></span><span style="display:flex;"><span>numero <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">38</span>
-</span></span><span style="display:flex;"><span>mora_em_sp <span style="color:#ff6ac1">=</span> <span style="color:#ff6ac1">TRUE</span>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> texto <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;Danilo&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> numero <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">38</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> mora_em_sp <span style="color:#ff6ac1">=</span> <span style="color:#ff6ac1">TRUE</span>
 </span></span></code></pre></div><p>Após criar essas variáveis, você pode verificar quais são os tipos (classes) dela utilizando a função <code>class()</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#57c7ff">class</span>(texto)
-</span></span><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">class</span>(texto)
 </span></span><span style="display:flex;"><span>[1] <span style="color:#5af78e">&#34;character&#34;</span>
 </span></span></code></pre></div><blockquote>
 <p>Detalhe: o <code>[1]</code> indica a linha de retorno do processamento do R, ou seja, como chamamos a função <code>class()</code>, a única coisa que ela retornou foi o tipo do valor da variável. O <code>[1]</code> indica qual linha de saída se refere aquela informação. Isso é útil para quando você tem listas gigantescas de dados.</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#57c7ff">class</span>(numero)
-</span></span><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">class</span>(numero)
 </span></span><span style="display:flex;"><span>[1] <span style="color:#5af78e">&#34;numeric&#34;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#57c7ff">class</span>(mora_em_sp)
-</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">class</span>(mora_em_sp)
 </span></span><span style="display:flex;"><span>[1] <span style="color:#5af78e">&#34;logical&#34;</span>
 </span></span></code></pre></div><p>Desta forma, o R faz a tipagem automática para nós de acordo com o tipo de informação que é associada à variável. Isso é importante pois alguns tipos de objetos não suportam múltiplas classes, como os vetores, por exemplo.</p>
 <h2 id="vetores" >
@@ -580,27 +590,22 @@ A primeira coisa que podemos fazer ao iniciar o R é começar a brincar com o te
 </div>
 </h2>
 <p>Os vetores são estruturas mais complexas de objetos que armazenam múltiplos valores. Conforme dito, os vetores precisam ter os valores de mesma classe idealmente e eles são criados utilizando a função <code>c()</code> (concatenar), separando cada elemento por vírgula. Vamos ao exemplo a seguir:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>idades <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">c</span>(<span style="color:#ff9f43">10</span>, <span style="color:#ff9f43">12</span>, <span style="color:#ff9f43">15</span>, <span style="color:#ff9f43">16</span>)
-</span></span><span style="display:flex;"><span><span style="color:#57c7ff">class</span>(idades)
-</span></span><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> idades <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">c</span>(<span style="color:#ff9f43">10</span>, <span style="color:#ff9f43">12</span>, <span style="color:#ff9f43">15</span>, <span style="color:#ff9f43">16</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">class</span>(idades)
 </span></span><span style="display:flex;"><span>[1] <span style="color:#5af78e">&#34;numeric&#34;</span>
 </span></span></code></pre></div><p>Se você misturar tipos, o R faz a conversão automática para garantir que todos os elementos existam. Por exemplo, se numa lista de <code>numbers</code> um <code>character</code> for adicionado, todos os números serão convertidos em caracteres:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>idades_mistura <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">c</span>(<span style="color:#ff9f43">10</span>, <span style="color:#ff9f43">13</span>, <span style="color:#5af78e">&#34;erro&#34;</span>, <span style="color:#ff9f43">10</span>)
-</span></span><span style="display:flex;"><span>idades_mistura
-</span></span><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> idades_mistura <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">c</span>(<span style="color:#ff9f43">10</span>, <span style="color:#ff9f43">13</span>, <span style="color:#5af78e">&#34;erro&#34;</span>, <span style="color:#ff9f43">10</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> idades_mistura
 </span></span><span style="display:flex;"><span>[1] <span style="color:#5af78e">&#34;10&#34;</span>   <span style="color:#5af78e">&#34;13&#34;</span>   <span style="color:#5af78e">&#34;erro&#34;</span> <span style="color:#5af78e">&#34;10&#34;</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#57c7ff">class</span>(idades_mistura)
-</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">class</span>(idades_mistura)
 </span></span><span style="display:flex;"><span>[1] <span style="color:#5af78e">&#34;character&#34;</span>
 </span></span></code></pre></div><p>Se você tem uma sequência de números e adiciona um valor <code>logical</code> esse valor é convertido em 0 se for <code>FALSE</code> ou 1 se for <code>TRUE</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>numeros <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">c</span>(<span style="color:#ff9f43">10</span>, <span style="color:#ff9f43">20</span>, <span style="color:#ff6ac1">TRUE</span>, <span style="color:#ff6ac1">FALSE</span>)
-</span></span><span style="display:flex;"><span>numeros
-</span></span><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> numeros <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">c</span>(<span style="color:#ff9f43">10</span>, <span style="color:#ff9f43">20</span>, <span style="color:#ff6ac1">TRUE</span>, <span style="color:#ff6ac1">FALSE</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> numeros
 </span></span><span style="display:flex;"><span>[1]  <span style="color:#ff9f43">10</span> <span style="color:#ff9f43">20</span>  <span style="color:#ff9f43">1</span>  <span style="color:#ff9f43">0</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#57c7ff">class</span>(numeros)
-</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">class</span>(numeros)
 </span></span><span style="display:flex;"><span>[1] <span style="color:#5af78e">&#34;numeric&#34;</span>
 </span></span></code></pre></div><p>Portanto, é sempre importante manter a consistência ao se criar vetores para não ter erros e problemas em qualidade de dados.</p>
 <h3 id="como-retornar-elementos-de-um-vetor" >
@@ -612,13 +617,11 @@ A primeira coisa que podemos fazer ao iniciar o R é começar a brincar com o te
 </div>
 </h3>
 <p>Essa é uma pergunta importante pois vai nos ajudar adiante quando falarmos sobre Data Frames. O vetor permite acesso a elementos específicos dele através dos índices. Veja o exemplo abaixo:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>cidades <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">c</span>(<span style="color:#5af78e">&#34;São Paulo&#34;</span>, <span style="color:#5af78e">&#34;Rio de Janeiro&#34;</span>, <span style="color:#5af78e">&#34;Curitiba&#34;</span>)
-</span></span><span style="display:flex;"><span>cidades[2]
-</span></span><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> cidades <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">c</span>(<span style="color:#5af78e">&#34;São Paulo&#34;</span>, <span style="color:#5af78e">&#34;Rio de Janeiro&#34;</span>, <span style="color:#5af78e">&#34;Curitiba&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> cidades[2]
 </span></span><span style="display:flex;"><span>[1] Rio de Janeiro
 </span></span></code></pre></div><p>No R, diferente de muitas linguagens de programação, o índice sempre se inicia no 1, retornando o primeiro elemento do vetor. Nesse caso, colocamos o índice 2 dentro de colchetes e retornamos o segundo elemento <code>Rio de Janeiro</code>. É possível também solicitar ao vetor que retorne um intervalo de índices utilizando <code>inicio:fim</code>, veja o exemplo:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>cidades[2<span style="color:#ff6ac1">:</span><span style="color:#ff9f43">3</span>]
-</span></span><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> cidades[2<span style="color:#ff6ac1">:</span><span style="color:#ff9f43">3</span>]
 </span></span><span style="display:flex;"><span>[1] <span style="color:#5af78e">&#34;Rio de Janeiro&#34;</span> <span style="color:#5af78e">&#34;Curitiba&#34;</span>
 </span></span></code></pre></div><h2 id="data-frames" >
 <div>
@@ -629,11 +632,10 @@ A primeira coisa que podemos fazer ao iniciar o R é começar a brincar com o te
 </div>
 </h2>
 <p>Por fim, podemos entender os data frames como estruturas de dados de 2 dimensões (linhas e colunas) ou conjuntos de vetores lado a lado. Vamos imaginar uma situação de uma tabela que contem nomes e idades. Vamos construí-la a partir de vetores:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>nomes <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">c</span>(<span style="color:#5af78e">&#34;Maria&#34;</span>, <span style="color:#5af78e">&#34;João&#34;</span>, <span style="color:#5af78e">&#34;Alice&#34;</span>, <span style="color:#5af78e">&#34;Ricardo&#34;</span>)
-</span></span><span style="display:flex;"><span>idades <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">c</span>(<span style="color:#ff9f43">30</span>, <span style="color:#ff9f43">34</span>, <span style="color:#ff9f43">27</span>, <span style="color:#ff9f43">22</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>tabela <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">data.frame</span>(nomes, idades)
-</span></span><span style="display:flex;"><span>tabela
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> nomes <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">c</span>(<span style="color:#5af78e">&#34;Maria&#34;</span>, <span style="color:#5af78e">&#34;João&#34;</span>, <span style="color:#5af78e">&#34;Alice&#34;</span>, <span style="color:#5af78e">&#34;Ricardo&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> idades <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">c</span>(<span style="color:#ff9f43">30</span>, <span style="color:#ff9f43">34</span>, <span style="color:#ff9f43">27</span>, <span style="color:#ff9f43">22</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> tabela <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">data.frame</span>(nomes, idades)
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> tabela
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    nomes idades
 </span></span><span style="display:flex;"><span><span style="color:#ff9f43">1</span>   Maria     <span style="color:#ff9f43">30</span>
@@ -641,8 +643,7 @@ A primeira coisa que podemos fazer ao iniciar o R é começar a brincar com o te
 </span></span><span style="display:flex;"><span><span style="color:#ff9f43">3</span>   Alice     <span style="color:#ff9f43">27</span>
 </span></span><span style="display:flex;"><span><span style="color:#ff9f43">4</span> Ricardo     <span style="color:#ff9f43">22</span>
 </span></span></code></pre></div><p>A função <code>data.frame()</code> cria uma tabela, ou data frame, utilizando os vetores de valores. Temos uma função interessante aqui que nos ajuda a identificar qual o tipo de dado cada coluna possui, como no exemplo:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#57c7ff">str</span>(tabela)
-</span></span><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">str</span>(tabela)
 </span></span><span style="display:flex;"><span><span style="color:#5af78e">&#39;data.frame&#39;</span><span style="color:#ff6ac1">:</span>	<span style="color:#ff9f43">4</span> obs. of  <span style="color:#ff9f43">2</span> variables<span style="color:#ff6ac1">:</span>
 </span></span><span style="display:flex;"><span> <span style="color:#ff6ac1">$</span> nomes <span style="color:#ff6ac1">:</span> chr  <span style="color:#5af78e">&#34;Maria&#34;</span> <span style="color:#5af78e">&#34;João&#34;</span> <span style="color:#5af78e">&#34;Alice&#34;</span> <span style="color:#5af78e">&#34;Ricardo&#34;</span>
 </span></span><span style="display:flex;"><span> <span style="color:#ff6ac1">$</span> idades<span style="color:#ff6ac1">:</span> num  <span style="color:#ff9f43">30</span> <span style="color:#ff9f43">34</span> <span style="color:#ff9f43">27</span> <span style="color:#ff9f43">22</span>
@@ -656,21 +657,17 @@ A primeira coisa que podemos fazer ao iniciar o R é começar a brincar com o te
 </div>
 </h3>
 <p>Para finalizar esse artigo, vamos fazer seleção de elementos no Data Frame como fizemos no vetor, caso queiramos utilizar os índices para retornar os valores. A estrutura é uma dupla de índices, cujo primeiro indica a linha e o segundo indica a coluna. Por tanto, digamos que queremos retornar a 4a linha com a 2a coluna:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>tabela[4,<span style="color:#ff9f43">2</span>]
-</span></span><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> tabela[4,<span style="color:#ff9f43">2</span>]
 </span></span><span style="display:flex;"><span>[1] <span style="color:#ff9f43">22</span>
 </span></span></code></pre></div><p>O número 22 é a idade do Ricardo, ultima linha da nossa tabela. A mesma lógica vale para o intervalo de valores dos vetores utilizando os dois-pontos. No entanto, um outro modo interessante aqui é, por exemplo, retornar todas as colunas de uma determinada linha, podemos fazer da seguinte forma:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>tabela[2,]
-</span></span><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> tabela[2,]
 </span></span><span style="display:flex;"><span>  nomes idades
 </span></span><span style="display:flex;"><span><span style="color:#ff9f43">2</span>  João     <span style="color:#ff9f43">34</span>
 </span></span></code></pre></div><p>Deixando o índice sem preencher significa que ele retornará tudo referente àquela dimensão. Preenchendo apenas o índice da linha, veremos todas as colunas daquela determinada linha. O contrário também funciona:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>tabela[,<span style="color:#ff9f43">2</span>]
-</span></span><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> tabela[,<span style="color:#ff9f43">2</span>]
 </span></span><span style="display:flex;"><span>[1] <span style="color:#ff9f43">30</span> <span style="color:#ff9f43">34</span> <span style="color:#ff9f43">27</span> <span style="color:#ff9f43">22</span>
 </span></span></code></pre></div><p>No exemplo acima todas as idades (coluna 2) são apresentadas. Uma forma alternativa de retornar uma coluna é utilizando o <code>$</code> e o nome da coluna após o nome do objeto data frame, como nesse exemplo:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span>tabela<span style="color:#ff6ac1">$</span>nomes
-</span></span><span style="display:flex;"><span>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> tabela<span style="color:#ff6ac1">$</span>nomes
 </span></span><span style="display:flex;"><span>[1] <span style="color:#5af78e">&#34;Maria&#34;</span>   <span style="color:#5af78e">&#34;João&#34;</span>    <span style="color:#5af78e">&#34;Alice&#34;</span>   <span style="color:#5af78e">&#34;Ricardo&#34;</span>
 </span></span></code></pre></div><p>Simplificando um pouco o uso pois não é necessário saber exatamente qual é o número da coluna que se deseja retornar.</p>
 <h2 id="próximos-passos" >
@@ -709,7 +706,9 @@ A primeira coisa que podemos fazer ao iniciar o R é começar a brincar com o te
     
     
     <div class="pagination post-pagination">
-        <div class="left pagination-item disabled">
+        <div class="left pagination-item ">
+            
+                <a href="/posts/r_basico_3/">Funções de Agregação em Vetores/Data Frames</a>
             
         </div>
         <div class="right pagination-item ">

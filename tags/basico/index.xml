@@ -19,10 +19,95 @@
     
 
     
-    <lastBuildDate>Wed, 13 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 14 Nov 2024 00:00:00 +0000</lastBuildDate>
     
     <atom:link href="/tags/basico/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Funções de Agregação em Vetores/Data Frames</title>
+      <link>/posts/r_basico_3/</link>
+      <pubDate>Thu, 14 Nov 2024 00:00:00 +0000</pubDate>
+      <author>danilo.scorzoni@gmail.com (Danilo Scorzoni Ré)</author>
+      <guid>/posts/r_basico_3/</guid>
+      <description>
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/a5e_Su3ajUU?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;Neste artigo vamos ver como utilizar funções de agregação e fazer cálculos sobre sequência de valores, como média, soma, etc.&lt;/p&gt;
+&lt;h2 id=&#34;revisando-vetores&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#revisando-vetores&#34;&gt;
+        #
+    &lt;/a&gt;
+    Revisando Vetores
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;A gente viu no artigo anterior que é possível criar objetos do tipo vetores que armazenam sequências de dados. Essas sequências podem depois ser utilizadas para criar uma tabela ou Data Frame. Para criar um vetor, basta utilizar a função &lt;code&gt;c()&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; vetor &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;4&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;5&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;funções-de-agregação&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#fun%c3%a7%c3%b5es-de-agrega%c3%a7%c3%a3o&#34;&gt;
+        #
+    &lt;/a&gt;
+    Funções de Agregação
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;A grande vantagem de se utilizar vetores é que você pode fazer cálculos que agregam os dados em um único número. Por exemplo, utilizando a função &lt;code&gt;sum()&lt;/code&gt; é possível calcular a soma dos valores:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;sum&lt;/span&gt;(vetor)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[1] &lt;span style=&#34;color:#ff9f43&#34;&gt;15&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Outras funções importantes podem ser utilizadas como &lt;code&gt;mean()&lt;/code&gt; para calcular a média e &lt;code&gt;length()&lt;/code&gt; para calcular o tamanho do vetor, ou seja, quantos números existem nele:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;mean&lt;/span&gt;(vetor)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[1] &lt;span style=&#34;color:#ff9f43&#34;&gt;3&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;length&lt;/span&gt;(vetor)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[1] &lt;span style=&#34;color:#ff9f43&#34;&gt;5&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Funções estatísticas estão também disponíveis como &lt;code&gt;median()&lt;/code&gt; para calcular a mediana dos valores e &lt;code&gt;sd()&lt;/code&gt; (standard deviation) para calcular o desvio padrão amostral:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;median&lt;/span&gt;(vetor)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[1] &lt;span style=&#34;color:#ff9f43&#34;&gt;3&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;sd&lt;/span&gt;(vetor)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[1] &lt;span style=&#34;color:#ff9f43&#34;&gt;1.581139&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Finalmente, dentre as funções agregadoras mais importantes temos a que calcula os percentis. Nessa você pode especificar um único percentil ou vários utilizando a função &lt;code&gt;c()&lt;/code&gt;. Para isso, vamos criar um novo vetor com mais dados para exemplificação:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; vetor2 &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;4&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;5&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;6&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;7&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;8&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;9&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;quantile&lt;/span&gt;(vetor2, &lt;span style=&#34;color:#ff9f43&#34;&gt;0.25&lt;/span&gt;) &lt;span style=&#34;color:#78787e&#34;&gt;# Retorna o percentil 25%&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;`25%`
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff9f43&#34;&gt;3&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;quantile&lt;/span&gt;(vetor2, &lt;span style=&#34;color:#57c7ff&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#ff9f43&#34;&gt;0.25&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;0.75&lt;/span&gt;)) &lt;span style=&#34;color:#78787e&#34;&gt;# Retorna os percentis 25% e 75%&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;`25% 75%`
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff9f43&#34;&gt;3&lt;/span&gt;   &lt;span style=&#34;color:#ff9f43&#34;&gt;7&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;operações-com-escalares&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#opera%c3%a7%c3%b5es-com-escalares&#34;&gt;
+        #
+    &lt;/a&gt;
+    Operações com escalares
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;É possível também aplicar operações entre vetores e escalares. Vamos supor que você queira multiplicar cada elemento de um vetor por 2, isso é feito da seguinte forma simples:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; vetor &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;3&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;4&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;5&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; vetor_vezes_2 &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; vetor &lt;span style=&#34;color:#ff6ac1&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; vetor_vezes_2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[1]  &lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt;  &lt;span style=&#34;color:#ff9f43&#34;&gt;4&lt;/span&gt;  &lt;span style=&#34;color:#ff9f43&#34;&gt;6&lt;/span&gt;  &lt;span style=&#34;color:#ff9f43&#34;&gt;8&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;10&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Esse método funciona para todas as outras operações matemáticas também. É importante mencionar que todas as operações que funcionam aqui para vetores também funcionam para colunas do Data Frame, conforme exemplo abaixo:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; df &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;data.frame&lt;/span&gt;(vetor)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; df&lt;span style=&#34;color:#ff6ac1&#34;&gt;$&lt;/span&gt;vetor_vezes_2 &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; df&lt;span style=&#34;color:#ff6ac1&#34;&gt;$&lt;/span&gt;vetor &lt;span style=&#34;color:#ff6ac1&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; df
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  vetor vetor_vezes_2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;     &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;             &lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt;     &lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt;             &lt;span style=&#34;color:#ff9f43&#34;&gt;4&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;3&lt;/span&gt;     &lt;span style=&#34;color:#ff9f43&#34;&gt;3&lt;/span&gt;             &lt;span style=&#34;color:#ff9f43&#34;&gt;6&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;4&lt;/span&gt;     &lt;span style=&#34;color:#ff9f43&#34;&gt;4&lt;/span&gt;             &lt;span style=&#34;color:#ff9f43&#34;&gt;8&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;5&lt;/span&gt;     &lt;span style=&#34;color:#ff9f43&#34;&gt;5&lt;/span&gt;            &lt;span style=&#34;color:#ff9f43&#34;&gt;10&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Veja que no código acima criamos um data frame &lt;code&gt;df&lt;/code&gt; baseado em &lt;code&gt;vetor&lt;/code&gt;. Em seguida, criamos uma nova coluna &lt;code&gt;df$vetor_vezes_2&lt;/code&gt; e aplicamos o cálculo de multiplicar a coluna vetor por 2.&lt;/p&gt;
+&lt;p&gt;No próximo artigo vamos ver como trabalhar com operadores lógicos para filtrar vetores e data frames.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Dados, vetores e data-frames</title>
@@ -30,7 +115,16 @@
       <pubDate>Wed, 13 Nov 2024 00:00:00 +0000</pubDate>
       <author>danilo.scorzoni@gmail.com (Danilo Scorzoni Ré)</author>
       <guid>/posts/r_basico_2/</guid>
-      <description>&lt;p&gt;Neste artigo vamos entender:&lt;/p&gt;
+      <description>
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/LC9bbcIzUaE?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;br /&gt;
+&lt;p&gt;Neste artigo vamos entender:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Como utilizar o R como uma calculadora?&lt;/li&gt;
 &lt;li&gt;Como os dados se organizam dentro do R e quais os principais tipos de valores suportados?&lt;/li&gt;
@@ -46,26 +140,25 @@
 &lt;/div&gt;
 &lt;/h2&gt;
 &lt;p&gt;A primeira coisa que podemos fazer ao iniciar o R é começar a brincar com o terminal, para entender como operações matemáticas podem ser feitas. Portanto, se você digitar no terminal 3+3 e der enter, verá o seguinte resultado:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;3+3&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;3+3&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[1] &lt;span style=&#34;color:#ff9f43&#34;&gt;6&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;Detalhe: o &lt;code&gt;[1]&lt;/code&gt; indica a linha de retorno do processamento do R, ela sempre se inicia em [1]. Nesse caso, apenas um elemento é retornado, pois estamos somando dos escalares e este elemento é o número 6, resultado da soma de 3 + 3.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;De forma análoga, temos as operações de subtração, multiplicação e divisão:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;5-3&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;5-3&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[1] &lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;10&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;10&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[1] &lt;span style=&#34;color:#ff9f43&#34;&gt;20&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[5]
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Potenciação e raiz quadrada também são possíveis:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt;^4 &lt;span style=&#34;color:#78787e&#34;&gt;# Dois elevado a quatro&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt;^4 &lt;span style=&#34;color:#78787e&#34;&gt;# Dois elevado a quatro&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[1] &lt;span style=&#34;color:#ff9f43&#34;&gt;16&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#57c7ff&#34;&gt;sqrt&lt;/span&gt;(&lt;span style=&#34;color:#ff9f43&#34;&gt;9&lt;/span&gt;) &lt;span style=&#34;color:#78787e&#34;&gt;# Raíz quadrada (square root) de 9&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;sqrt&lt;/span&gt;(&lt;span style=&#34;color:#ff9f43&#34;&gt;9&lt;/span&gt;) &lt;span style=&#34;color:#78787e&#34;&gt;# Raíz quadrada (square root) de 9&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[3]
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Agora que já entendemos o R como uma calculadora, vamos prosseguir para compreender melhor como o R armazena e estrutura os dados.&lt;/p&gt;
 &lt;h2 id=&#34;dados-e-estrutura-interna&#34; &gt;
@@ -78,22 +171,19 @@
 &lt;/h2&gt;
 &lt;p&gt;Dentro do R, os dados são organizados em estruturas chamadas objetos. Para simplificar o entendimento, tanto variáveis, como tabelas inteiras, e até mesmo saídas de funções são consideradas objetos dentro do R.&lt;/p&gt;
 &lt;p&gt;Quando criamos variáveis, elas podem assumir os tipos básicos character (para caracteres), numeric (para números) ou lógico (verdadeiro/falso). Por exemplo:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;texto &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Danilo&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;numero &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;38&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mora_em_sp &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;TRUE&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; texto &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Danilo&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; numero &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;38&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; mora_em_sp &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;TRUE&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Após criar essas variáveis, você pode verificar quais são os tipos (classes) dela utilizando a função &lt;code&gt;class()&lt;/code&gt;:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#57c7ff&#34;&gt;class&lt;/span&gt;(texto)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;class&lt;/span&gt;(texto)
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[1] &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;character&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;Detalhe: o &lt;code&gt;[1]&lt;/code&gt; indica a linha de retorno do processamento do R, ou seja, como chamamos a função &lt;code&gt;class()&lt;/code&gt;, a única coisa que ela retornou foi o tipo do valor da variável. O &lt;code&gt;[1]&lt;/code&gt; indica qual linha de saída se refere aquela informação. Isso é útil para quando você tem listas gigantescas de dados.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#57c7ff&#34;&gt;class&lt;/span&gt;(numero)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;class&lt;/span&gt;(numero)
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[1] &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;numeric&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#57c7ff&#34;&gt;class&lt;/span&gt;(mora_em_sp)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;class&lt;/span&gt;(mora_em_sp)
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[1] &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;logical&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Desta forma, o R faz a tipagem automática para nós de acordo com o tipo de informação que é associada à variável. Isso é importante pois alguns tipos de objetos não suportam múltiplas classes, como os vetores, por exemplo.&lt;/p&gt;
 &lt;h2 id=&#34;vetores&#34; &gt;
@@ -105,27 +195,22 @@
 &lt;/div&gt;
 &lt;/h2&gt;
 &lt;p&gt;Os vetores são estruturas mais complexas de objetos que armazenam múltiplos valores. Conforme dito, os vetores precisam ter os valores de mesma classe idealmente e eles são criados utilizando a função &lt;code&gt;c()&lt;/code&gt; (concatenar), separando cada elemento por vírgula. Vamos ao exemplo a seguir:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;idades &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#ff9f43&#34;&gt;10&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;12&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;15&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;16&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#57c7ff&#34;&gt;class&lt;/span&gt;(idades)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; idades &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#ff9f43&#34;&gt;10&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;12&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;15&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;16&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;class&lt;/span&gt;(idades)
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[1] &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;numeric&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Se você misturar tipos, o R faz a conversão automática para garantir que todos os elementos existam. Por exemplo, se numa lista de &lt;code&gt;numbers&lt;/code&gt; um &lt;code&gt;character&lt;/code&gt; for adicionado, todos os números serão convertidos em caracteres:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;idades_mistura &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#ff9f43&#34;&gt;10&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;13&lt;/span&gt;, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;erro&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;10&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;idades_mistura
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; idades_mistura &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#ff9f43&#34;&gt;10&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;13&lt;/span&gt;, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;erro&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;10&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; idades_mistura
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[1] &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;10&amp;#34;&lt;/span&gt;   &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;13&amp;#34;&lt;/span&gt;   &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;erro&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;10&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#57c7ff&#34;&gt;class&lt;/span&gt;(idades_mistura)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;class&lt;/span&gt;(idades_mistura)
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[1] &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;character&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Se você tem uma sequência de números e adiciona um valor &lt;code&gt;logical&lt;/code&gt; esse valor é convertido em 0 se for &lt;code&gt;FALSE&lt;/code&gt; ou 1 se for &lt;code&gt;TRUE&lt;/code&gt;:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;numeros &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#ff9f43&#34;&gt;10&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;20&lt;/span&gt;, &lt;span style=&#34;color:#ff6ac1&#34;&gt;TRUE&lt;/span&gt;, &lt;span style=&#34;color:#ff6ac1&#34;&gt;FALSE&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;numeros
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; numeros &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#ff9f43&#34;&gt;10&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;20&lt;/span&gt;, &lt;span style=&#34;color:#ff6ac1&#34;&gt;TRUE&lt;/span&gt;, &lt;span style=&#34;color:#ff6ac1&#34;&gt;FALSE&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; numeros
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[1]  &lt;span style=&#34;color:#ff9f43&#34;&gt;10&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;20&lt;/span&gt;  &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;  &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#57c7ff&#34;&gt;class&lt;/span&gt;(numeros)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;class&lt;/span&gt;(numeros)
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[1] &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;numeric&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Portanto, é sempre importante manter a consistência ao se criar vetores para não ter erros e problemas em qualidade de dados.&lt;/p&gt;
 &lt;h3 id=&#34;como-retornar-elementos-de-um-vetor&#34; &gt;
@@ -137,13 +222,11 @@
 &lt;/div&gt;
 &lt;/h3&gt;
 &lt;p&gt;Essa é uma pergunta importante pois vai nos ajudar adiante quando falarmos sobre Data Frames. O vetor permite acesso a elementos específicos dele através dos índices. Veja o exemplo abaixo:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cidades &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;São Paulo&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Rio de Janeiro&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Curitiba&amp;#34;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cidades[2]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; cidades &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;São Paulo&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Rio de Janeiro&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Curitiba&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; cidades[2]
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[1] Rio de Janeiro
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;No R, diferente de muitas linguagens de programação, o índice sempre se inicia no 1, retornando o primeiro elemento do vetor. Nesse caso, colocamos o índice 2 dentro de colchetes e retornamos o segundo elemento &lt;code&gt;Rio de Janeiro&lt;/code&gt;. É possível também solicitar ao vetor que retorne um intervalo de índices utilizando &lt;code&gt;inicio:fim&lt;/code&gt;, veja o exemplo:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cidades[2&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;3&lt;/span&gt;]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; cidades[2&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;3&lt;/span&gt;]
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[1] &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Rio de Janeiro&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Curitiba&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;data-frames&#34; &gt;
 &lt;div&gt;
@@ -154,11 +237,10 @@
 &lt;/div&gt;
 &lt;/h2&gt;
 &lt;p&gt;Por fim, podemos entender os data frames como estruturas de dados de 2 dimensões (linhas e colunas) ou conjuntos de vetores lado a lado. Vamos imaginar uma situação de uma tabela que contem nomes e idades. Vamos construí-la a partir de vetores:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nomes &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Maria&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;João&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Alice&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Ricardo&amp;#34;&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;idades &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#ff9f43&#34;&gt;30&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;34&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;27&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;22&lt;/span&gt;)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tabela &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;data.frame&lt;/span&gt;(nomes, idades)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tabela
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; nomes &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Maria&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;João&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Alice&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Ricardo&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; idades &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#ff9f43&#34;&gt;30&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;34&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;27&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;22&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; tabela &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;data.frame&lt;/span&gt;(nomes, idades)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; tabela
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    nomes idades
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;   Maria     &lt;span style=&#34;color:#ff9f43&#34;&gt;30&lt;/span&gt;
@@ -166,8 +248,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;3&lt;/span&gt;   Alice     &lt;span style=&#34;color:#ff9f43&#34;&gt;27&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;4&lt;/span&gt; Ricardo     &lt;span style=&#34;color:#ff9f43&#34;&gt;22&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;A função &lt;code&gt;data.frame()&lt;/code&gt; cria uma tabela, ou data frame, utilizando os vetores de valores. Temos uma função interessante aqui que nos ajuda a identificar qual o tipo de dado cada coluna possui, como no exemplo:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#57c7ff&#34;&gt;str&lt;/span&gt;(tabela)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;str&lt;/span&gt;(tabela)
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;data.frame&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt;	&lt;span style=&#34;color:#ff9f43&#34;&gt;4&lt;/span&gt; obs. of  &lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt; variables&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;$&lt;/span&gt; nomes &lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; chr  &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Maria&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;João&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Alice&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Ricardo&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;$&lt;/span&gt; idades&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; num  &lt;span style=&#34;color:#ff9f43&#34;&gt;30&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;34&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;27&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;22&lt;/span&gt;
@@ -181,21 +262,17 @@
 &lt;/div&gt;
 &lt;/h3&gt;
 &lt;p&gt;Para finalizar esse artigo, vamos fazer seleção de elementos no Data Frame como fizemos no vetor, caso queiramos utilizar os índices para retornar os valores. A estrutura é uma dupla de índices, cujo primeiro indica a linha e o segundo indica a coluna. Por tanto, digamos que queremos retornar a 4a linha com a 2a coluna:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tabela[4,&lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt;]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; tabela[4,&lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt;]
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[1] &lt;span style=&#34;color:#ff9f43&#34;&gt;22&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;O número 22 é a idade do Ricardo, ultima linha da nossa tabela. A mesma lógica vale para o intervalo de valores dos vetores utilizando os dois-pontos. No entanto, um outro modo interessante aqui é, por exemplo, retornar todas as colunas de uma determinada linha, podemos fazer da seguinte forma:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tabela[2,]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; tabela[2,]
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  nomes idades
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt;  João     &lt;span style=&#34;color:#ff9f43&#34;&gt;34&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Deixando o índice sem preencher significa que ele retornará tudo referente àquela dimensão. Preenchendo apenas o índice da linha, veremos todas as colunas daquela determinada linha. O contrário também funciona:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tabela[,&lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt;]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; tabela[,&lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt;]
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[1] &lt;span style=&#34;color:#ff9f43&#34;&gt;30&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;34&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;27&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;22&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;No exemplo acima todas as idades (coluna 2) são apresentadas. Uma forma alternativa de retornar uma coluna é utilizando o &lt;code&gt;$&lt;/code&gt; e o nome da coluna após o nome do objeto data frame, como nesse exemplo:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tabela&lt;span style=&#34;color:#ff6ac1&#34;&gt;$&lt;/span&gt;nomes
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; tabela&lt;span style=&#34;color:#ff6ac1&#34;&gt;$&lt;/span&gt;nomes
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[1] &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Maria&amp;#34;&lt;/span&gt;   &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;João&amp;#34;&lt;/span&gt;    &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Alice&amp;#34;&lt;/span&gt;   &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Ricardo&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Simplificando um pouco o uso pois não é necessário saber exatamente qual é o número da coluna que se deseja retornar.&lt;/p&gt;
 &lt;h2 id=&#34;próximos-passos&#34; &gt;
@@ -216,7 +293,15 @@
       <pubDate>Wed, 13 Nov 2024 00:00:00 +0000</pubDate>
       <author>danilo.scorzoni@gmail.com (Danilo Scorzoni Ré)</author>
       <guid>/posts/r_basico/</guid>
-      <description>&lt;br /&gt;
+      <description>
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/qD2hdd5A00I?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;br /&gt;
 &lt;p&gt;Se você está começando a explorar o mundo dos dados, provavelmente já ouviu falar sobre o R, um dos softwares estatísticos mais utilizados para análise de dados. Este post é uma introdução ao R, explicando o que ele é, para que serve e por que você, como estudante de graduação, deveria considerar usá-lo em seus estudos. Mesmo que você ainda não tenha um conhecimento avançado em estatística, o R pode se tornar uma ferramenta poderosa e acessível no seu dia a dia acadêmico.&lt;/p&gt;
 &lt;br /&gt;
 &lt;h2 id=&#34;o-que-é-o-r&#34; &gt;
@@ -250,17 +335,8 @@
     Como instalar o R?
 &lt;/div&gt;
 &lt;/h2&gt;
-&lt;p&gt;Para começar, basta fazer o download do R no site oficial do &lt;a href=&#34;https://www.r-project.org/&#34;&gt;CRAN (The Comprehensive R Archive Network)&lt;/a&gt;, que é o repositório oficial do R. Recomenda-se também baixar o RStudio, uma interface gráfica que facilita muito o uso do R e é amplamente utilizada por iniciantes e usuários avançados. O RStudio organiza o ambiente de trabalho de maneira intuitiva, com áreas dedicadas para scripts, visualização de gráficos e histórico de comandos, o que facilita a execução de análises. No guia abaixo você consegue ver com mais detalhes como fazer o Download e a instalação do R e do RStudio.&lt;/p&gt;
-&lt;br /&gt;
-
-
-    
-    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/qD2hdd5A00I?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
-      &gt;&lt;/iframe&gt;
-    &lt;/div&gt;
-
-&lt;br /&gt;
+&lt;p&gt;Para começar, basta fazer o download do R no site oficial do &lt;a href=&#34;https://www.r-project.org/&#34;&gt;CRAN (The Comprehensive R Archive Network)&lt;/a&gt;, que é o repositório oficial do R. Recomenda-se também baixar o RStudio, uma interface gráfica que facilita muito o uso do R e é amplamente utilizada por iniciantes e usuários avançados. O RStudio organiza o ambiente de trabalho de maneira intuitiva, com áreas dedicadas para scripts, visualização de gráficos e histórico de comandos, o que facilita a execução de análises.&lt;/p&gt;
+&lt;p&gt;Para um passo a passo sobre a instalação do R e do RStudio, assista ao vídeo que está no início deste artigo.&lt;/p&gt;
 &lt;p&gt;Fique atento aos próximos conteúdos publicados onde você encontrará o passo a passo para se tornar um expert em R.&lt;/p&gt;
 </description>
     </item>

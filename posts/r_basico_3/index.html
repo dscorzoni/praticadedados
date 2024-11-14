@@ -14,7 +14,7 @@
 
 <script defer src="https://cloud.umami.is/script.js" data-website-id="16f92f2c-a24c-464e-883a-628f95af4fe2"></script>
 
-<title>Introdução ao R - Prática de Dados</title>
+<title>Funções de Agregação em Vetores/Data Frames - Prática de Dados</title>
 
 <meta
   name="description"
@@ -22,8 +22,16 @@
       
     
 
+Neste artigo vamos ver como utilizar funções de agregação e fazer cálculos sobre sequência de valores, como média, soma, etc.
 
-Se você está começando a explorar o mundo dos dados, provavelmente já ouviu falar sobre o R, um dos softwares estatísticos mais utilizados para análise de dados. Este post é uma introdução ao R, explicando o que ele é, para que serve e por que você, como estudante de graduação, deveria considerar usá-lo em seus estudos. Mesmo que você ainda não tenha um conhecimento avançado em estatística, o R pode se tornar uma ferramenta poderosa e acessível no seu dia a dia acadêmico."
+
+    
+        #
+    
+    Revisando Vetores
+
+
+A gente viu no artigo anterior que é possível criar objetos do tipo vetores que armazenam sequências de dados. Essas sequências podem depois ser utilizadas para criar uma tabela ou Data Frame. Para criar um vetor, basta utilizar a função c():"
 />
 
   <link rel="icon" type="image/x-icon" href="https://praticadedados.dsre.dev/favicon.ico">
@@ -406,7 +414,7 @@ Se você está começando a explorar o mundo dos dados, provavelmente já ouviu 
     <article class="post h-entry">
         <div class="post-header">
             <header>
-                <h1 class="p-name post-title">Introdução ao R</h1>
+                <h1 class="p-name post-title">Funções de Agregação em Vetores/Data Frames</h1>
                 
 
             </header>
@@ -417,12 +425,12 @@ Se você está começando a explorar o mundo dos dados, provavelmente já ouviu 
 <div class="post-info noselect">
     
         <div class="post-date dt-published">
-            <time datetime="2024-11-13">2024-11-13</time>
+            <time datetime="2024-11-14">2024-11-14</time>
             
         </div>
     
 
-    <a class="post-hidden-url u-url" href="/posts/r_basico/">/posts/r_basico/</a>
+    <a class="post-hidden-url u-url" href="/posts/r_basico_3/">/posts/r_basico_3/</a>
     <a href="https://praticadedados.dsre.dev/" class="p-name p-author post-hidden-author h-card" rel="me">map[email:danilo.scorzoni@gmail.com location:São Paulo/SP name:Danilo Scorzoni Ré]</a>
 
 
@@ -456,9 +464,9 @@ Se você está começando a explorar o mundo dos dados, provavelmente já ouviu 
     <summary>Table of Contents</summary>
     <div class="inner"><nav id="TableOfContents">
   <ul>
-    <li><a href="#o-que-é-o-r">O que é o R?</a></li>
-    <li><a href="#por-que-aprender-r">Por que aprender R?</a></li>
-    <li><a href="#como-instalar-o-r">Como instalar o R?</a></li>
+    <li><a href="#revisando-vetores">Revisando Vetores</a></li>
+    <li><a href="#funções-de-agregação">Funções de Agregação</a></li>
+    <li><a href="#operações-com-escalares">Operações com escalares</a></li>
   </ul>
 </nav></div>
   </details>
@@ -489,47 +497,78 @@ Se você está começando a explorar o mundo dos dados, provavelmente já ouviu 
 
     
     <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/qD2hdd5A00I?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/a5e_Su3ajUU?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
       ></iframe>
     </div>
 
-<br />
-<p>Se você está começando a explorar o mundo dos dados, provavelmente já ouviu falar sobre o R, um dos softwares estatísticos mais utilizados para análise de dados. Este post é uma introdução ao R, explicando o que ele é, para que serve e por que você, como estudante de graduação, deveria considerar usá-lo em seus estudos. Mesmo que você ainda não tenha um conhecimento avançado em estatística, o R pode se tornar uma ferramenta poderosa e acessível no seu dia a dia acadêmico.</p>
-<br />
-<h2 id="o-que-é-o-r" >
+<p>Neste artigo vamos ver como utilizar funções de agregação e fazer cálculos sobre sequência de valores, como média, soma, etc.</p>
+<h2 id="revisando-vetores" >
 <div>
-    <a href="#o-que-%c3%a9-o-r">
+    <a href="#revisando-vetores">
         #
     </a>
-    O que é o R?
+    Revisando Vetores
 </div>
 </h2>
-<p>O R é um software livre e de código aberto, criado especificamente para manipulação de dados, análise estatística e visualização de informações. Ele foi desenvolvido em 1993 e, desde então, vem ganhando popularidade entre pesquisadores, cientistas de dados e profissionais de várias áreas. Uma das principais razões para essa popularidade é a flexibilidade do R, que permite realizar desde análises básicas até métodos estatísticos avançados, além de gerar gráficos de alta qualidade.</p>
-<h2 id="por-que-aprender-r" >
+<p>A gente viu no artigo anterior que é possível criar objetos do tipo vetores que armazenam sequências de dados. Essas sequências podem depois ser utilizadas para criar uma tabela ou Data Frame. Para criar um vetor, basta utilizar a função <code>c()</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> vetor <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">c</span>(<span style="color:#ff9f43">1</span>, <span style="color:#ff9f43">2</span>, <span style="color:#ff9f43">3</span>, <span style="color:#ff9f43">4</span>, <span style="color:#ff9f43">5</span>)
+</span></span></code></pre></div><h2 id="funções-de-agregação" >
 <div>
-    <a href="#por-que-aprender-r">
+    <a href="#fun%c3%a7%c3%b5es-de-agrega%c3%a7%c3%a3o">
         #
     </a>
-    Por que aprender R?
+    Funções de Agregação
 </div>
 </h2>
-<ol>
-<li><strong>É Gratuito e de Código Aberto:</strong> O R pode ser baixado e utilizado gratuitamente, o que facilita o acesso para estudantes e instituições de ensino. Sendo de código aberto, ele também possui uma comunidade ativa que constantemente cria e compartilha pacotes (conjuntos de funcionalidades) para estender suas capacidades.</li>
-<li><strong>Focado em análise estatística e visualização de dados:</strong> O R foi criado especificamente para análise de dados e estatística. Ele possui uma série de funções embutidas para cálculos estatísticos e pacotes dedicados para visualização de dados, como o popular ggplot2, que permite criar gráficos personalizados e de alta qualidade com facilidade.</li>
-<li><strong>Ampla gama de pacotes:</strong> Com mais de 18 mil pacotes disponíveis (e crescendo!), o R oferece soluções para praticamente qualquer necessidade analítica, desde testes estatísticos básicos até modelos preditivos avançados e aprendizado de máquina.</li>
-<li><strong>Comunidade ativa:</strong> A comunidade do R é grande e receptiva, com fóruns, grupos de discussão e redes sociais onde você pode encontrar ajuda para dúvidas e aprender com os desafios enfrentados por outros usuários.</li>
-</ol>
-<h2 id="como-instalar-o-r" >
+<p>A grande vantagem de se utilizar vetores é que você pode fazer cálculos que agregam os dados em um único número. Por exemplo, utilizando a função <code>sum()</code> é possível calcular a soma dos valores:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">sum</span>(vetor)
+</span></span><span style="display:flex;"><span>[1] <span style="color:#ff9f43">15</span>
+</span></span></code></pre></div><p>Outras funções importantes podem ser utilizadas como <code>mean()</code> para calcular a média e <code>length()</code> para calcular o tamanho do vetor, ou seja, quantos números existem nele:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">mean</span>(vetor)
+</span></span><span style="display:flex;"><span>[1] <span style="color:#ff9f43">3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">length</span>(vetor)
+</span></span><span style="display:flex;"><span>[1] <span style="color:#ff9f43">5</span>
+</span></span></code></pre></div><p>Funções estatísticas estão também disponíveis como <code>median()</code> para calcular a mediana dos valores e <code>sd()</code> (standard deviation) para calcular o desvio padrão amostral:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">median</span>(vetor)
+</span></span><span style="display:flex;"><span>[1] <span style="color:#ff9f43">3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">sd</span>(vetor)
+</span></span><span style="display:flex;"><span>[1] <span style="color:#ff9f43">1.581139</span>
+</span></span></code></pre></div><p>Finalmente, dentre as funções agregadoras mais importantes temos a que calcula os percentis. Nessa você pode especificar um único percentil ou vários utilizando a função <code>c()</code>. Para isso, vamos criar um novo vetor com mais dados para exemplificação:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> vetor2 <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">c</span>(<span style="color:#ff9f43">1</span>, <span style="color:#ff9f43">2</span>, <span style="color:#ff9f43">3</span>, <span style="color:#ff9f43">4</span>, <span style="color:#ff9f43">5</span>, <span style="color:#ff9f43">6</span>, <span style="color:#ff9f43">7</span>, <span style="color:#ff9f43">8</span>, <span style="color:#ff9f43">9</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">quantile</span>(vetor2, <span style="color:#ff9f43">0.25</span>) <span style="color:#78787e"># Retorna o percentil 25%</span>
+</span></span><span style="display:flex;"><span>`25%`
+</span></span><span style="display:flex;"><span>  <span style="color:#ff9f43">3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">quantile</span>(vetor2, <span style="color:#57c7ff">c</span>(<span style="color:#ff9f43">0.25</span>, <span style="color:#ff9f43">0.75</span>)) <span style="color:#78787e"># Retorna os percentis 25% e 75%</span>
+</span></span><span style="display:flex;"><span>`25% 75%`
+</span></span><span style="display:flex;"><span>  <span style="color:#ff9f43">3</span>   <span style="color:#ff9f43">7</span>
+</span></span></code></pre></div><h2 id="operações-com-escalares" >
 <div>
-    <a href="#como-instalar-o-r">
+    <a href="#opera%c3%a7%c3%b5es-com-escalares">
         #
     </a>
-    Como instalar o R?
+    Operações com escalares
 </div>
 </h2>
-<p>Para começar, basta fazer o download do R no site oficial do <a href="https://www.r-project.org/">CRAN (The Comprehensive R Archive Network)</a>, que é o repositório oficial do R. Recomenda-se também baixar o RStudio, uma interface gráfica que facilita muito o uso do R e é amplamente utilizada por iniciantes e usuários avançados. O RStudio organiza o ambiente de trabalho de maneira intuitiva, com áreas dedicadas para scripts, visualização de gráficos e histórico de comandos, o que facilita a execução de análises.</p>
-<p>Para um passo a passo sobre a instalação do R e do RStudio, assista ao vídeo que está no início deste artigo.</p>
-<p>Fique atento aos próximos conteúdos publicados onde você encontrará o passo a passo para se tornar um expert em R.</p>
+<p>É possível também aplicar operações entre vetores e escalares. Vamos supor que você queira multiplicar cada elemento de um vetor por 2, isso é feito da seguinte forma simples:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> vetor <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">c</span>(<span style="color:#ff9f43">1</span>, <span style="color:#ff9f43">2</span>, <span style="color:#ff9f43">3</span>, <span style="color:#ff9f43">4</span>, <span style="color:#ff9f43">5</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> vetor_vezes_2 <span style="color:#ff6ac1">=</span> vetor <span style="color:#ff6ac1">*</span> <span style="color:#ff9f43">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> vetor_vezes_2
+</span></span><span style="display:flex;"><span>[1]  <span style="color:#ff9f43">2</span>  <span style="color:#ff9f43">4</span>  <span style="color:#ff9f43">6</span>  <span style="color:#ff9f43">8</span> <span style="color:#ff9f43">10</span>
+</span></span></code></pre></div><p>Esse método funciona para todas as outras operações matemáticas também. É importante mencionar que todas as operações que funcionam aqui para vetores também funcionam para colunas do Data Frame, conforme exemplo abaixo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> df <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">data.frame</span>(vetor)
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> df<span style="color:#ff6ac1">$</span>vetor_vezes_2 <span style="color:#ff6ac1">=</span> df<span style="color:#ff6ac1">$</span>vetor <span style="color:#ff6ac1">*</span> <span style="color:#ff9f43">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> df
+</span></span><span style="display:flex;"><span>  vetor vetor_vezes_2
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">1</span>     <span style="color:#ff9f43">1</span>             <span style="color:#ff9f43">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">2</span>     <span style="color:#ff9f43">2</span>             <span style="color:#ff9f43">4</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">3</span>     <span style="color:#ff9f43">3</span>             <span style="color:#ff9f43">6</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">4</span>     <span style="color:#ff9f43">4</span>             <span style="color:#ff9f43">8</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">5</span>     <span style="color:#ff9f43">5</span>            <span style="color:#ff9f43">10</span>
+</span></span></code></pre></div><p>Veja que no código acima criamos um data frame <code>df</code> baseado em <code>vetor</code>. Em seguida, criamos uma nova coluna <code>df$vetor_vezes_2</code> e aplicamos o cálculo de multiplicar a coluna vetor por 2.</p>
+<p>No próximo artigo vamos ver como trabalhar com operadores lógicos para filtrar vetores e data frames.</p>
 
         </div>
 
@@ -548,6 +587,8 @@ Se você está começando a explorar o mundo dos dados, provavelmente já ouviu 
                 
                 <li><a href="/posts/r_basico_2/">Dados, vetores e data-frames</a></li>
                 
+                <li><a href="/posts/r_basico/">Introdução ao R</a></li>
+                
             </ul>
         
     
@@ -557,12 +598,12 @@ Se você está começando a explorar o mundo dos dados, provavelmente já ouviu 
     
     
     <div class="pagination post-pagination">
-        <div class="left pagination-item ">
-            
-                <a href="/posts/r_basico_2/">Dados, vetores e data-frames</a>
+        <div class="left pagination-item disabled">
             
         </div>
-        <div class="right pagination-item disabled">
+        <div class="right pagination-item ">
+            
+                <a href="/posts/r_basico_2/">Dados, vetores e data-frames</a>
             
         </div>
     </div>
