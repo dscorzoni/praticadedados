@@ -51,16 +51,40 @@
 &lt;/div&gt;
 &lt;/h2&gt;
 &lt;img src=&#34;https://dsre.dev/sobre/danilo_coliseu.jpg&#34;&gt;
-&lt;br /&gt;
+&lt;h1&gt;Olá,&lt;/h1&gt;
+&lt;p&gt;Me chamo Danilo Scorzoni Ré e esse é o meu portfolio de projetos e site pessoal.&lt;/p&gt;
+&lt;p&gt;Aqui você irá encontrar algumas informações sobre mim, minha experiência profissional, tecnologias que domino e alguns dos meus projetos.&lt;/p&gt;
+&lt;h3 id=&#34;cientista-de-dados&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#cientista-de-dados&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Cientista de Dados
+&lt;/div&gt;
+&lt;/h3&gt;
 &lt;p&gt;Sou engenheiro florestal por formação mas atuo há mais de 12 anos na área de Ciência de Dados nos ramos de tecnologia e serviços financeiros. Passei por empresas como Serasa Experian, Facebook e Instagram, no Brasil e nos Estados Unidos.&lt;/p&gt;
-&lt;br /&gt;
 &lt;p&gt;Atuando em posições estratégicas realizando análises utilizando ferramentas de análise de dados como R, RStudio, Python e ferramentas de visualização de dados como ggplot2, Tableau dentre outras.&lt;/p&gt;
-&lt;br /&gt;
 &lt;p&gt;Dentre as metodologias estatísticas, tenho experiência com: teste A/B, análise de regressão, algoritmos de segmentação/agrupamento, modelos de classificação como regressão logística e random forest, modelos de inferência causal como propensity score matching, dentre outras.&lt;/p&gt;
-&lt;br /&gt;
 &lt;p&gt;Nas áreas de negócio, tive a oportunidade de trabalhar com projetos em Analytics durante a minha experiência na Serasa Experian, com o desenvolvimento de variáveis baseadas em dados não estruturados, bem como desenvolvimento de modelos de risco com aplicações em marketing, seguros e fraude. Já durante a minha experiência na Meta, tive a oportunidade de trabalhar nas áreas de Parcerias de Mídia e Vendas para Pequenas e Médias Empresas, bem como nas áreas de desenvolvimento de produtos (Instagram e WhatsApp).&lt;/p&gt;
-&lt;br /&gt;
-&lt;p&gt;Mais informações sobre mim, bem como link para minhas redes, você pode encontrar no meu &lt;a href=&#34;https://dsre.dev&#34;&gt;site principal&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;pesquisador-em-ecologia-florestal&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#pesquisador-em-ecologia-florestal&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Pesquisador em Ecologia Florestal
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Antes de ir para o mercado, atuei como pesquisador em ecologia florestal durante meu mestrado em Ciência Florestal. Minha linha de pesquisa envolveu quantificação de recursos florestais e sistemas de restauração da Mata Atlântica no estado de São Paulo. Além disso, tive participação em alguns projetos de pesquisa através de consultoria estatística, saindo como co-autor em alguns trabalhos. Você pode acessar a minha dissertação de mestrado completa no link da Biblioteca da UNESP.&lt;/p&gt;
+&lt;p&gt;Durante esses anos como pesquisador tive a oportunidade de aplicar diversos métodos estatísticos como planejamento de experimentos, análise de variância, análise de regressão utilizando modelos lineares e modelos lineares generalizados. Você pode conferir a lista de publicações no meu perfil do ResearchGate.&lt;/p&gt;
+&lt;h3 id=&#34;canal-no-youtube-prática-de-dados&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#canal-no-youtube-pr%c3%a1tica-de-dados&#34;&gt;
+        ##
+    &lt;/a&gt;
+    Canal no YouTube: Prática de Dados
+&lt;/div&gt;
+&lt;/h3&gt;
+&lt;p&gt;Visando preencher uma lacuna de conhecimento sobre R em Português, decidi criar um canal Prática de Dados no YouTube, durante a pandemia, para compartilhar um pouco do que sei sobre R para iniciantes e intermediários. Esse é um projeto que tenho muito carinho, apesar de pouco ativo atualmente, mas que gera aproximadamente 2 mil visualizações por mês.&lt;/p&gt;
 </description>
     </item>
     
