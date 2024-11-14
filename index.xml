@@ -84,16 +84,157 @@
     Canal no YouTube: Prática de Dados
 &lt;/div&gt;
 &lt;/h3&gt;
-&lt;p&gt;Visando preencher uma lacuna de conhecimento sobre R em Português, decidi criar um canal Prática de Dados no YouTube, durante a pandemia, para compartilhar um pouco do que sei sobre R para iniciantes e intermediários. Esse é um projeto que tenho muito carinho, apesar de pouco ativo atualmente, mas que gera aproximadamente 2 mil visualizações por mês.&lt;/p&gt;
+&lt;p&gt;Visando preencher uma lacuna de conhecimento sobre R em Português, decidi criar um canal Prática de Dados no YouTube, durante a pandemia, para compartilhar um pouco do que sei sobre R para iniciantes e intermediários. Esse é um projeto que tenho muito carinho, apesar de pouco ativo atualmente, mas que gera aproximadamente 4 mil visualizações por mês.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Filtros em vetores e data frames</title>
+      <link>/posts/r_basico_4/r_basico_4/</link>
+      <pubDate>Thu, 14 Nov 2024 00:00:00 +0000</pubDate>
+      <author>danilo.scorzoni@gmail.com (Danilo Scorzoni Ré)</author>
+      <guid>/posts/r_basico_4/r_basico_4/</guid>
+      <description>
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/BOCiRXnRbl8?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;br /&gt;
+&lt;h2 id=&#34;filtro-em-vetores&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#filtro-em-vetores&#34;&gt;
+        #
+    &lt;/a&gt;
+    Filtro em vetores
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;Os operadores lógicos podem ser utilizados para filtrar vetores e data frames. Para entender de maneira simples como eles funcionam, vamos criar um vetor de números e testar quais deles são maiores que 10:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; vetor &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;5&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;10&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;15&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;25&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;50&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; vetor &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;10&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[1] &lt;span style=&#34;color:#ff6ac1&#34;&gt;FALSE&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;FALSE&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;FALSE&lt;/span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;TRUE&lt;/span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;TRUE&lt;/span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;TRUE&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Quando utilizamos a expressão &lt;code&gt;vetor &amp;gt; 10&lt;/code&gt;, o R faz um teste lógico com cada elemento do vetor e checa se o número é maior que 10. Quando verdadeiro, ele retorna &lt;code&gt;TRUE&lt;/code&gt; e quando falso ele retorna &lt;code&gt;FALSE&lt;/code&gt;. É possível utilizar esse conjunto de &lt;code&gt;TRUE&lt;/code&gt;/&lt;code&gt;FALSE&lt;/code&gt; para realizar filtros no próprio vetor, quando colocado essa expressão entre colchetes. Veja o exemplo:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; vetor[vetor &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;10&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[1] &lt;span style=&#34;color:#ff9f43&#34;&gt;15&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;25&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;50&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;O código acima, portanto, filtra o vetor apresentado de acordo com o teste lógico aplicado dentre dos colchetes.&lt;/p&gt;
+&lt;h2 id=&#34;entendendo-mais-as-comparações&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#entendendo-mais-as-compara%c3%a7%c3%b5es&#34;&gt;
+        #
+    &lt;/a&gt;
+    Entendendo mais as comparações
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;Existem vários tipos de comparações que podemos fazer. No exemplo acima vimos a desigualdade &lt;strong&gt;maior que&lt;/strong&gt;, no entanto, temos os seguintes tipos de comparações:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#78787e&#34;&gt;# 1 é igual a 1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[1] &lt;span style=&#34;color:#ff6ac1&#34;&gt;TRUE&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#78787e&#34;&gt;# 1 é diferente de 1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[1] &lt;span style=&#34;color:#ff6ac1&#34;&gt;FALSE&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#78787e&#34;&gt;# 1 é maior que 1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[1] &lt;span style=&#34;color:#ff6ac1&#34;&gt;FALSE&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#78787e&#34;&gt;# 1 é menor que 1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[1] &lt;span style=&#34;color:#ff6ac1&#34;&gt;FALSE&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#78787e&#34;&gt;# 1 é maior ou igual a 1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[1] &lt;span style=&#34;color:#ff6ac1&#34;&gt;TRUE&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#78787e&#34;&gt;# 1 é menor ou igual a 1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[1] &lt;span style=&#34;color:#ff6ac1&#34;&gt;TRUE&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;aplicando-filtros-em-data-frames&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#aplicando-filtros-em-data-frames&#34;&gt;
+        #
+    &lt;/a&gt;
+    Aplicando filtros em data frames
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;Todas essas comparações podem ser aplicadas para filtrar linhas de data frames também. Vamos construir um data-frame com os dados abaixo:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; nomes &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;João&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Maria&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Daniel&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Aline&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Mariana&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; salario &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;c&lt;/span&gt;(&lt;span style=&#34;color:#ff9f43&#34;&gt;1000&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;2500&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;2000&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;3000&lt;/span&gt;, &lt;span style=&#34;color:#ff9f43&#34;&gt;3500&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; df &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;data.frame&lt;/span&gt;(nomes, salario)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; df
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    nomes salario
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;    João    &lt;span style=&#34;color:#ff9f43&#34;&gt;1000&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt;   Maria    &lt;span style=&#34;color:#ff9f43&#34;&gt;2500&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;3&lt;/span&gt;  Daniel    &lt;span style=&#34;color:#ff9f43&#34;&gt;2000&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;4&lt;/span&gt;   Aline    &lt;span style=&#34;color:#ff9f43&#34;&gt;3000&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;5&lt;/span&gt; Mariana    &lt;span style=&#34;color:#ff9f43&#34;&gt;3500&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Na tabela acima que temos um conjunto de dados com nomes e salários, se quisermos filtrar para mostrar apenas as pessoas com salário igual ou maior a 3000, fazemos da seguinte forma:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; df[df&lt;span style=&#34;color:#ff6ac1&#34;&gt;$&lt;/span&gt;salario &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;3000&lt;/span&gt;,] &lt;span style=&#34;color:#78787e&#34;&gt;# Não esquecer da vírgula no final&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    nomes salario
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;4&lt;/span&gt;   Aline    &lt;span style=&#34;color:#ff9f43&#34;&gt;3000&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;5&lt;/span&gt; Mariana    &lt;span style=&#34;color:#ff9f43&#34;&gt;3500&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Portanto, colocamos a comparação lógica dentro dos colchetes como primeiro argumento, indicando um filtro para linhas. Para não dar erro, precisamos colocar uma vírgula no final e deixamos o segundo argumento vazio, para que o R entenda que queremos filtrar apenas as linhas.&lt;/p&gt;
+&lt;p&gt;De forma semelhante, se quisermos filtrar o salário por nome da pessoa, podemos fazer o seguinte para mostrar os dados de João:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; df[df&lt;span style=&#34;color:#ff6ac1&#34;&gt;$&lt;/span&gt;nome &lt;span style=&#34;color:#ff6ac1&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;João&amp;#34;&lt;/span&gt;,] &lt;span style=&#34;color:#78787e&#34;&gt;# Não se esqueça dos dois sinais de igual&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  nomes salario
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;  João    &lt;span style=&#34;color:#ff9f43&#34;&gt;1000&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;operadores-lógicos-and-e-or&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#operadores-l%c3%b3gicos-and-e-or&#34;&gt;
+        #
+    &lt;/a&gt;
+    Operadores lógicos AND e OR
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;Em uma situação onde você pode ter múltiplos criterios para fazer um filtro, por exemplo, valor de salário entre 2500 e 3000 (incluindo esses valores), você pode utilizar um operador lógico &lt;code&gt;&amp;amp;&lt;/code&gt;. O &lt;code&gt;&amp;amp;&lt;/code&gt; funciona como um concatenador &lt;strong&gt;E&lt;/strong&gt; para duas operações e ele só retorna &lt;code&gt;TRUE&lt;/code&gt; se ambas as condições forem verdadeiras. Veja o exemplo:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; df[df&lt;span style=&#34;color:#ff6ac1&#34;&gt;$&lt;/span&gt;salario &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;2500&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;amp;&lt;/span&gt; df&lt;span style=&#34;color:#ff6ac1&#34;&gt;$&lt;/span&gt;salario &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;3000&lt;/span&gt;,]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  nomes salario
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt; Maria    &lt;span style=&#34;color:#ff9f43&#34;&gt;2500&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;4&lt;/span&gt; Aline    &lt;span style=&#34;color:#ff9f43&#34;&gt;3000&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Existe também o operador lógico &lt;code&gt;|&lt;/code&gt; que funciona como concatenador &lt;strong&gt;OU&lt;/strong&gt; para duas operações. Isso significa que basta uma das comparações ser verdadeira que o retorno será &lt;code&gt;TRUE&lt;/code&gt;. No exemplo abaixo vamos filtrar as linhas cujos nomes são João &lt;strong&gt;OU&lt;/strong&gt; Aline:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; df[df&lt;span style=&#34;color:#ff6ac1&#34;&gt;$&lt;/span&gt;nome &lt;span style=&#34;color:#ff6ac1&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;João&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;|&lt;/span&gt; df&lt;span style=&#34;color:#ff6ac1&#34;&gt;$&lt;/span&gt;nome &lt;span style=&#34;color:#ff6ac1&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Aline&amp;#34;&lt;/span&gt;,]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  nomes salario
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;  João    &lt;span style=&#34;color:#ff9f43&#34;&gt;1000&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;4&lt;/span&gt; Aline    &lt;span style=&#34;color:#ff9f43&#34;&gt;3000&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;para-praticar&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#para-praticar&#34;&gt;
+        #
+    &lt;/a&gt;
+    Para praticar
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;Uma forma de praticar os operadores lógicos é utilizar as bases de dados disponíveis por padrão no R. A base &lt;code&gt;mtcars&lt;/code&gt; possui informações sobre modelos de carro publicados pela revista &lt;em&gt;Motor Trends&lt;/em&gt;  nos Estados Unidos. Para carregar os dados, utilize os comandos abaixo:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;data&lt;/span&gt;(mtcars)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;str&lt;/span&gt;(mtcars) &lt;span style=&#34;color:#78787e&#34;&gt;# Entenda a estrutura desse data frame&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;data.frame&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt;	&lt;span style=&#34;color:#ff9f43&#34;&gt;32&lt;/span&gt; obs. of  &lt;span style=&#34;color:#ff9f43&#34;&gt;11&lt;/span&gt; variables&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;$&lt;/span&gt; mpg &lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; num  &lt;span style=&#34;color:#ff9f43&#34;&gt;21&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;21&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;22.8&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;21.4&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;18.7&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;18.1&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;14.3&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;24.4&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;22.8&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;19.2&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;$&lt;/span&gt; cyl &lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; num  &lt;span style=&#34;color:#ff9f43&#34;&gt;6&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;6&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;4&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;6&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;8&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;6&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;8&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;4&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;4&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;6&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;$&lt;/span&gt; disp&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; num  &lt;span style=&#34;color:#ff9f43&#34;&gt;160&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;160&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;108&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;258&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;360&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;$&lt;/span&gt; hp  &lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; num  &lt;span style=&#34;color:#ff9f43&#34;&gt;110&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;110&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;93&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;110&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;175&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;105&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;245&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;62&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;95&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;123&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;$&lt;/span&gt; drat&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; num  &lt;span style=&#34;color:#ff9f43&#34;&gt;3.9&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;3.9&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;3.85&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;3.08&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;3.15&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;2.76&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;3.21&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;3.69&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;3.92&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;3.92&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;$&lt;/span&gt; wt  &lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; num  &lt;span style=&#34;color:#ff9f43&#34;&gt;2.62&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;2.88&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;2.32&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;3.21&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;3.44&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;$&lt;/span&gt; qsec&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; num  &lt;span style=&#34;color:#ff9f43&#34;&gt;16.5&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;17&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;18.6&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;19.4&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;17&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;$&lt;/span&gt; vs  &lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; num  &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;$&lt;/span&gt; am  &lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; num  &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;$&lt;/span&gt; gear&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; num  &lt;span style=&#34;color:#ff9f43&#34;&gt;4&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;4&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;4&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;3&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;3&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;3&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;3&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;4&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;4&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;4&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;$&lt;/span&gt; carb&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; num  &lt;span style=&#34;color:#ff9f43&#34;&gt;4&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;4&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;4&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;4&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Note a quantidade grande de colunas que há nesse arquivo. Se você souber um pouco de inglês, pode utilizar a função &lt;code&gt;help()&lt;/code&gt; para obter um descritivo desse conjunto de dados:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#57c7ff&#34;&gt;help&lt;/span&gt;(mtcars)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;E para praticar, você pode realizar os seguintes filtros:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Retornar todos os carros que possuem 6 ou mais cilindros (&lt;code&gt;cyl&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;Retornar todos os carros que possuem câmbio manual (&lt;code&gt;am&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;Retornar todos os carros que consomem menos do que 20 miles/gallon (&lt;code&gt;mpg&lt;/code&gt;) e que pesem menos do que 3k pounds (&lt;code&gt;wt&lt;/code&gt;).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;E assim por diante, as possibilidades são bem numerosas!&lt;/p&gt;
+&lt;p&gt;&amp;ndash;&lt;/p&gt;
+&lt;p&gt;No próximo artigo veremos como trabalhar com arquivos CSV e do Excel, como importar, exportar e verificar a qualidade dos dados.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Funções de Agregação em Vetores/Data Frames</title>
-      <link>/posts/r_basico_3/</link>
+      <link>/posts/r_basico_3/r_basico_3/</link>
       <pubDate>Thu, 14 Nov 2024 00:00:00 +0000</pubDate>
       <author>danilo.scorzoni@gmail.com (Danilo Scorzoni Ré)</author>
-      <guid>/posts/r_basico_3/</guid>
+      <guid>/posts/r_basico_3/r_basico_3/</guid>
       <description>
 
     
@@ -175,10 +316,10 @@
     
     <item>
       <title>Dados, vetores e data-frames</title>
-      <link>/posts/r_basico_2/</link>
+      <link>/posts/r_basico_2/r_basico_2/</link>
       <pubDate>Wed, 13 Nov 2024 00:00:00 +0000</pubDate>
       <author>danilo.scorzoni@gmail.com (Danilo Scorzoni Ré)</author>
-      <guid>/posts/r_basico_2/</guid>
+      <guid>/posts/r_basico_2/r_basico_2/</guid>
       <description>
 
     
@@ -353,10 +494,10 @@
     
     <item>
       <title>Introdução ao R</title>
-      <link>/posts/r_basico/</link>
+      <link>/posts/r_basico/r_basico/</link>
       <pubDate>Wed, 13 Nov 2024 00:00:00 +0000</pubDate>
       <author>danilo.scorzoni@gmail.com (Danilo Scorzoni Ré)</author>
-      <guid>/posts/r_basico/</guid>
+      <guid>/posts/r_basico/r_basico/</guid>
       <description>
 
     

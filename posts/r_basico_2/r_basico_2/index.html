@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+
+
+<html lang="pt-br" data-theme="">
+<head>
+    
+        
+<meta charset="utf-8" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8461386780086405" crossorigin="anonymous"></script>
+
+<script defer src="https://cloud.umami.is/script.js" data-website-id="16f92f2c-a24c-464e-883a-628f95af4fe2"></script>
+
+<title>Dados, vetores e data-frames - Prática de Dados</title>
+
+<meta
+  name="description"
+  content="
+      
+    
+
+
+Neste artigo vamos entender:
+
+Como utilizar o R como uma calculadora?
+Como os dados se organizam dentro do R e quais os principais tipos de valores suportados?
+O que são vetores e data-frames?
+Como filtrar linhas e colunas em data-frames?
+
+
+
+    
+        #
+    
+    O R como uma calculadora
+
+
+A primeira coisa que podemos fazer ao iniciar o R é começar a brincar com o terminal, para entender como operações matemáticas podem ser feitas. Portanto, se você digitar no terminal 3&#43;3 e der enter, verá o seguinte resultado:"
+/>
+
+  <link rel="icon" type="image/x-icon" href="https://dsre.dev/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://dsre.dev/favicon.png">
+         
+<style>
+  body {
+    visibility: hidden;
+    opacity: 0;
+  }
+</style>
+
+<noscript>
+  <style>
+    body {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</noscript>
+ 
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.184a655c5ad8596648622468e6696abf0cf0a2cf8266df17b4f7a36fe9c97551.css" integrity="sha256-GEplXFrYWWZIYiRo5mlqvwzwos&#43;CZt8XtPejb&#43;nJdVE=">
+    
+
+
+ 
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.c4c04b3ef88e3d619ad4c7ee5e03048422bc55c4fefdc1f07657c1133670aa22.css" integrity="sha256-xMBLPviOPWGa1MfuXgMEhCK8VcT&#43;/cHwdlfBEzZwqiI=">
+    
+
+
+ 
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.min.21c5d8fe0a79d623b0adc1ce4bd4f6dd2c05cd939c9aaaa966ba7186b1464f4d.css" integrity="sha256-IcXY/gp51iOwrcHOS9T23SwFzZOcmqqpZrpxhrFGT00=">
+    
+
+
+     
+
+    
+
+
+
+
+
+    
+    
+        
+    
+    
+
+    
+        <script src="/js/script.min.08f04d96386c73c9bf4d160333f8f448c05a6e01c06770542ee0e013954ce930.js" type="text/javascript" charset="utf-8" integrity="sha256-CPBNljhsc8m/TRYDM/j0SMBabgHAZ3BULuDgE5VM6TA="></script>
+    
+
+
+   
+
+
+
+
+  
+
+<script async defer data-website-id="16f92f2c-a24c-464e-883a-628f95af4fe2" data-cache="false" data-do-not-track="false" src="https://cloud.umami.is/script.js"></script>
+  
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header">
+            
+                <div class="header-top">
+    <div class="header-top-left">
+        <h1 class="site-title noselect">
+    <a href="/">Prática de Dados</a>
+</h1>
+
+        
+
+
+
+    
+
+
+
+    
+
+
+
+    
+        <div class="theme-switcher">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-sun-high"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14.828 14.828a4 4 0 1 0 -5.656 -5.656a4 4 0 0 0 5.656 5.656z" /><path d="M6.343 17.657l-1.414 1.414" /><path d="M6.343 6.343l-1.414 -1.414" /><path d="M17.657 6.343l1.414 -1.414" /><path d="M17.657 17.657l1.414 1.414" /><path d="M4 12h-2" /><path d="M12 4v-2" /><path d="M20 12h2" /><path d="M12 20v2" /></svg>
+
+
+</span>
+
+        </div>
+    
+
+    <script>
+        const STORAGE_KEY = 'user-color-scheme'
+        const defaultTheme = "auto"
+
+        let currentTheme
+        let switchButton
+        let autoDefinedScheme = window.matchMedia('(prefers-color-scheme: dark)')
+
+        function switchTheme(e) {
+            currentTheme = (currentTheme === 'dark') ? 'light' : 'dark';
+            if (localStorage) localStorage.setItem(STORAGE_KEY, currentTheme);
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            changeGiscusTheme(currentTheme);
+            document.body.dispatchEvent(new CustomEvent(currentTheme + "-theme-set"));
+        }
+
+        const autoChangeScheme = e => {
+            currentTheme = e.matches ? 'dark' : 'light'
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            changeGiscusTheme(currentTheme);
+            document.body.dispatchEvent(new CustomEvent(currentTheme + "-theme-set"));
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            switchButton = document.querySelector('.theme-switcher')
+            currentTheme = detectCurrentScheme()
+
+            if (currentTheme === 'auto') {
+                autoChangeScheme(autoDefinedScheme);
+                autoDefinedScheme.addListener(autoChangeScheme);
+            } else {
+                document.documentElement.setAttribute('data-theme', currentTheme)
+            }
+
+            if (switchButton) {
+                switchButton.addEventListener('click', switchTheme, false)
+            }
+
+            showContent();
+        })
+
+        function detectCurrentScheme() {
+            if (localStorage !== null && localStorage.getItem(STORAGE_KEY)) {
+                return localStorage.getItem(STORAGE_KEY)
+            }
+            if (defaultTheme) {
+                return defaultTheme
+            }
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
+        function showContent() {
+            document.body.style.visibility = 'visible';
+            document.body.style.opacity = 1;
+        }
+
+        function changeGiscusTheme (theme) {
+            function sendMessage(message) {
+              const iframe = document.querySelector('iframe.giscus-frame');
+              if (!iframe) return;
+              iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+            }
+
+            sendMessage({
+              setConfig: {
+                theme: theme
+              }
+            });
+        }
+    </script>
+
+
+        <ul class="social-icons noselect">
+
+
+    
+        <li>
+            <a href="https://github.com/dscorzoni" title="Github" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-github"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+    
+        <li>
+            <a href="https://www.linkedin.com/in/dscorzoni/" title="Linkedin" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 11l0 5" /><path d="M8 8l0 .01" /><path d="M12 16l0 -5" /><path d="M16 16v-3a2 2 0 0 0 -4 0" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+    
+        <li>
+            <a href="https://www.youtube.com/c/Pr%C3%A1ticadeDados" title="Youtube" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-youtube"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8z" /><path d="M10 9l5 3l-5 3z" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+
+
+
+
+
+    <li>
+            <a href="/index.xml" title="RSS" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-rss"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M4 4a16 16 0 0 1 16 16" /><path d="M4 11a9 9 0 0 1 9 9" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+</ul>
+
+    </div>
+    <div class="header-top-right">
+
+    </div>
+</div>
+
+
+    <nav class="noselect">
+        
+        
+        <a class="" href="https://dsre.dev/" title="">Home</a>
+        
+        <a class="" href="https://dsre.dev/tags/" title="">Tags</a>
+        
+        <a class="" href="https://dsre.dev/about/me/" title="Sobre o Prática de Dados">Sobre o Prática de Dados</a>
+        
+    </nav>
+
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+
+
+            
+        </header>
+        <main id="main" tabindex="-1">
+            
+    
+
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title">Dados, vetores e data-frames</h1>
+                
+
+            </header>
+            
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2024-11-13">2024-11-13</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/r_basico_2/r_basico_2/">/posts/r_basico_2/r_basico_2/</a>
+    <a href="https://dsre.dev/" class="p-name p-author post-hidden-author h-card" rel="me">map[email:danilo.scorzoni@gmail.com location:São Paulo/SP name:Danilo Scorzoni Ré]</a>
+
+
+    <div class="post-taxonomies">
+        
+        
+            <ul class="post-tags">
+                
+                    
+                    <li><a href="/tags/basico/">#Basico</a></li>
+                
+            </ul>
+        
+        
+    </div>
+</div>
+
+        </div>
+        
+
+  
+  
+
+
+
+
+  
+  
+  
+  <details class="toc noselect">
+    <summary>Table of Contents</summary>
+    <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#o-r-como-uma-calculadora">O R como uma calculadora</a></li>
+    <li><a href="#dados-e-estrutura-interna">Dados e estrutura interna</a></li>
+    <li><a href="#vetores">Vetores</a>
+      <ul>
+        <li><a href="#como-retornar-elementos-de-um-vetor">Como retornar elementos de um vetor?</a></li>
+      </ul>
+    </li>
+    <li><a href="#data-frames">Data Frames</a>
+      <ul>
+        <li><a href="#utilizando-índices-no-data-frame">Utilizando Índices no Data Frame</a></li>
+      </ul>
+    </li>
+    <li><a href="#próximos-passos">Próximos Passos</a></li>
+  </ul>
+</nav></div>
+  </details>
+  
+
+
+
+<script>
+  var toc = document.querySelector(".toc");
+  if (toc) {
+    toc.addEventListener("click", function () {
+      if (event.target.tagName !== "A") {
+        event.preventDefault();
+        if (this.open) {
+          this.open = false;
+          this.classList.remove("expanded");
+        } else {
+          this.open = true;
+          this.classList.add("expanded");
+        }
+      }
+    });
+  }
+</script>
+
+        <div class="content e-content">
+            
+
+    
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/LC9bbcIzUaE?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
+      ></iframe>
+    </div>
+
+<br />
+<p>Neste artigo vamos entender:</p>
+<ul>
+<li>Como utilizar o R como uma calculadora?</li>
+<li>Como os dados se organizam dentro do R e quais os principais tipos de valores suportados?</li>
+<li>O que são vetores e data-frames?</li>
+<li>Como filtrar linhas e colunas em data-frames?</li>
+</ul>
+<h2 id="o-r-como-uma-calculadora" >
+<div>
+    <a href="#o-r-como-uma-calculadora">
+        #
+    </a>
+    O R como uma calculadora
+</div>
+</h2>
+<p>A primeira coisa que podemos fazer ao iniciar o R é começar a brincar com o terminal, para entender como operações matemáticas podem ser feitas. Portanto, se você digitar no terminal 3+3 e der enter, verá o seguinte resultado:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#ff9f43">3+3</span>
+</span></span><span style="display:flex;"><span>[1] <span style="color:#ff9f43">6</span>
+</span></span></code></pre></div><blockquote>
+<p>Detalhe: o <code>[1]</code> indica a linha de retorno do processamento do R, ela sempre se inicia em [1]. Nesse caso, apenas um elemento é retornado, pois estamos somando dos escalares e este elemento é o número 6, resultado da soma de 3 + 3.</p>
+</blockquote>
+<p>De forma análoga, temos as operações de subtração, multiplicação e divisão:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#ff9f43">5-3</span>
+</span></span><span style="display:flex;"><span>[1] <span style="color:#ff9f43">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#ff9f43">2</span><span style="color:#ff6ac1">*</span><span style="color:#ff9f43">10</span>
+</span></span><span style="display:flex;"><span>[1] <span style="color:#ff9f43">20</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#ff9f43">10</span><span style="color:#ff6ac1">/</span><span style="color:#ff9f43">2</span>
+</span></span><span style="display:flex;"><span>[5]
+</span></span></code></pre></div><p>Potenciação e raiz quadrada também são possíveis:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#ff9f43">2</span>^4 <span style="color:#78787e"># Dois elevado a quatro</span>
+</span></span><span style="display:flex;"><span>[1] <span style="color:#ff9f43">16</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">sqrt</span>(<span style="color:#ff9f43">9</span>) <span style="color:#78787e"># Raíz quadrada (square root) de 9</span>
+</span></span><span style="display:flex;"><span>[3]
+</span></span></code></pre></div><p>Agora que já entendemos o R como uma calculadora, vamos prosseguir para compreender melhor como o R armazena e estrutura os dados.</p>
+<h2 id="dados-e-estrutura-interna" >
+<div>
+    <a href="#dados-e-estrutura-interna">
+        #
+    </a>
+    Dados e estrutura interna
+</div>
+</h2>
+<p>Dentro do R, os dados são organizados em estruturas chamadas objetos. Para simplificar o entendimento, tanto variáveis, como tabelas inteiras, e até mesmo saídas de funções são consideradas objetos dentro do R.</p>
+<p>Quando criamos variáveis, elas podem assumir os tipos básicos character (para caracteres), numeric (para números) ou lógico (verdadeiro/falso). Por exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> texto <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;Danilo&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> numero <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">38</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> mora_em_sp <span style="color:#ff6ac1">=</span> <span style="color:#ff6ac1">TRUE</span>
+</span></span></code></pre></div><p>Após criar essas variáveis, você pode verificar quais são os tipos (classes) dela utilizando a função <code>class()</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">class</span>(texto)
+</span></span><span style="display:flex;"><span>[1] <span style="color:#5af78e">&#34;character&#34;</span>
+</span></span></code></pre></div><blockquote>
+<p>Detalhe: o <code>[1]</code> indica a linha de retorno do processamento do R, ou seja, como chamamos a função <code>class()</code>, a única coisa que ela retornou foi o tipo do valor da variável. O <code>[1]</code> indica qual linha de saída se refere aquela informação. Isso é útil para quando você tem listas gigantescas de dados.</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">class</span>(numero)
+</span></span><span style="display:flex;"><span>[1] <span style="color:#5af78e">&#34;numeric&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">class</span>(mora_em_sp)
+</span></span><span style="display:flex;"><span>[1] <span style="color:#5af78e">&#34;logical&#34;</span>
+</span></span></code></pre></div><p>Desta forma, o R faz a tipagem automática para nós de acordo com o tipo de informação que é associada à variável. Isso é importante pois alguns tipos de objetos não suportam múltiplas classes, como os vetores, por exemplo.</p>
+<h2 id="vetores" >
+<div>
+    <a href="#vetores">
+        #
+    </a>
+    Vetores
+</div>
+</h2>
+<p>Os vetores são estruturas mais complexas de objetos que armazenam múltiplos valores. Conforme dito, os vetores precisam ter os valores de mesma classe idealmente e eles são criados utilizando a função <code>c()</code> (concatenar), separando cada elemento por vírgula. Vamos ao exemplo a seguir:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> idades <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">c</span>(<span style="color:#ff9f43">10</span>, <span style="color:#ff9f43">12</span>, <span style="color:#ff9f43">15</span>, <span style="color:#ff9f43">16</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">class</span>(idades)
+</span></span><span style="display:flex;"><span>[1] <span style="color:#5af78e">&#34;numeric&#34;</span>
+</span></span></code></pre></div><p>Se você misturar tipos, o R faz a conversão automática para garantir que todos os elementos existam. Por exemplo, se numa lista de <code>numbers</code> um <code>character</code> for adicionado, todos os números serão convertidos em caracteres:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> idades_mistura <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">c</span>(<span style="color:#ff9f43">10</span>, <span style="color:#ff9f43">13</span>, <span style="color:#5af78e">&#34;erro&#34;</span>, <span style="color:#ff9f43">10</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> idades_mistura
+</span></span><span style="display:flex;"><span>[1] <span style="color:#5af78e">&#34;10&#34;</span>   <span style="color:#5af78e">&#34;13&#34;</span>   <span style="color:#5af78e">&#34;erro&#34;</span> <span style="color:#5af78e">&#34;10&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">class</span>(idades_mistura)
+</span></span><span style="display:flex;"><span>[1] <span style="color:#5af78e">&#34;character&#34;</span>
+</span></span></code></pre></div><p>Se você tem uma sequência de números e adiciona um valor <code>logical</code> esse valor é convertido em 0 se for <code>FALSE</code> ou 1 se for <code>TRUE</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> numeros <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">c</span>(<span style="color:#ff9f43">10</span>, <span style="color:#ff9f43">20</span>, <span style="color:#ff6ac1">TRUE</span>, <span style="color:#ff6ac1">FALSE</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> numeros
+</span></span><span style="display:flex;"><span>[1]  <span style="color:#ff9f43">10</span> <span style="color:#ff9f43">20</span>  <span style="color:#ff9f43">1</span>  <span style="color:#ff9f43">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">class</span>(numeros)
+</span></span><span style="display:flex;"><span>[1] <span style="color:#5af78e">&#34;numeric&#34;</span>
+</span></span></code></pre></div><p>Portanto, é sempre importante manter a consistência ao se criar vetores para não ter erros e problemas em qualidade de dados.</p>
+<h3 id="como-retornar-elementos-de-um-vetor" >
+<div>
+    <a href="#como-retornar-elementos-de-um-vetor">
+        ##
+    </a>
+    Como retornar elementos de um vetor?
+</div>
+</h3>
+<p>Essa é uma pergunta importante pois vai nos ajudar adiante quando falarmos sobre Data Frames. O vetor permite acesso a elementos específicos dele através dos índices. Veja o exemplo abaixo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> cidades <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">c</span>(<span style="color:#5af78e">&#34;São Paulo&#34;</span>, <span style="color:#5af78e">&#34;Rio de Janeiro&#34;</span>, <span style="color:#5af78e">&#34;Curitiba&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> cidades[2]
+</span></span><span style="display:flex;"><span>[1] Rio de Janeiro
+</span></span></code></pre></div><p>No R, diferente de muitas linguagens de programação, o índice sempre se inicia no 1, retornando o primeiro elemento do vetor. Nesse caso, colocamos o índice 2 dentro de colchetes e retornamos o segundo elemento <code>Rio de Janeiro</code>. É possível também solicitar ao vetor que retorne um intervalo de índices utilizando <code>inicio:fim</code>, veja o exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> cidades[2<span style="color:#ff6ac1">:</span><span style="color:#ff9f43">3</span>]
+</span></span><span style="display:flex;"><span>[1] <span style="color:#5af78e">&#34;Rio de Janeiro&#34;</span> <span style="color:#5af78e">&#34;Curitiba&#34;</span>
+</span></span></code></pre></div><h2 id="data-frames" >
+<div>
+    <a href="#data-frames">
+        #
+    </a>
+    Data Frames
+</div>
+</h2>
+<p>Por fim, podemos entender os data frames como estruturas de dados de 2 dimensões (linhas e colunas) ou conjuntos de vetores lado a lado. Vamos imaginar uma situação de uma tabela que contem nomes e idades. Vamos construí-la a partir de vetores:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> nomes <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">c</span>(<span style="color:#5af78e">&#34;Maria&#34;</span>, <span style="color:#5af78e">&#34;João&#34;</span>, <span style="color:#5af78e">&#34;Alice&#34;</span>, <span style="color:#5af78e">&#34;Ricardo&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> idades <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">c</span>(<span style="color:#ff9f43">30</span>, <span style="color:#ff9f43">34</span>, <span style="color:#ff9f43">27</span>, <span style="color:#ff9f43">22</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> tabela <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">data.frame</span>(nomes, idades)
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> tabela
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    nomes idades
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">1</span>   Maria     <span style="color:#ff9f43">30</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">2</span>    João     <span style="color:#ff9f43">34</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">3</span>   Alice     <span style="color:#ff9f43">27</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">4</span> Ricardo     <span style="color:#ff9f43">22</span>
+</span></span></code></pre></div><p>A função <code>data.frame()</code> cria uma tabela, ou data frame, utilizando os vetores de valores. Temos uma função interessante aqui que nos ajuda a identificar qual o tipo de dado cada coluna possui, como no exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">str</span>(tabela)
+</span></span><span style="display:flex;"><span><span style="color:#5af78e">&#39;data.frame&#39;</span><span style="color:#ff6ac1">:</span>	<span style="color:#ff9f43">4</span> obs. of  <span style="color:#ff9f43">2</span> variables<span style="color:#ff6ac1">:</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ff6ac1">$</span> nomes <span style="color:#ff6ac1">:</span> chr  <span style="color:#5af78e">&#34;Maria&#34;</span> <span style="color:#5af78e">&#34;João&#34;</span> <span style="color:#5af78e">&#34;Alice&#34;</span> <span style="color:#5af78e">&#34;Ricardo&#34;</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ff6ac1">$</span> idades<span style="color:#ff6ac1">:</span> num  <span style="color:#ff9f43">30</span> <span style="color:#ff9f43">34</span> <span style="color:#ff9f43">27</span> <span style="color:#ff9f43">22</span>
+</span></span></code></pre></div><p>A função <code>str()</code> nos mostra a estrutura de objetos no R. Nesse caso, o retorno da função nos diz que esse objeto é um <code>data.frame</code> que possui 4 observações e 2 variáveis. A variável <code>nomes</code> é do tipo <code>chr</code> (character) e a variável <code>idades</code> é do tipo <code>num</code> (numeric). Segue também uma amostra dos valores para ilustrar o tipo de cada coluna. Note que como essa tabela que fizemos é pequena, todos os valores são mostrados.</p>
+<h3 id="utilizando-índices-no-data-frame" >
+<div>
+    <a href="#utilizando-%c3%adndices-no-data-frame">
+        ##
+    </a>
+    Utilizando Índices no Data Frame
+</div>
+</h3>
+<p>Para finalizar esse artigo, vamos fazer seleção de elementos no Data Frame como fizemos no vetor, caso queiramos utilizar os índices para retornar os valores. A estrutura é uma dupla de índices, cujo primeiro indica a linha e o segundo indica a coluna. Por tanto, digamos que queremos retornar a 4a linha com a 2a coluna:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> tabela[4,<span style="color:#ff9f43">2</span>]
+</span></span><span style="display:flex;"><span>[1] <span style="color:#ff9f43">22</span>
+</span></span></code></pre></div><p>O número 22 é a idade do Ricardo, ultima linha da nossa tabela. A mesma lógica vale para o intervalo de valores dos vetores utilizando os dois-pontos. No entanto, um outro modo interessante aqui é, por exemplo, retornar todas as colunas de uma determinada linha, podemos fazer da seguinte forma:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> tabela[2,]
+</span></span><span style="display:flex;"><span>  nomes idades
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">2</span>  João     <span style="color:#ff9f43">34</span>
+</span></span></code></pre></div><p>Deixando o índice sem preencher significa que ele retornará tudo referente àquela dimensão. Preenchendo apenas o índice da linha, veremos todas as colunas daquela determinada linha. O contrário também funciona:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> tabela[,<span style="color:#ff9f43">2</span>]
+</span></span><span style="display:flex;"><span>[1] <span style="color:#ff9f43">30</span> <span style="color:#ff9f43">34</span> <span style="color:#ff9f43">27</span> <span style="color:#ff9f43">22</span>
+</span></span></code></pre></div><p>No exemplo acima todas as idades (coluna 2) são apresentadas. Uma forma alternativa de retornar uma coluna é utilizando o <code>$</code> e o nome da coluna após o nome do objeto data frame, como nesse exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> tabela<span style="color:#ff6ac1">$</span>nomes
+</span></span><span style="display:flex;"><span>[1] <span style="color:#5af78e">&#34;Maria&#34;</span>   <span style="color:#5af78e">&#34;João&#34;</span>    <span style="color:#5af78e">&#34;Alice&#34;</span>   <span style="color:#5af78e">&#34;Ricardo&#34;</span>
+</span></span></code></pre></div><p>Simplificando um pouco o uso pois não é necessário saber exatamente qual é o número da coluna que se deseja retornar.</p>
+<h2 id="próximos-passos" >
+<div>
+    <a href="#pr%c3%b3ximos-passos">
+        #
+    </a>
+    Próximos Passos
+</div>
+</h2>
+<p>No próximo artigo, vamos ver como realizar operações com vetores e data-frames como por exemplo, aplicar uma fórmula sobre colunas numéricas, calcular somas, médias, entre outras coisas.</p>
+
+        </div>
+
+    </article>
+
+    
+    
+        
+    
+
+    
+        
+        
+            <h3 class="read-next-title noselect">Read next</h3>
+            <ul class="read-next-posts noselect">
+                
+                <li><a href="/posts/r_basico/r_basico/">Introdução ao R</a></li>
+                
+            </ul>
+        
+    
+
+    
+        
+    
+    
+    <div class="pagination post-pagination">
+        <div class="left pagination-item ">
+            
+                <a href="/posts/r_basico_3/r_basico_3/">Funções de Agregação em Vetores/Data Frames</a>
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a href="/posts/r_basico/r_basico/">Introdução ao R</a>
+            
+        </div>
+    </div>
+
+
+
+
+
+    
+
+    
+        
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+        </main>
+        
+            <footer class="common-footer noselect">
+    
+    
+
+    <div class="common-footer-bottom">
+        
+
+        <div style="display: flex; align-items: center; gap:8px">
+            ©  Danilo Scorzoni Ré,  2024
+            
+        </div>
+        <div style="display:flex;align-items: center">
+            
+            
+            
+            
+            
+            
+        </div>
+        <div>
+            Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/Junyi-99/hugo-theme-anubis2">Anubis2</a>.<br>
+            
+
+        </div>
+    </div>
+
+    <p class="h-card vcard">
+
+    <a href=https://dsre.dev/ class="p-name u-url url fn" rel="me">map[email:danilo.scorzoni@gmail.com location:São Paulo/SP name:Danilo Scorzoni Ré]</a>
+
+    
+
+    
+</p>
+
+</footer>
+
+        
+    </div>
+</body>
+</html>

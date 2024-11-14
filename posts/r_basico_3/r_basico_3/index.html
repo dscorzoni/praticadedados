@@ -14,30 +14,24 @@
 
 <script defer src="https://cloud.umami.is/script.js" data-website-id="16f92f2c-a24c-464e-883a-628f95af4fe2"></script>
 
-<title>Sobre o Prática de Dados - Prática de Dados</title>
+<title>Funções de Agregação em Vetores/Data Frames - Prática de Dados</title>
 
 <meta
   name="description"
-  content="O Prática de Dados é um canal do YouTube com o objetivo de compartilhar conhecimento sobre análise de dados, de maneira geral, e com foco no software R. O canal começou como um projeto durante a pandemia da COVID-19 e conta com vídeos diversos publicados ao longo do tempo.
-
-
-
-    
-    
+  content="
       
     
 
-
-
+Neste artigo vamos ver como utilizar funções de agregação e fazer cálculos sobre sequência de valores, como média, soma, etc.
 
 
     
         #
     
-    Sobre o Autor
+    Revisando Vetores
 
 
-"
+A gente viu no artigo anterior que é possível criar objetos do tipo vetores que armazenam sequências de dados. Essas sequências podem depois ser utilizadas para criar uma tabela ou Data Frame. Para criar um vetor, basta utilizar a função c():"
 />
 
   <link rel="icon" type="image/x-icon" href="https://dsre.dev/favicon.ico">
@@ -378,7 +372,7 @@
         
         <a class="" href="https://dsre.dev/tags/" title="">Tags</a>
         
-        <a class=" active" href="https://dsre.dev/about/me/" title="Sobre o Prática de Dados">Sobre o Prática de Dados</a>
+        <a class="" href="https://dsre.dev/about/me/" title="Sobre o Prática de Dados">Sobre o Prática de Dados</a>
         
     </nav>
 
@@ -420,7 +414,7 @@
     <article class="post h-entry">
         <div class="post-header">
             <header>
-                <h1 class="p-name post-title">Sobre o Prática de Dados</h1>
+                <h1 class="p-name post-title">Funções de Agregação em Vetores/Data Frames</h1>
                 
 
             </header>
@@ -431,12 +425,12 @@
 <div class="post-info noselect">
     
         <div class="post-date dt-published">
-            <time datetime="2024-11-13">2024-11-13</time>
+            <time datetime="2024-11-14">2024-11-14</time>
             
         </div>
     
 
-    <a class="post-hidden-url u-url" href="/about/me/">/about/me/</a>
+    <a class="post-hidden-url u-url" href="/posts/r_basico_3/r_basico_3/">/posts/r_basico_3/r_basico_3/</a>
     <a href="https://dsre.dev/" class="p-name p-author post-hidden-author h-card" rel="me">map[email:danilo.scorzoni@gmail.com location:São Paulo/SP name:Danilo Scorzoni Ré]</a>
 
 
@@ -446,10 +440,7 @@
             <ul class="post-tags">
                 
                     
-                    <li><a href="/tags/sobre/">#Sobre</a></li>
-                
-                    
-                    <li><a href="/tags/pessoal/">#Pessoal</a></li>
+                    <li><a href="/tags/basico/">#Basico</a></li>
                 
             </ul>
         
@@ -461,9 +452,25 @@
         
 
   
+  
 
 
 
+
+  
+  
+  
+  <details class="toc noselect">
+    <summary>Table of Contents</summary>
+    <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#revisando-vetores">Revisando Vetores</a></li>
+    <li><a href="#funções-de-agregação">Funções de Agregação</a></li>
+    <li><a href="#operações-com-escalares">Operações com escalares</a></li>
+  </ul>
+</nav></div>
+  </details>
+  
 
 
 
@@ -486,61 +493,82 @@
 </script>
 
         <div class="content e-content">
-            <p>O <a href="https://www.youtube.com/c/Pr%C3%A1ticadeDados">Prática de Dados</a> é um canal do YouTube com o objetivo de compartilhar conhecimento sobre análise de dados, de maneira geral, e com foco no software R. O canal começou como um projeto durante a pandemia da COVID-19 e conta com vídeos diversos publicados ao longo do tempo.</p>
-<br />
-
+            
 
     
     <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/I7oMYGE5rsw?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/a5e_Su3ajUU?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
       ></iframe>
     </div>
 
-<br />
-<br />
-<h2 id="sobre-o-autor" >
+<p>Neste artigo vamos ver como utilizar funções de agregação e fazer cálculos sobre sequência de valores, como média, soma, etc.</p>
+<h2 id="revisando-vetores" >
 <div>
-    <a href="#sobre-o-autor">
+    <a href="#revisando-vetores">
         #
     </a>
-    Sobre o Autor
+    Revisando Vetores
 </div>
 </h2>
-<p><img src="/danilo_coliseu.jpg" alt=""></p>
-<h1>Olá,</h1>
-<p>Me chamo Danilo Scorzoni Ré e esse é o meu portfolio de projetos e site pessoal.</p>
-<p>Aqui você irá encontrar algumas informações sobre mim, minha experiência profissional, tecnologias que domino e alguns dos meus projetos.</p>
-<h3 id="cientista-de-dados" >
+<p>A gente viu no artigo anterior que é possível criar objetos do tipo vetores que armazenam sequências de dados. Essas sequências podem depois ser utilizadas para criar uma tabela ou Data Frame. Para criar um vetor, basta utilizar a função <code>c()</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> vetor <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">c</span>(<span style="color:#ff9f43">1</span>, <span style="color:#ff9f43">2</span>, <span style="color:#ff9f43">3</span>, <span style="color:#ff9f43">4</span>, <span style="color:#ff9f43">5</span>)
+</span></span></code></pre></div><h2 id="funções-de-agregação" >
 <div>
-    <a href="#cientista-de-dados">
-        ##
+    <a href="#fun%c3%a7%c3%b5es-de-agrega%c3%a7%c3%a3o">
+        #
     </a>
-    Cientista de Dados
+    Funções de Agregação
 </div>
-</h3>
-<p>Sou engenheiro florestal por formação mas atuo há mais de 12 anos na área de Ciência de Dados nos ramos de tecnologia e serviços financeiros. Passei por empresas como Serasa Experian, Facebook e Instagram, no Brasil e nos Estados Unidos.</p>
-<p>Atuando em posições estratégicas realizando análises utilizando ferramentas de análise de dados como R, RStudio, Python e ferramentas de visualização de dados como ggplot2, Tableau dentre outras.</p>
-<p>Dentre as metodologias estatísticas, tenho experiência com: teste A/B, análise de regressão, algoritmos de segmentação/agrupamento, modelos de classificação como regressão logística e random forest, modelos de inferência causal como propensity score matching, dentre outras.</p>
-<p>Nas áreas de negócio, tive a oportunidade de trabalhar com projetos em Analytics durante a minha experiência na Serasa Experian, com o desenvolvimento de variáveis baseadas em dados não estruturados, bem como desenvolvimento de modelos de risco com aplicações em marketing, seguros e fraude. Já durante a minha experiência na Meta, tive a oportunidade de trabalhar nas áreas de Parcerias de Mídia e Vendas para Pequenas e Médias Empresas, bem como nas áreas de desenvolvimento de produtos (Instagram e WhatsApp).</p>
-<h3 id="pesquisador-em-ecologia-florestal" >
+</h2>
+<p>A grande vantagem de se utilizar vetores é que você pode fazer cálculos que agregam os dados em um único número. Por exemplo, utilizando a função <code>sum()</code> é possível calcular a soma dos valores:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">sum</span>(vetor)
+</span></span><span style="display:flex;"><span>[1] <span style="color:#ff9f43">15</span>
+</span></span></code></pre></div><p>Outras funções importantes podem ser utilizadas como <code>mean()</code> para calcular a média e <code>length()</code> para calcular o tamanho do vetor, ou seja, quantos números existem nele:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">mean</span>(vetor)
+</span></span><span style="display:flex;"><span>[1] <span style="color:#ff9f43">3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">length</span>(vetor)
+</span></span><span style="display:flex;"><span>[1] <span style="color:#ff9f43">5</span>
+</span></span></code></pre></div><p>Funções estatísticas estão também disponíveis como <code>median()</code> para calcular a mediana dos valores e <code>sd()</code> (standard deviation) para calcular o desvio padrão amostral:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">median</span>(vetor)
+</span></span><span style="display:flex;"><span>[1] <span style="color:#ff9f43">3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">sd</span>(vetor)
+</span></span><span style="display:flex;"><span>[1] <span style="color:#ff9f43">1.581139</span>
+</span></span></code></pre></div><p>Finalmente, dentre as funções agregadoras mais importantes temos a que calcula os percentis. Nessa você pode especificar um único percentil ou vários utilizando a função <code>c()</code>. Para isso, vamos criar um novo vetor com mais dados para exemplificação:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> vetor2 <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">c</span>(<span style="color:#ff9f43">1</span>, <span style="color:#ff9f43">2</span>, <span style="color:#ff9f43">3</span>, <span style="color:#ff9f43">4</span>, <span style="color:#ff9f43">5</span>, <span style="color:#ff9f43">6</span>, <span style="color:#ff9f43">7</span>, <span style="color:#ff9f43">8</span>, <span style="color:#ff9f43">9</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">quantile</span>(vetor2, <span style="color:#ff9f43">0.25</span>) <span style="color:#78787e"># Retorna o percentil 25%</span>
+</span></span><span style="display:flex;"><span>`25%`
+</span></span><span style="display:flex;"><span>  <span style="color:#ff9f43">3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">quantile</span>(vetor2, <span style="color:#57c7ff">c</span>(<span style="color:#ff9f43">0.25</span>, <span style="color:#ff9f43">0.75</span>)) <span style="color:#78787e"># Retorna os percentis 25% e 75%</span>
+</span></span><span style="display:flex;"><span>`25% 75%`
+</span></span><span style="display:flex;"><span>  <span style="color:#ff9f43">3</span>   <span style="color:#ff9f43">7</span>
+</span></span></code></pre></div><h2 id="operações-com-escalares" >
 <div>
-    <a href="#pesquisador-em-ecologia-florestal">
-        ##
+    <a href="#opera%c3%a7%c3%b5es-com-escalares">
+        #
     </a>
-    Pesquisador em Ecologia Florestal
+    Operações com escalares
 </div>
-</h3>
-<p>Antes de ir para o mercado, atuei como pesquisador em ecologia florestal durante meu mestrado em Ciência Florestal. Minha linha de pesquisa envolveu quantificação de recursos florestais e sistemas de restauração da Mata Atlântica no estado de São Paulo. Além disso, tive participação em alguns projetos de pesquisa através de consultoria estatística, saindo como co-autor em alguns trabalhos. Você pode acessar a minha dissertação de mestrado completa no link da Biblioteca da UNESP.</p>
-<p>Durante esses anos como pesquisador tive a oportunidade de aplicar diversos métodos estatísticos como planejamento de experimentos, análise de variância, análise de regressão utilizando modelos lineares e modelos lineares generalizados. Você pode conferir a lista de publicações no meu perfil do ResearchGate.</p>
-<h3 id="canal-no-youtube-prática-de-dados" >
-<div>
-    <a href="#canal-no-youtube-pr%c3%a1tica-de-dados">
-        ##
-    </a>
-    Canal no YouTube: Prática de Dados
-</div>
-</h3>
-<p>Visando preencher uma lacuna de conhecimento sobre R em Português, decidi criar um canal Prática de Dados no YouTube, durante a pandemia, para compartilhar um pouco do que sei sobre R para iniciantes e intermediários. Esse é um projeto que tenho muito carinho, apesar de pouco ativo atualmente, mas que gera aproximadamente 4 mil visualizações por mês.</p>
+</h2>
+<p>É possível também aplicar operações entre vetores e escalares. Vamos supor que você queira multiplicar cada elemento de um vetor por 2, isso é feito da seguinte forma simples:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> vetor <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">c</span>(<span style="color:#ff9f43">1</span>, <span style="color:#ff9f43">2</span>, <span style="color:#ff9f43">3</span>, <span style="color:#ff9f43">4</span>, <span style="color:#ff9f43">5</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> vetor_vezes_2 <span style="color:#ff6ac1">=</span> vetor <span style="color:#ff6ac1">*</span> <span style="color:#ff9f43">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> vetor_vezes_2
+</span></span><span style="display:flex;"><span>[1]  <span style="color:#ff9f43">2</span>  <span style="color:#ff9f43">4</span>  <span style="color:#ff9f43">6</span>  <span style="color:#ff9f43">8</span> <span style="color:#ff9f43">10</span>
+</span></span></code></pre></div><p>Esse método funciona para todas as outras operações matemáticas também. É importante mencionar que todas as operações que funcionam aqui para vetores também funcionam para colunas do Data Frame, conforme exemplo abaixo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> df <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">data.frame</span>(vetor)
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> df<span style="color:#ff6ac1">$</span>vetor_vezes_2 <span style="color:#ff6ac1">=</span> df<span style="color:#ff6ac1">$</span>vetor <span style="color:#ff6ac1">*</span> <span style="color:#ff9f43">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> df
+</span></span><span style="display:flex;"><span>  vetor vetor_vezes_2
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">1</span>     <span style="color:#ff9f43">1</span>             <span style="color:#ff9f43">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">2</span>     <span style="color:#ff9f43">2</span>             <span style="color:#ff9f43">4</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">3</span>     <span style="color:#ff9f43">3</span>             <span style="color:#ff9f43">6</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">4</span>     <span style="color:#ff9f43">4</span>             <span style="color:#ff9f43">8</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">5</span>     <span style="color:#ff9f43">5</span>            <span style="color:#ff9f43">10</span>
+</span></span></code></pre></div><p>Veja que no código acima criamos um data frame <code>df</code> baseado em <code>vetor</code>. Em seguida, criamos uma nova coluna <code>df$vetor_vezes_2</code> e aplicamos o cálculo de multiplicar a coluna vetor por 2.</p>
+<p>No próximo artigo vamos ver como trabalhar com operadores lógicos para filtrar vetores e data frames.</p>
 
         </div>
 
@@ -554,10 +582,36 @@
     
         
         
+            <h3 class="read-next-title noselect">Read next</h3>
+            <ul class="read-next-posts noselect">
+                
+                <li><a href="/posts/r_basico_4/r_basico_4/">Filtros em vetores e data frames</a></li>
+                
+                <li><a href="/posts/r_basico_2/r_basico_2/">Dados, vetores e data-frames</a></li>
+                
+                <li><a href="/posts/r_basico/r_basico/">Introdução ao R</a></li>
+                
+            </ul>
+        
     
 
     
         
+    
+    
+    <div class="pagination post-pagination">
+        <div class="left pagination-item ">
+            
+                <a href="/posts/r_basico_4/r_basico_4/">Filtros em vetores e data frames</a>
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a href="/posts/r_basico_2/r_basico_2/">Dados, vetores e data-frames</a>
+            
+        </div>
+    </div>
+
 
 
 
