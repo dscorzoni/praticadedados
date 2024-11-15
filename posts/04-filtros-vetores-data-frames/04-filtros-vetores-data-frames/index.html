@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+
+
+<html lang="pt-br" data-theme="">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+        
+<meta charset="utf-8" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8461386780086405" crossorigin="anonymous"></script>
+
+<script defer src="https://cloud.umami.is/script.js" data-website-id="16f92f2c-a24c-464e-883a-628f95af4fe2"></script>
+
+<title>Filtros em vetores e data frames - Prática de Dados</title>
+
+<meta
+  name="description"
+  content="
+      
+    
+
+
+
+
+    
+        #
+    
+    Filtro em vetores
+
+
+Os operadores lógicos podem ser utilizados para filtrar vetores e data frames. Para entender de maneira simples como eles funcionam, vamos criar um vetor de números e testar quais deles são maiores que 10:
+&gt; vetor = c(1, 5, 10, 15, 25, 50)
+&gt; vetor &gt; 10
+[1] FALSE FALSE FALSE  TRUE  TRUE  TRUE
+Quando utilizamos a expressão vetor &gt; 10, o R faz um teste lógico com cada elemento do vetor e checa se o número é maior que 10. Quando verdadeiro, ele retorna TRUE e quando falso ele retorna FALSE. É possível utilizar esse conjunto de TRUE/FALSE para realizar filtros no próprio vetor, quando colocado essa expressão entre colchetes. Veja o exemplo:"
+/>
+
+  <link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="http://localhost:1313/favicon.png">
+         
+<style>
+  body {
+    visibility: hidden;
+    opacity: 0;
+  }
+</style>
+
+<noscript>
+  <style>
+    body {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</noscript>
+ 
+
+    
+
+
+
+
+
+    
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.6e739f029af7eb26027684a3056b93b467e0f1cc506b91a3843104dd03bbd91f.css" integrity="sha256-bnOfApr36yYCdoSjBWuTtGfg8cxQa5GjhDEE3QO72R8=">
+    
+
+
+ 
+
+    
+
+
+
+
+
+    
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.9c1888ebff42c0224ce04dac10cb2c401f1b77f54f78e8d87d73c3bed781c263.css" integrity="sha256-nBiI6/9CwCJM4E2sEMssQB8bd/VPeOjYfXPDvteBwmM=">
+    
+
+
+ 
+
+    
+
+
+
+
+
+    
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.acd606c0fce58853afe0248d37bb41acbbcdd8b1aca2412b6c0fa760da0137f3.css" integrity="sha256-rNYGwPzliFOv4CSNN7tBrLvN2LGsokErbA&#43;nYNoBN/M=">
+    
+
+
+     
+
+    
+
+
+
+
+
+    
+    
+    
+
+    
+        <script src="/js/script.672e2309c296e07c18bcd08b28d797a56222ff941d65f308fba3158c44885b14.js" type="text/javascript" charset="utf-8" integrity="sha256-Zy4jCcKW4HwYvNCLKNeXpWIi/5QdZfMI&#43;6MVjESIWxQ="></script>
+    
+
+
+   
+
+
+
+
+  
+
+<script async defer data-website-id="16f92f2c-a24c-464e-883a-628f95af4fe2" data-cache="false" data-do-not-track="false" src="https://cloud.umami.is/script.js"></script>
+  
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header">
+            
+                <div class="header-top">
+    <div class="header-top-left">
+        <h1 class="site-title noselect">
+    <a href="/">Prática de Dados</a>
+</h1>
+
+        
+
+
+
+    
+
+
+
+    
+
+
+
+    
+        <div class="theme-switcher">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-sun-high"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14.828 14.828a4 4 0 1 0 -5.656 -5.656a4 4 0 0 0 5.656 5.656z" /><path d="M6.343 17.657l-1.414 1.414" /><path d="M6.343 6.343l-1.414 -1.414" /><path d="M17.657 6.343l1.414 -1.414" /><path d="M17.657 17.657l1.414 1.414" /><path d="M4 12h-2" /><path d="M12 4v-2" /><path d="M20 12h2" /><path d="M12 20v2" /></svg>
+
+
+</span>
+
+        </div>
+    
+
+    <script>
+        const STORAGE_KEY = 'user-color-scheme'
+        const defaultTheme = "auto"
+
+        let currentTheme
+        let switchButton
+        let autoDefinedScheme = window.matchMedia('(prefers-color-scheme: dark)')
+
+        function switchTheme(e) {
+            currentTheme = (currentTheme === 'dark') ? 'light' : 'dark';
+            if (localStorage) localStorage.setItem(STORAGE_KEY, currentTheme);
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            changeGiscusTheme(currentTheme);
+            document.body.dispatchEvent(new CustomEvent(currentTheme + "-theme-set"));
+        }
+
+        const autoChangeScheme = e => {
+            currentTheme = e.matches ? 'dark' : 'light'
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            changeGiscusTheme(currentTheme);
+            document.body.dispatchEvent(new CustomEvent(currentTheme + "-theme-set"));
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            switchButton = document.querySelector('.theme-switcher')
+            currentTheme = detectCurrentScheme()
+
+            if (currentTheme === 'auto') {
+                autoChangeScheme(autoDefinedScheme);
+                autoDefinedScheme.addListener(autoChangeScheme);
+            } else {
+                document.documentElement.setAttribute('data-theme', currentTheme)
+            }
+
+            if (switchButton) {
+                switchButton.addEventListener('click', switchTheme, false)
+            }
+
+            showContent();
+        })
+
+        function detectCurrentScheme() {
+            if (localStorage !== null && localStorage.getItem(STORAGE_KEY)) {
+                return localStorage.getItem(STORAGE_KEY)
+            }
+            if (defaultTheme) {
+                return defaultTheme
+            }
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
+        function showContent() {
+            document.body.style.visibility = 'visible';
+            document.body.style.opacity = 1;
+        }
+
+        function changeGiscusTheme (theme) {
+            function sendMessage(message) {
+              const iframe = document.querySelector('iframe.giscus-frame');
+              if (!iframe) return;
+              iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+            }
+
+            sendMessage({
+              setConfig: {
+                theme: theme
+              }
+            });
+        }
+    </script>
+
+
+    </div>
+    <div class="header-top-right">
+        
+        <ul class="social-icons noselect">
+
+
+    
+        <li>
+            <a href="https://github.com/dscorzoni" title="Github" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-github"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+    
+        <li>
+            <a href="https://www.linkedin.com/in/dscorzoni/" title="Linkedin" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 11l0 5" /><path d="M8 8l0 .01" /><path d="M12 16l0 -5" /><path d="M16 16v-3a2 2 0 0 0 -4 0" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+    
+        <li>
+            <a href="https://www.youtube.com/c/Pr%C3%A1ticadeDados" title="Youtube" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-youtube"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8z" /><path d="M10 9l5 3l-5 3z" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+
+
+
+
+
+    <li>
+            <a href="/index.xml" title="RSS" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-rss"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M4 4a16 16 0 0 1 16 16" /><path d="M4 11a9 9 0 0 1 9 9" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+</ul>
+
+    </div>
+</div>
+
+
+    <nav class="noselect">
+        
+        
+        <a class="" href="http://localhost:1313/" title="">Home</a>
+        
+        <a class="" href="http://localhost:1313/tags/" title="">Tags</a>
+        
+        <a class="" href="http://localhost:1313/about/me/" title="Sobre o Prática de Dados">Sobre o Prática de Dados</a>
+        
+    </nav>
+
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+
+
+            
+        </header>
+        <main id="main" tabindex="-1">
+            
+    
+
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title">Filtros em vetores e data frames</h1>
+                
+
+            </header>
+            
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2024-11-14">2024-11-14</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/04-filtros-vetores-data-frames/04-filtros-vetores-data-frames/">/posts/04-filtros-vetores-data-frames/04-filtros-vetores-data-frames/</a>
+    <a href="http://localhost:1313/" class="p-name p-author post-hidden-author h-card" rel="me">map[email:danilo.scorzoni@gmail.com location:São Paulo/SP name:Danilo Scorzoni Ré]</a>
+
+
+    <div class="post-taxonomies">
+        
+        
+            <ul class="post-tags">
+                
+                    
+                    <li><a href="/tags/basico/">#Basico</a></li>
+                
+            </ul>
+        
+        
+    </div>
+</div>
+
+        </div>
+        
+
+  
+  
+
+
+
+
+  
+  
+  
+  <details class="toc noselect">
+    <summary>Table of Contents</summary>
+    <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#filtro-em-vetores">Filtro em vetores</a></li>
+    <li><a href="#entendendo-mais-as-comparações">Entendendo mais as comparações</a></li>
+    <li><a href="#aplicando-filtros-em-data-frames">Aplicando filtros em data frames</a></li>
+    <li><a href="#operadores-lógicos-and-e-or">Operadores lógicos AND e OR</a></li>
+    <li><a href="#para-praticar">Para praticar</a></li>
+  </ul>
+</nav></div>
+  </details>
+  
+
+
+
+<script>
+  var toc = document.querySelector(".toc");
+  if (toc) {
+    toc.addEventListener("click", function () {
+      if (event.target.tagName !== "A") {
+        event.preventDefault();
+        if (this.open) {
+          this.open = false;
+          this.classList.remove("expanded");
+        } else {
+          this.open = true;
+          this.classList.add("expanded");
+        }
+      }
+    });
+  }
+</script>
+
+        <div class="content e-content">
+            
+
+    
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/BOCiRXnRbl8?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
+      ></iframe>
+    </div>
+
+<br />
+<h2 id="filtro-em-vetores" >
+<div>
+    <a href="#filtro-em-vetores">
+        #
+    </a>
+    Filtro em vetores
+</div>
+</h2>
+<p>Os operadores lógicos podem ser utilizados para filtrar vetores e data frames. Para entender de maneira simples como eles funcionam, vamos criar um vetor de números e testar quais deles são maiores que 10:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> vetor <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">c</span>(<span style="color:#ff9f43">1</span>, <span style="color:#ff9f43">5</span>, <span style="color:#ff9f43">10</span>, <span style="color:#ff9f43">15</span>, <span style="color:#ff9f43">25</span>, <span style="color:#ff9f43">50</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> vetor <span style="color:#ff6ac1">&gt;</span> <span style="color:#ff9f43">10</span>
+</span></span><span style="display:flex;"><span>[1] <span style="color:#ff6ac1">FALSE</span> <span style="color:#ff6ac1">FALSE</span> <span style="color:#ff6ac1">FALSE</span>  <span style="color:#ff6ac1">TRUE</span>  <span style="color:#ff6ac1">TRUE</span>  <span style="color:#ff6ac1">TRUE</span>
+</span></span></code></pre></div><p>Quando utilizamos a expressão <code>vetor &gt; 10</code>, o R faz um teste lógico com cada elemento do vetor e checa se o número é maior que 10. Quando verdadeiro, ele retorna <code>TRUE</code> e quando falso ele retorna <code>FALSE</code>. É possível utilizar esse conjunto de <code>TRUE</code>/<code>FALSE</code> para realizar filtros no próprio vetor, quando colocado essa expressão entre colchetes. Veja o exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> vetor[vetor <span style="color:#ff6ac1">&gt;</span> <span style="color:#ff9f43">10</span>]
+</span></span><span style="display:flex;"><span>[1] <span style="color:#ff9f43">15</span> <span style="color:#ff9f43">25</span> <span style="color:#ff9f43">50</span>
+</span></span></code></pre></div><p>O código acima, portanto, filtra o vetor apresentado de acordo com o teste lógico aplicado dentre dos colchetes.</p>
+<h2 id="entendendo-mais-as-comparações" >
+<div>
+    <a href="#entendendo-mais-as-compara%c3%a7%c3%b5es">
+        #
+    </a>
+    Entendendo mais as comparações
+</div>
+</h2>
+<p>Existem vários tipos de comparações que podemos fazer. No exemplo acima vimos a desigualdade <strong>maior que</strong>, no entanto, temos os seguintes tipos de comparações:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#ff9f43">1</span> <span style="color:#ff6ac1">==</span> <span style="color:#ff9f43">1</span> <span style="color:#78787e"># 1 é igual a 1</span>
+</span></span><span style="display:flex;"><span>[1] <span style="color:#ff6ac1">TRUE</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#ff9f43">1</span> <span style="color:#ff6ac1">!=</span> <span style="color:#ff9f43">1</span> <span style="color:#78787e"># 1 é diferente de 1</span>
+</span></span><span style="display:flex;"><span>[1] <span style="color:#ff6ac1">FALSE</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#ff9f43">1</span> <span style="color:#ff6ac1">&gt;</span> <span style="color:#ff9f43">1</span> <span style="color:#78787e"># 1 é maior que 1</span>
+</span></span><span style="display:flex;"><span>[1] <span style="color:#ff6ac1">FALSE</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#ff9f43">1</span> <span style="color:#ff6ac1">&lt;</span> <span style="color:#ff9f43">1</span> <span style="color:#78787e"># 1 é menor que 1</span>
+</span></span><span style="display:flex;"><span>[1] <span style="color:#ff6ac1">FALSE</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#ff9f43">1</span> <span style="color:#ff6ac1">&gt;=</span> <span style="color:#ff9f43">1</span> <span style="color:#78787e"># 1 é maior ou igual a 1</span>
+</span></span><span style="display:flex;"><span>[1] <span style="color:#ff6ac1">TRUE</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#ff9f43">1</span> <span style="color:#ff6ac1">&lt;=</span> <span style="color:#ff9f43">1</span> <span style="color:#78787e"># 1 é menor ou igual a 1</span>
+</span></span><span style="display:flex;"><span>[1] <span style="color:#ff6ac1">TRUE</span>
+</span></span></code></pre></div><h2 id="aplicando-filtros-em-data-frames" >
+<div>
+    <a href="#aplicando-filtros-em-data-frames">
+        #
+    </a>
+    Aplicando filtros em data frames
+</div>
+</h2>
+<p>Todas essas comparações podem ser aplicadas para filtrar linhas de data frames também. Vamos construir um data-frame com os dados abaixo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> nomes <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">c</span>(<span style="color:#5af78e">&#34;João&#34;</span>, <span style="color:#5af78e">&#34;Maria&#34;</span>, <span style="color:#5af78e">&#34;Daniel&#34;</span>, <span style="color:#5af78e">&#34;Aline&#34;</span>, <span style="color:#5af78e">&#34;Mariana&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> salario <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">c</span>(<span style="color:#ff9f43">1000</span>, <span style="color:#ff9f43">2500</span>, <span style="color:#ff9f43">2000</span>, <span style="color:#ff9f43">3000</span>, <span style="color:#ff9f43">3500</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> df <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">data.frame</span>(nomes, salario)
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> df
+</span></span><span style="display:flex;"><span>    nomes salario
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">1</span>    João    <span style="color:#ff9f43">1000</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">2</span>   Maria    <span style="color:#ff9f43">2500</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">3</span>  Daniel    <span style="color:#ff9f43">2000</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">4</span>   Aline    <span style="color:#ff9f43">3000</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">5</span> Mariana    <span style="color:#ff9f43">3500</span>
+</span></span></code></pre></div><p>Na tabela acima que temos um conjunto de dados com nomes e salários, se quisermos filtrar para mostrar apenas as pessoas com salário igual ou maior a 3000, fazemos da seguinte forma:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> df[df<span style="color:#ff6ac1">$</span>salario <span style="color:#ff6ac1">&gt;=</span> <span style="color:#ff9f43">3000</span>,] <span style="color:#78787e"># Não esquecer da vírgula no final</span>
+</span></span><span style="display:flex;"><span>    nomes salario
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">4</span>   Aline    <span style="color:#ff9f43">3000</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">5</span> Mariana    <span style="color:#ff9f43">3500</span>
+</span></span></code></pre></div><p>Portanto, colocamos a comparação lógica dentro dos colchetes como primeiro argumento, indicando um filtro para linhas. Para não dar erro, precisamos colocar uma vírgula no final e deixamos o segundo argumento vazio, para que o R entenda que queremos filtrar apenas as linhas.</p>
+<p>De forma semelhante, se quisermos filtrar o salário por nome da pessoa, podemos fazer o seguinte para mostrar os dados de João:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> df[df<span style="color:#ff6ac1">$</span>nome <span style="color:#ff6ac1">==</span> <span style="color:#5af78e">&#34;João&#34;</span>,] <span style="color:#78787e"># Não se esqueça dos dois sinais de igual</span>
+</span></span><span style="display:flex;"><span>  nomes salario
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">1</span>  João    <span style="color:#ff9f43">1000</span>
+</span></span></code></pre></div><h2 id="operadores-lógicos-and-e-or" >
+<div>
+    <a href="#operadores-l%c3%b3gicos-and-e-or">
+        #
+    </a>
+    Operadores lógicos AND e OR
+</div>
+</h2>
+<p>Em uma situação onde você pode ter múltiplos criterios para fazer um filtro, por exemplo, valor de salário entre 2500 e 3000 (incluindo esses valores), você pode utilizar um operador lógico <code>&amp;</code>. O <code>&amp;</code> funciona como um concatenador <strong>E</strong> para duas operações e ele só retorna <code>TRUE</code> se ambas as condições forem verdadeiras. Veja o exemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> df[df<span style="color:#ff6ac1">$</span>salario <span style="color:#ff6ac1">&gt;=</span> <span style="color:#ff9f43">2500</span> <span style="color:#ff6ac1">&amp;</span> df<span style="color:#ff6ac1">$</span>salario <span style="color:#ff6ac1">&lt;=</span> <span style="color:#ff9f43">3000</span>,]
+</span></span><span style="display:flex;"><span>  nomes salario
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">2</span> Maria    <span style="color:#ff9f43">2500</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">4</span> Aline    <span style="color:#ff9f43">3000</span>
+</span></span></code></pre></div><p>Existe também o operador lógico <code>|</code> que funciona como concatenador <strong>OU</strong> para duas operações. Isso significa que basta uma das comparações ser verdadeira que o retorno será <code>TRUE</code>. No exemplo abaixo vamos filtrar as linhas cujos nomes são João <strong>OU</strong> Aline:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> df[df<span style="color:#ff6ac1">$</span>nome <span style="color:#ff6ac1">==</span> <span style="color:#5af78e">&#34;João&#34;</span> <span style="color:#ff6ac1">|</span> df<span style="color:#ff6ac1">$</span>nome <span style="color:#ff6ac1">==</span> <span style="color:#5af78e">&#34;Aline&#34;</span>,]
+</span></span><span style="display:flex;"><span>  nomes salario
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">1</span>  João    <span style="color:#ff9f43">1000</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">4</span> Aline    <span style="color:#ff9f43">3000</span>
+</span></span></code></pre></div><h2 id="para-praticar" >
+<div>
+    <a href="#para-praticar">
+        #
+    </a>
+    Para praticar
+</div>
+</h2>
+<p>Uma forma de praticar os operadores lógicos é utilizar as bases de dados disponíveis por padrão no R. A base <code>mtcars</code> possui informações sobre modelos de carro publicados pela revista <em>Motor Trends</em>  nos Estados Unidos. Para carregar os dados, utilize os comandos abaixo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">data</span>(mtcars)
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">str</span>(mtcars) <span style="color:#78787e"># Entenda a estrutura desse data frame</span>
+</span></span><span style="display:flex;"><span><span style="color:#5af78e">&#39;data.frame&#39;</span><span style="color:#ff6ac1">:</span>	<span style="color:#ff9f43">32</span> obs. of  <span style="color:#ff9f43">11</span> variables<span style="color:#ff6ac1">:</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ff6ac1">$</span> mpg <span style="color:#ff6ac1">:</span> num  <span style="color:#ff9f43">21</span> <span style="color:#ff9f43">21</span> <span style="color:#ff9f43">22.8</span> <span style="color:#ff9f43">21.4</span> <span style="color:#ff9f43">18.7</span> <span style="color:#ff9f43">18.1</span> <span style="color:#ff9f43">14.3</span> <span style="color:#ff9f43">24.4</span> <span style="color:#ff9f43">22.8</span> <span style="color:#ff9f43">19.2</span> <span style="color:#ff6ac1">...</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ff6ac1">$</span> cyl <span style="color:#ff6ac1">:</span> num  <span style="color:#ff9f43">6</span> <span style="color:#ff9f43">6</span> <span style="color:#ff9f43">4</span> <span style="color:#ff9f43">6</span> <span style="color:#ff9f43">8</span> <span style="color:#ff9f43">6</span> <span style="color:#ff9f43">8</span> <span style="color:#ff9f43">4</span> <span style="color:#ff9f43">4</span> <span style="color:#ff9f43">6</span> <span style="color:#ff6ac1">...</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ff6ac1">$</span> disp<span style="color:#ff6ac1">:</span> num  <span style="color:#ff9f43">160</span> <span style="color:#ff9f43">160</span> <span style="color:#ff9f43">108</span> <span style="color:#ff9f43">258</span> <span style="color:#ff9f43">360</span> <span style="color:#ff6ac1">...</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ff6ac1">$</span> hp  <span style="color:#ff6ac1">:</span> num  <span style="color:#ff9f43">110</span> <span style="color:#ff9f43">110</span> <span style="color:#ff9f43">93</span> <span style="color:#ff9f43">110</span> <span style="color:#ff9f43">175</span> <span style="color:#ff9f43">105</span> <span style="color:#ff9f43">245</span> <span style="color:#ff9f43">62</span> <span style="color:#ff9f43">95</span> <span style="color:#ff9f43">123</span> <span style="color:#ff6ac1">...</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ff6ac1">$</span> drat<span style="color:#ff6ac1">:</span> num  <span style="color:#ff9f43">3.9</span> <span style="color:#ff9f43">3.9</span> <span style="color:#ff9f43">3.85</span> <span style="color:#ff9f43">3.08</span> <span style="color:#ff9f43">3.15</span> <span style="color:#ff9f43">2.76</span> <span style="color:#ff9f43">3.21</span> <span style="color:#ff9f43">3.69</span> <span style="color:#ff9f43">3.92</span> <span style="color:#ff9f43">3.92</span> <span style="color:#ff6ac1">...</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ff6ac1">$</span> wt  <span style="color:#ff6ac1">:</span> num  <span style="color:#ff9f43">2.62</span> <span style="color:#ff9f43">2.88</span> <span style="color:#ff9f43">2.32</span> <span style="color:#ff9f43">3.21</span> <span style="color:#ff9f43">3.44</span> <span style="color:#ff6ac1">...</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ff6ac1">$</span> qsec<span style="color:#ff6ac1">:</span> num  <span style="color:#ff9f43">16.5</span> <span style="color:#ff9f43">17</span> <span style="color:#ff9f43">18.6</span> <span style="color:#ff9f43">19.4</span> <span style="color:#ff9f43">17</span> <span style="color:#ff6ac1">...</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ff6ac1">$</span> vs  <span style="color:#ff6ac1">:</span> num  <span style="color:#ff9f43">0</span> <span style="color:#ff9f43">0</span> <span style="color:#ff9f43">1</span> <span style="color:#ff9f43">1</span> <span style="color:#ff9f43">0</span> <span style="color:#ff9f43">1</span> <span style="color:#ff9f43">0</span> <span style="color:#ff9f43">1</span> <span style="color:#ff9f43">1</span> <span style="color:#ff9f43">1</span> <span style="color:#ff6ac1">...</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ff6ac1">$</span> am  <span style="color:#ff6ac1">:</span> num  <span style="color:#ff9f43">1</span> <span style="color:#ff9f43">1</span> <span style="color:#ff9f43">1</span> <span style="color:#ff9f43">0</span> <span style="color:#ff9f43">0</span> <span style="color:#ff9f43">0</span> <span style="color:#ff9f43">0</span> <span style="color:#ff9f43">0</span> <span style="color:#ff9f43">0</span> <span style="color:#ff9f43">0</span> <span style="color:#ff6ac1">...</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ff6ac1">$</span> gear<span style="color:#ff6ac1">:</span> num  <span style="color:#ff9f43">4</span> <span style="color:#ff9f43">4</span> <span style="color:#ff9f43">4</span> <span style="color:#ff9f43">3</span> <span style="color:#ff9f43">3</span> <span style="color:#ff9f43">3</span> <span style="color:#ff9f43">3</span> <span style="color:#ff9f43">4</span> <span style="color:#ff9f43">4</span> <span style="color:#ff9f43">4</span> <span style="color:#ff6ac1">...</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ff6ac1">$</span> carb<span style="color:#ff6ac1">:</span> num  <span style="color:#ff9f43">4</span> <span style="color:#ff9f43">4</span> <span style="color:#ff9f43">1</span> <span style="color:#ff9f43">1</span> <span style="color:#ff9f43">2</span> <span style="color:#ff9f43">1</span> <span style="color:#ff9f43">4</span> <span style="color:#ff9f43">2</span> <span style="color:#ff9f43">2</span> <span style="color:#ff9f43">4</span> <span style="color:#ff6ac1">...</span>
+</span></span></code></pre></div><p>Note a quantidade grande de colunas que há nesse arquivo. Se você souber um pouco de inglês, pode utilizar a função <code>help()</code> para obter um descritivo desse conjunto de dados:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#57c7ff">help</span>(mtcars)
+</span></span></code></pre></div><p>E para praticar, você pode realizar os seguintes filtros:</p>
+<ol>
+<li>Retornar todos os carros que possuem 6 ou mais cilindros (<code>cyl</code>).</li>
+<li>Retornar todos os carros que possuem câmbio manual (<code>am</code>).</li>
+<li>Retornar todos os carros que consomem menos do que 20 miles/gallon (<code>mpg</code>) e que pesem menos do que 3k pounds (<code>wt</code>).</li>
+</ol>
+<p>E assim por diante, as possibilidades são bem numerosas!</p>
+<p>&ndash;</p>
+<p>No próximo artigo veremos como trabalhar com arquivos CSV e do Excel, como importar, exportar e verificar a qualidade dos dados.</p>
+
+        </div>
+
+    </article>
+
+    
+    
+        
+    
+
+    
+        
+        
+            <h3 class="read-next-title noselect">Read next</h3>
+            <ul class="read-next-posts noselect">
+                
+                <li><a href="/posts/03-funcoes-agregacao/03-funcoes-agregacao/">Funções de Agregação em Vetores/Data Frames</a></li>
+                
+                <li><a href="/posts/02-dados-vetores-data-frames/02-dados-vetores-data-frames/">Dados, vetores e data-frames</a></li>
+                
+                <li><a href="/posts/01-introducao-ao-r/01-introducao-ao-r/">Introdução ao R</a></li>
+                
+            </ul>
+        
+    
+
+    
+        
+    
+    
+    <div class="pagination post-pagination">
+        <div class="left pagination-item disabled">
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a href="/posts/03-funcoes-agregacao/03-funcoes-agregacao/">Funções de Agregação em Vetores/Data Frames</a>
+            
+        </div>
+    </div>
+
+
+
+
+
+    
+
+    
+        
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+        </main>
+        
+            <footer class="common-footer noselect">
+    
+    
+
+    <div class="common-footer-bottom">
+        
+
+        <div style="display: flex; align-items: center; gap:8px">
+            ©  Danilo Scorzoni Ré,  2024
+            
+        </div>
+        <div style="display:flex;align-items: center">
+            
+            
+            
+            
+            
+            
+        </div>
+        <div>
+            Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/Junyi-99/hugo-theme-anubis2">Anubis2</a>.<br>
+            
+
+        </div>
+    </div>
+
+    <p class="h-card vcard">
+
+    <a href=http://localhost:1313/ class="p-name u-url url fn" rel="me">map[email:danilo.scorzoni@gmail.com location:São Paulo/SP name:Danilo Scorzoni Ré]</a>
+
+    
+
+    
+</p>
+
+</footer>
+
+        
+    </div>
+</body>
+</html>

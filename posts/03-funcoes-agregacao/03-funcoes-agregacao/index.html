@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+
+
+<html lang="pt-br" data-theme="">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+        
+<meta charset="utf-8" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8461386780086405" crossorigin="anonymous"></script>
+
+<script defer src="https://cloud.umami.is/script.js" data-website-id="16f92f2c-a24c-464e-883a-628f95af4fe2"></script>
+
+<title>Funções de Agregação em Vetores/Data Frames - Prática de Dados</title>
+
+<meta
+  name="description"
+  content="
+      
+    
+
+Neste artigo vamos ver como utilizar funções de agregação e fazer cálculos sobre sequência de valores, como média, soma, etc.
+
+
+    
+        #
+    
+    Revisando Vetores
+
+
+A gente viu no artigo anterior que é possível criar objetos do tipo vetores que armazenam sequências de dados. Essas sequências podem depois ser utilizadas para criar uma tabela ou Data Frame. Para criar um vetor, basta utilizar a função c():"
+/>
+
+  <link rel="icon" type="image/x-icon" href="http://localhost:1313/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="http://localhost:1313/favicon.png">
+         
+<style>
+  body {
+    visibility: hidden;
+    opacity: 0;
+  }
+</style>
+
+<noscript>
+  <style>
+    body {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</noscript>
+ 
+
+    
+
+
+
+
+
+    
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.6e739f029af7eb26027684a3056b93b467e0f1cc506b91a3843104dd03bbd91f.css" integrity="sha256-bnOfApr36yYCdoSjBWuTtGfg8cxQa5GjhDEE3QO72R8=">
+    
+
+
+ 
+
+    
+
+
+
+
+
+    
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.9c1888ebff42c0224ce04dac10cb2c401f1b77f54f78e8d87d73c3bed781c263.css" integrity="sha256-nBiI6/9CwCJM4E2sEMssQB8bd/VPeOjYfXPDvteBwmM=">
+    
+
+
+ 
+
+    
+
+
+
+
+
+    
+    
+    
+
+    
+        <link rel="stylesheet" href="/css/style.acd606c0fce58853afe0248d37bb41acbbcdd8b1aca2412b6c0fa760da0137f3.css" integrity="sha256-rNYGwPzliFOv4CSNN7tBrLvN2LGsokErbA&#43;nYNoBN/M=">
+    
+
+
+     
+
+    
+
+
+
+
+
+    
+    
+    
+
+    
+        <script src="/js/script.672e2309c296e07c18bcd08b28d797a56222ff941d65f308fba3158c44885b14.js" type="text/javascript" charset="utf-8" integrity="sha256-Zy4jCcKW4HwYvNCLKNeXpWIi/5QdZfMI&#43;6MVjESIWxQ="></script>
+    
+
+
+   
+
+
+
+
+  
+
+<script async defer data-website-id="16f92f2c-a24c-464e-883a-628f95af4fe2" data-cache="false" data-do-not-track="false" src="https://cloud.umami.is/script.js"></script>
+  
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header">
+            
+                <div class="header-top">
+    <div class="header-top-left">
+        <h1 class="site-title noselect">
+    <a href="/">Prática de Dados</a>
+</h1>
+
+        
+
+
+
+    
+
+
+
+    
+
+
+
+    
+        <div class="theme-switcher">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-sun-high"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14.828 14.828a4 4 0 1 0 -5.656 -5.656a4 4 0 0 0 5.656 5.656z" /><path d="M6.343 17.657l-1.414 1.414" /><path d="M6.343 6.343l-1.414 -1.414" /><path d="M17.657 6.343l1.414 -1.414" /><path d="M17.657 17.657l1.414 1.414" /><path d="M4 12h-2" /><path d="M12 4v-2" /><path d="M20 12h2" /><path d="M12 20v2" /></svg>
+
+
+</span>
+
+        </div>
+    
+
+    <script>
+        const STORAGE_KEY = 'user-color-scheme'
+        const defaultTheme = "auto"
+
+        let currentTheme
+        let switchButton
+        let autoDefinedScheme = window.matchMedia('(prefers-color-scheme: dark)')
+
+        function switchTheme(e) {
+            currentTheme = (currentTheme === 'dark') ? 'light' : 'dark';
+            if (localStorage) localStorage.setItem(STORAGE_KEY, currentTheme);
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            changeGiscusTheme(currentTheme);
+            document.body.dispatchEvent(new CustomEvent(currentTheme + "-theme-set"));
+        }
+
+        const autoChangeScheme = e => {
+            currentTheme = e.matches ? 'dark' : 'light'
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            changeGiscusTheme(currentTheme);
+            document.body.dispatchEvent(new CustomEvent(currentTheme + "-theme-set"));
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            switchButton = document.querySelector('.theme-switcher')
+            currentTheme = detectCurrentScheme()
+
+            if (currentTheme === 'auto') {
+                autoChangeScheme(autoDefinedScheme);
+                autoDefinedScheme.addListener(autoChangeScheme);
+            } else {
+                document.documentElement.setAttribute('data-theme', currentTheme)
+            }
+
+            if (switchButton) {
+                switchButton.addEventListener('click', switchTheme, false)
+            }
+
+            showContent();
+        })
+
+        function detectCurrentScheme() {
+            if (localStorage !== null && localStorage.getItem(STORAGE_KEY)) {
+                return localStorage.getItem(STORAGE_KEY)
+            }
+            if (defaultTheme) {
+                return defaultTheme
+            }
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
+        function showContent() {
+            document.body.style.visibility = 'visible';
+            document.body.style.opacity = 1;
+        }
+
+        function changeGiscusTheme (theme) {
+            function sendMessage(message) {
+              const iframe = document.querySelector('iframe.giscus-frame');
+              if (!iframe) return;
+              iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+            }
+
+            sendMessage({
+              setConfig: {
+                theme: theme
+              }
+            });
+        }
+    </script>
+
+
+    </div>
+    <div class="header-top-right">
+        
+        <ul class="social-icons noselect">
+
+
+    
+        <li>
+            <a href="https://github.com/dscorzoni" title="Github" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-github"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+    
+        <li>
+            <a href="https://www.linkedin.com/in/dscorzoni/" title="Linkedin" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 11l0 5" /><path d="M8 8l0 .01" /><path d="M12 16l0 -5" /><path d="M16 16v-3a2 2 0 0 0 -4 0" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+    
+        <li>
+            <a href="https://www.youtube.com/c/Pr%C3%A1ticadeDados" title="Youtube" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-youtube"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8z" /><path d="M10 9l5 3l-5 3z" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+
+
+
+
+
+    <li>
+            <a href="/index.xml" title="RSS" rel="me">
+            <span class="inline-svg">
+
+    
+
+
+    
+    
+    
+    
+    
+
+    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-rss"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M4 4a16 16 0 0 1 16 16" /><path d="M4 11a9 9 0 0 1 9 9" /></svg>
+
+
+</span>
+
+            </a>
+        </li>
+    
+
+</ul>
+
+    </div>
+</div>
+
+
+    <nav class="noselect">
+        
+        
+        <a class="" href="http://localhost:1313/" title="">Home</a>
+        
+        <a class="" href="http://localhost:1313/tags/" title="">Tags</a>
+        
+        <a class="" href="http://localhost:1313/about/me/" title="Sobre o Prática de Dados">Sobre o Prática de Dados</a>
+        
+    </nav>
+
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+
+
+            
+        </header>
+        <main id="main" tabindex="-1">
+            
+    
+
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title">Funções de Agregação em Vetores/Data Frames</h1>
+                
+
+            </header>
+            
+
+
+
+<div class="post-info noselect">
+    
+        <div class="post-date dt-published">
+            <time datetime="2024-11-14">2024-11-14</time>
+            
+        </div>
+    
+
+    <a class="post-hidden-url u-url" href="/posts/03-funcoes-agregacao/03-funcoes-agregacao/">/posts/03-funcoes-agregacao/03-funcoes-agregacao/</a>
+    <a href="http://localhost:1313/" class="p-name p-author post-hidden-author h-card" rel="me">map[email:danilo.scorzoni@gmail.com location:São Paulo/SP name:Danilo Scorzoni Ré]</a>
+
+
+    <div class="post-taxonomies">
+        
+        
+            <ul class="post-tags">
+                
+                    
+                    <li><a href="/tags/basico/">#Basico</a></li>
+                
+            </ul>
+        
+        
+    </div>
+</div>
+
+        </div>
+        
+
+  
+  
+
+
+
+
+  
+  
+  
+  <details class="toc noselect">
+    <summary>Table of Contents</summary>
+    <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#revisando-vetores">Revisando Vetores</a></li>
+    <li><a href="#funções-de-agregação">Funções de Agregação</a></li>
+    <li><a href="#operações-com-escalares">Operações com escalares</a></li>
+  </ul>
+</nav></div>
+  </details>
+  
+
+
+
+<script>
+  var toc = document.querySelector(".toc");
+  if (toc) {
+    toc.addEventListener("click", function () {
+      if (event.target.tagName !== "A") {
+        event.preventDefault();
+        if (this.open) {
+          this.open = false;
+          this.classList.remove("expanded");
+        } else {
+          this.open = true;
+          this.classList.add("expanded");
+        }
+      }
+    });
+  }
+</script>
+
+        <div class="content e-content">
+            
+
+    
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/a5e_Su3ajUU?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
+      ></iframe>
+    </div>
+
+<p>Neste artigo vamos ver como utilizar funções de agregação e fazer cálculos sobre sequência de valores, como média, soma, etc.</p>
+<h2 id="revisando-vetores" >
+<div>
+    <a href="#revisando-vetores">
+        #
+    </a>
+    Revisando Vetores
+</div>
+</h2>
+<p>A gente viu no artigo anterior que é possível criar objetos do tipo vetores que armazenam sequências de dados. Essas sequências podem depois ser utilizadas para criar uma tabela ou Data Frame. Para criar um vetor, basta utilizar a função <code>c()</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> vetor <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">c</span>(<span style="color:#ff9f43">1</span>, <span style="color:#ff9f43">2</span>, <span style="color:#ff9f43">3</span>, <span style="color:#ff9f43">4</span>, <span style="color:#ff9f43">5</span>)
+</span></span></code></pre></div><h2 id="funções-de-agregação" >
+<div>
+    <a href="#fun%c3%a7%c3%b5es-de-agrega%c3%a7%c3%a3o">
+        #
+    </a>
+    Funções de Agregação
+</div>
+</h2>
+<p>A grande vantagem de se utilizar vetores é que você pode fazer cálculos que agregam os dados em um único número. Por exemplo, utilizando a função <code>sum()</code> é possível calcular a soma dos valores:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">sum</span>(vetor)
+</span></span><span style="display:flex;"><span>[1] <span style="color:#ff9f43">15</span>
+</span></span></code></pre></div><p>Outras funções importantes podem ser utilizadas como <code>mean()</code> para calcular a média e <code>length()</code> para calcular o tamanho do vetor, ou seja, quantos números existem nele:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">mean</span>(vetor)
+</span></span><span style="display:flex;"><span>[1] <span style="color:#ff9f43">3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">length</span>(vetor)
+</span></span><span style="display:flex;"><span>[1] <span style="color:#ff9f43">5</span>
+</span></span></code></pre></div><p>Funções estatísticas estão também disponíveis como <code>median()</code> para calcular a mediana dos valores e <code>sd()</code> (standard deviation) para calcular o desvio padrão amostral:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">median</span>(vetor)
+</span></span><span style="display:flex;"><span>[1] <span style="color:#ff9f43">3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">sd</span>(vetor)
+</span></span><span style="display:flex;"><span>[1] <span style="color:#ff9f43">1.581139</span>
+</span></span></code></pre></div><p>Finalmente, dentre as funções agregadoras mais importantes temos a que calcula os percentis. Nessa você pode especificar um único percentil ou vários utilizando a função <code>c()</code>. Para isso, vamos criar um novo vetor com mais dados para exemplificação:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> vetor2 <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">c</span>(<span style="color:#ff9f43">1</span>, <span style="color:#ff9f43">2</span>, <span style="color:#ff9f43">3</span>, <span style="color:#ff9f43">4</span>, <span style="color:#ff9f43">5</span>, <span style="color:#ff9f43">6</span>, <span style="color:#ff9f43">7</span>, <span style="color:#ff9f43">8</span>, <span style="color:#ff9f43">9</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">quantile</span>(vetor2, <span style="color:#ff9f43">0.25</span>) <span style="color:#78787e"># Retorna o percentil 25%</span>
+</span></span><span style="display:flex;"><span>`25%`
+</span></span><span style="display:flex;"><span>  <span style="color:#ff9f43">3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">quantile</span>(vetor2, <span style="color:#57c7ff">c</span>(<span style="color:#ff9f43">0.25</span>, <span style="color:#ff9f43">0.75</span>)) <span style="color:#78787e"># Retorna os percentis 25% e 75%</span>
+</span></span><span style="display:flex;"><span>`25% 75%`
+</span></span><span style="display:flex;"><span>  <span style="color:#ff9f43">3</span>   <span style="color:#ff9f43">7</span>
+</span></span></code></pre></div><h2 id="operações-com-escalares" >
+<div>
+    <a href="#opera%c3%a7%c3%b5es-com-escalares">
+        #
+    </a>
+    Operações com escalares
+</div>
+</h2>
+<p>É possível também aplicar operações entre vetores e escalares. Vamos supor que você queira multiplicar cada elemento de um vetor por 2, isso é feito da seguinte forma simples:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> vetor <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">c</span>(<span style="color:#ff9f43">1</span>, <span style="color:#ff9f43">2</span>, <span style="color:#ff9f43">3</span>, <span style="color:#ff9f43">4</span>, <span style="color:#ff9f43">5</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> vetor_vezes_2 <span style="color:#ff6ac1">=</span> vetor <span style="color:#ff6ac1">*</span> <span style="color:#ff9f43">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> vetor_vezes_2
+</span></span><span style="display:flex;"><span>[1]  <span style="color:#ff9f43">2</span>  <span style="color:#ff9f43">4</span>  <span style="color:#ff9f43">6</span>  <span style="color:#ff9f43">8</span> <span style="color:#ff9f43">10</span>
+</span></span></code></pre></div><p>Esse método funciona para todas as outras operações matemáticas também. É importante mencionar que todas as operações que funcionam aqui para vetores também funcionam para colunas do Data Frame, conforme exemplo abaixo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> df <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">data.frame</span>(vetor)
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> df<span style="color:#ff6ac1">$</span>vetor_vezes_2 <span style="color:#ff6ac1">=</span> df<span style="color:#ff6ac1">$</span>vetor <span style="color:#ff6ac1">*</span> <span style="color:#ff9f43">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> df
+</span></span><span style="display:flex;"><span>  vetor vetor_vezes_2
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">1</span>     <span style="color:#ff9f43">1</span>             <span style="color:#ff9f43">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">2</span>     <span style="color:#ff9f43">2</span>             <span style="color:#ff9f43">4</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">3</span>     <span style="color:#ff9f43">3</span>             <span style="color:#ff9f43">6</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">4</span>     <span style="color:#ff9f43">4</span>             <span style="color:#ff9f43">8</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">5</span>     <span style="color:#ff9f43">5</span>            <span style="color:#ff9f43">10</span>
+</span></span></code></pre></div><p>Veja que no código acima criamos um data frame <code>df</code> baseado em <code>vetor</code>. Em seguida, criamos uma nova coluna <code>df$vetor_vezes_2</code> e aplicamos o cálculo de multiplicar a coluna vetor por 2.</p>
+<p>No próximo artigo vamos ver como trabalhar com operadores lógicos para filtrar vetores e data frames.</p>
+
+        </div>
+
+    </article>
+
+    
+    
+        
+    
+
+    
+        
+        
+            <h3 class="read-next-title noselect">Read next</h3>
+            <ul class="read-next-posts noselect">
+                
+                <li><a href="/posts/04-filtros-vetores-data-frames/04-filtros-vetores-data-frames/">Filtros em vetores e data frames</a></li>
+                
+                <li><a href="/posts/02-dados-vetores-data-frames/02-dados-vetores-data-frames/">Dados, vetores e data-frames</a></li>
+                
+                <li><a href="/posts/01-introducao-ao-r/01-introducao-ao-r/">Introdução ao R</a></li>
+                
+            </ul>
+        
+    
+
+    
+        
+    
+    
+    <div class="pagination post-pagination">
+        <div class="left pagination-item ">
+            
+                <a href="/posts/04-filtros-vetores-data-frames/04-filtros-vetores-data-frames/">Filtros em vetores e data frames</a>
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a href="/posts/02-dados-vetores-data-frames/02-dados-vetores-data-frames/">Dados, vetores e data-frames</a>
+            
+        </div>
+    </div>
+
+
+
+
+
+    
+
+    
+        
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+        </main>
+        
+            <footer class="common-footer noselect">
+    
+    
+
+    <div class="common-footer-bottom">
+        
+
+        <div style="display: flex; align-items: center; gap:8px">
+            ©  Danilo Scorzoni Ré,  2024
+            
+        </div>
+        <div style="display:flex;align-items: center">
+            
+            
+            
+            
+            
+            
+        </div>
+        <div>
+            Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/Junyi-99/hugo-theme-anubis2">Anubis2</a>.<br>
+            
+
+        </div>
+    </div>
+
+    <p class="h-card vcard">
+
+    <a href=http://localhost:1313/ class="p-name u-url url fn" rel="me">map[email:danilo.scorzoni@gmail.com location:São Paulo/SP name:Danilo Scorzoni Ré]</a>
+
+    
+
+    
+</p>
+
+</footer>
+
+        
+    </div>
+</body>
+</html>

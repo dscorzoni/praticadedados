@@ -14,14 +14,27 @@
 
 <script defer src="https://cloud.umami.is/script.js" data-website-id="16f92f2c-a24c-464e-883a-628f95af4fe2"></script>
 
-<title>Basico - Prática de Dados</title>
+<title>Funções de Agregação em Vetores/Data Frames - Prática de Dados</title>
 
 <meta
   name="description"
-  content="Repositório de código e artigos do Prática de Dados"
+  content="
+      
+    
+
+Neste artigo vamos ver como utilizar funções de agregação e fazer cálculos sobre sequência de valores, como média, soma, etc.
+
+
+    
+        #
+    
+    Revisando Vetores
+
+
+A gente viu no artigo anterior que é possível criar objetos do tipo vetores que armazenam sequências de dados. Essas sequências podem depois ser utilizadas para criar uma tabela ou Data Frame. Para criar um vetor, basta utilizar a função c():"
 />
 
-  <link rel="alternate" type="application/rss+xml" href="/tags/basico/index.xml" title="Prática de Dados" /> <link rel="icon" type="image/x-icon" href="https://dsre.dev/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="https://dsre.dev/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://dsre.dev/favicon.png">
          
 <style>
@@ -396,203 +409,16 @@
         </header>
         <main id="main" tabindex="-1">
             
-    <h1>Tag: Basico</h1>
-    <div class="post-info">
-        <a href="/tags/">To all tags</a>
-    </div>
-    
-    
-        <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            
-            
-            
-            <h1 class="p-name post-title ">
-                <a class="u-url" href="/posts/05-carregando-dados-csv-excel/">Carregando dados do Excel e CSV</a>
-            </h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/-BST5xCFBrQ?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
-      ></iframe>
-    </div>
-
-<br />
-<p>Neste artigo vamos ver como carregar dados externos no R, seja por arquivos separados por vírgula (.csv - Comma Separated Values) ou por arquivos do Excel (.xlsx). Vamos começar criando um arquivo no Google Sheets para facilitar o acompanhamento deste tutorial:</p>
-<br />
-<p><img src="google_sheets.png" alt="Dados em uma planilha do Google Sheets"></p>
-        </div>
     
 
-    
-        <div class="read-more">
-            <a class="u-url" href="/posts/05-carregando-dados-csv-excel/">Read more</a>
-        </div>
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2024-11-15">2024-11-15</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/05-carregando-dados-csv-excel/">/posts/05-carregando-dados-csv-excel/</a>
-    <a href="https://dsre.dev/" class="p-name p-author post-hidden-author h-card" rel="me">map[email:danilo.scorzoni@gmail.com location:São Paulo/SP name:Danilo Scorzoni Ré]</a>
-
-
-    <div class="post-taxonomies">
-        
-        
-            <ul class="post-tags">
+    <article class="post h-entry">
+        <div class="post-header">
+            <header>
+                <h1 class="p-name post-title">Funções de Agregação em Vetores/Data Frames</h1>
                 
-                    
-                    <li><a href="/tags/basico/">#Basico</a></li>
-                
-                    
-                    <li><a href="/tags/excel/">#Excel</a></li>
-                
-                    
-                    <li><a href="/tags/google-sheets/">#Google Sheets</a></li>
-                
-            </ul>
-        
-        
-    </div>
-</div>
 
-</article>
-
-    
-        <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
+            </header>
             
-            
-            
-            <h1 class="p-name post-title ">
-                <a class="u-url" href="/posts/04-filtros-vetores-data-frames/">Filtros em vetores e data frames</a>
-            </h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/BOCiRXnRbl8?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
-      ></iframe>
-    </div>
-
-<br />
-<h2 id="filtro-em-vetores" >
-<div>
-    <a href="#filtro-em-vetores">
-        #
-    </a>
-    Filtro em vetores
-</div>
-</h2>
-<p>Os operadores lógicos podem ser utilizados para filtrar vetores e data frames. Para entender de maneira simples como eles funcionam, vamos criar um vetor de números e testar quais deles são maiores que 10:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> vetor <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">c</span>(<span style="color:#ff9f43">1</span>, <span style="color:#ff9f43">5</span>, <span style="color:#ff9f43">10</span>, <span style="color:#ff9f43">15</span>, <span style="color:#ff9f43">25</span>, <span style="color:#ff9f43">50</span>)
-</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> vetor <span style="color:#ff6ac1">&gt;</span> <span style="color:#ff9f43">10</span>
-</span></span><span style="display:flex;"><span>[1] <span style="color:#ff6ac1">FALSE</span> <span style="color:#ff6ac1">FALSE</span> <span style="color:#ff6ac1">FALSE</span>  <span style="color:#ff6ac1">TRUE</span>  <span style="color:#ff6ac1">TRUE</span>  <span style="color:#ff6ac1">TRUE</span>
-</span></span></code></pre></div><p>Quando utilizamos a expressão <code>vetor &gt; 10</code>, o R faz um teste lógico com cada elemento do vetor e checa se o número é maior que 10. Quando verdadeiro, ele retorna <code>TRUE</code> e quando falso ele retorna <code>FALSE</code>. É possível utilizar esse conjunto de <code>TRUE</code>/<code>FALSE</code> para realizar filtros no próprio vetor, quando colocado essa expressão entre colchetes. Veja o exemplo:</p>
-        </div>
-    
-
-    
-        <div class="read-more">
-            <a class="u-url" href="/posts/04-filtros-vetores-data-frames/">Read more</a>
-        </div>
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2024-11-14">2024-11-14</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/04-filtros-vetores-data-frames/">/posts/04-filtros-vetores-data-frames/</a>
-    <a href="https://dsre.dev/" class="p-name p-author post-hidden-author h-card" rel="me">map[email:danilo.scorzoni@gmail.com location:São Paulo/SP name:Danilo Scorzoni Ré]</a>
-
-
-    <div class="post-taxonomies">
-        
-        
-            <ul class="post-tags">
-                
-                    
-                    <li><a href="/tags/basico/">#Basico</a></li>
-                
-            </ul>
-        
-        
-    </div>
-</div>
-
-</article>
-
-    
-        <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            
-            
-            
-            <h1 class="p-name post-title ">
-                <a class="u-url" href="/posts/03-funcoes-agregacao/">Funções de Agregação em Vetores/Data Frames</a>
-            </h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/a5e_Su3ajUU?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
-      ></iframe>
-    </div>
-
-<p>Neste artigo vamos ver como utilizar funções de agregação e fazer cálculos sobre sequência de valores, como média, soma, etc.</p>
-<h2 id="revisando-vetores" >
-<div>
-    <a href="#revisando-vetores">
-        #
-    </a>
-    Revisando Vetores
-</div>
-</h2>
-<p>A gente viu no artigo anterior que é possível criar objetos do tipo vetores que armazenam sequências de dados. Essas sequências podem depois ser utilizadas para criar uma tabela ou Data Frame. Para criar um vetor, basta utilizar a função <code>c()</code>:</p>
-        </div>
-    
-
-    
-        <div class="read-more">
-            <a class="u-url" href="/posts/03-funcoes-agregacao/">Read more</a>
-        </div>
-    
-
-    
 
 
 
@@ -622,157 +448,192 @@
     </div>
 </div>
 
-</article>
-
-    
-        <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
-            
-            
-            
-            <h1 class="p-name post-title ">
-                <a class="u-url" href="/posts/02-dados-vetores-data-frames/">Dados, vetores e data-frames</a>
-            </h1>
-        </header>
+        </div>
         
 
-    </div>
+  
+  
+
+
+
+
+  
+  
+  
+  <details class="toc noselect">
+    <summary>Table of Contents</summary>
+    <div class="inner"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#revisando-vetores">Revisando Vetores</a></li>
+    <li><a href="#funções-de-agregação">Funções de Agregação</a></li>
+    <li><a href="#operações-com-escalares">Operações com escalares</a></li>
+  </ul>
+</nav></div>
+  </details>
+  
+
+
+
+<script>
+  var toc = document.querySelector(".toc");
+  if (toc) {
+    toc.addEventListener("click", function () {
+      if (event.target.tagName !== "A") {
+        event.preventDefault();
+        if (this.open) {
+          this.open = false;
+          this.classList.remove("expanded");
+        } else {
+          this.open = true;
+          this.classList.add("expanded");
+        }
+      }
+    });
+  }
+</script>
+
+        <div class="content e-content">
+            
 
     
-        <div class="content post-summary p-summary">
-            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/LC9bbcIzUaE?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/a5e_Su3ajUU?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
       ></iframe>
     </div>
 
-<br />
-<p>Neste artigo vamos entender:</p>
-<ul>
-<li>Como utilizar o R como uma calculadora?</li>
-<li>Como os dados se organizam dentro do R e quais os principais tipos de valores suportados?</li>
-<li>O que são vetores e data-frames?</li>
-<li>Como filtrar linhas e colunas em data-frames?</li>
-</ul>
-<h2 id="o-r-como-uma-calculadora" >
+<p>Neste artigo vamos ver como utilizar funções de agregação e fazer cálculos sobre sequência de valores, como média, soma, etc.</p>
+<h2 id="revisando-vetores" >
 <div>
-    <a href="#o-r-como-uma-calculadora">
+    <a href="#revisando-vetores">
         #
     </a>
-    O R como uma calculadora
+    Revisando Vetores
 </div>
 </h2>
-<p>A primeira coisa que podemos fazer ao iniciar o R é começar a brincar com o terminal, para entender como operações matemáticas podem ser feitas. Portanto, se você digitar no terminal 3+3 e der enter, verá o seguinte resultado:</p>
+<p>A gente viu no artigo anterior que é possível criar objetos do tipo vetores que armazenam sequências de dados. Essas sequências podem depois ser utilizadas para criar uma tabela ou Data Frame. Para criar um vetor, basta utilizar a função <code>c()</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> vetor <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">c</span>(<span style="color:#ff9f43">1</span>, <span style="color:#ff9f43">2</span>, <span style="color:#ff9f43">3</span>, <span style="color:#ff9f43">4</span>, <span style="color:#ff9f43">5</span>)
+</span></span></code></pre></div><h2 id="funções-de-agregação" >
+<div>
+    <a href="#fun%c3%a7%c3%b5es-de-agrega%c3%a7%c3%a3o">
+        #
+    </a>
+    Funções de Agregação
+</div>
+</h2>
+<p>A grande vantagem de se utilizar vetores é que você pode fazer cálculos que agregam os dados em um único número. Por exemplo, utilizando a função <code>sum()</code> é possível calcular a soma dos valores:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">sum</span>(vetor)
+</span></span><span style="display:flex;"><span>[1] <span style="color:#ff9f43">15</span>
+</span></span></code></pre></div><p>Outras funções importantes podem ser utilizadas como <code>mean()</code> para calcular a média e <code>length()</code> para calcular o tamanho do vetor, ou seja, quantos números existem nele:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">mean</span>(vetor)
+</span></span><span style="display:flex;"><span>[1] <span style="color:#ff9f43">3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">length</span>(vetor)
+</span></span><span style="display:flex;"><span>[1] <span style="color:#ff9f43">5</span>
+</span></span></code></pre></div><p>Funções estatísticas estão também disponíveis como <code>median()</code> para calcular a mediana dos valores e <code>sd()</code> (standard deviation) para calcular o desvio padrão amostral:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">median</span>(vetor)
+</span></span><span style="display:flex;"><span>[1] <span style="color:#ff9f43">3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">sd</span>(vetor)
+</span></span><span style="display:flex;"><span>[1] <span style="color:#ff9f43">1.581139</span>
+</span></span></code></pre></div><p>Finalmente, dentre as funções agregadoras mais importantes temos a que calcula os percentis. Nessa você pode especificar um único percentil ou vários utilizando a função <code>c()</code>. Para isso, vamos criar um novo vetor com mais dados para exemplificação:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> vetor2 <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">c</span>(<span style="color:#ff9f43">1</span>, <span style="color:#ff9f43">2</span>, <span style="color:#ff9f43">3</span>, <span style="color:#ff9f43">4</span>, <span style="color:#ff9f43">5</span>, <span style="color:#ff9f43">6</span>, <span style="color:#ff9f43">7</span>, <span style="color:#ff9f43">8</span>, <span style="color:#ff9f43">9</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">quantile</span>(vetor2, <span style="color:#ff9f43">0.25</span>) <span style="color:#78787e"># Retorna o percentil 25%</span>
+</span></span><span style="display:flex;"><span>`25%`
+</span></span><span style="display:flex;"><span>  <span style="color:#ff9f43">3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> <span style="color:#57c7ff">quantile</span>(vetor2, <span style="color:#57c7ff">c</span>(<span style="color:#ff9f43">0.25</span>, <span style="color:#ff9f43">0.75</span>)) <span style="color:#78787e"># Retorna os percentis 25% e 75%</span>
+</span></span><span style="display:flex;"><span>`25% 75%`
+</span></span><span style="display:flex;"><span>  <span style="color:#ff9f43">3</span>   <span style="color:#ff9f43">7</span>
+</span></span></code></pre></div><h2 id="operações-com-escalares" >
+<div>
+    <a href="#opera%c3%a7%c3%b5es-com-escalares">
+        #
+    </a>
+    Operações com escalares
+</div>
+</h2>
+<p>É possível também aplicar operações entre vetores e escalares. Vamos supor que você queira multiplicar cada elemento de um vetor por 2, isso é feito da seguinte forma simples:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> vetor <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">c</span>(<span style="color:#ff9f43">1</span>, <span style="color:#ff9f43">2</span>, <span style="color:#ff9f43">3</span>, <span style="color:#ff9f43">4</span>, <span style="color:#ff9f43">5</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> vetor_vezes_2 <span style="color:#ff6ac1">=</span> vetor <span style="color:#ff6ac1">*</span> <span style="color:#ff9f43">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> vetor_vezes_2
+</span></span><span style="display:flex;"><span>[1]  <span style="color:#ff9f43">2</span>  <span style="color:#ff9f43">4</span>  <span style="color:#ff9f43">6</span>  <span style="color:#ff9f43">8</span> <span style="color:#ff9f43">10</span>
+</span></span></code></pre></div><p>Esse método funciona para todas as outras operações matemáticas também. É importante mencionar que todas as operações que funcionam aqui para vetores também funcionam para colunas do Data Frame, conforme exemplo abaixo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-R" data-lang="R"><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> df <span style="color:#ff6ac1">=</span> <span style="color:#57c7ff">data.frame</span>(vetor)
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> df<span style="color:#ff6ac1">$</span>vetor_vezes_2 <span style="color:#ff6ac1">=</span> df<span style="color:#ff6ac1">$</span>vetor <span style="color:#ff6ac1">*</span> <span style="color:#ff9f43">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&gt;</span> df
+</span></span><span style="display:flex;"><span>  vetor vetor_vezes_2
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">1</span>     <span style="color:#ff9f43">1</span>             <span style="color:#ff9f43">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">2</span>     <span style="color:#ff9f43">2</span>             <span style="color:#ff9f43">4</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">3</span>     <span style="color:#ff9f43">3</span>             <span style="color:#ff9f43">6</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">4</span>     <span style="color:#ff9f43">4</span>             <span style="color:#ff9f43">8</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff9f43">5</span>     <span style="color:#ff9f43">5</span>            <span style="color:#ff9f43">10</span>
+</span></span></code></pre></div><p>Veja que no código acima criamos um data frame <code>df</code> baseado em <code>vetor</code>. Em seguida, criamos uma nova coluna <code>df$vetor_vezes_2</code> e aplicamos o cálculo de multiplicar a coluna vetor por 2.</p>
+<p>No próximo artigo vamos ver como trabalhar com operadores lógicos para filtrar vetores e data frames.</p>
+
         </div>
+
+    </article>
+
+    
+    
+        
     
 
     
-        <div class="read-more">
-            <a class="u-url" href="/posts/02-dados-vetores-data-frames/">Read more</a>
-        </div>
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2024-11-13">2024-11-13</time>
-            
-        </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/02-dados-vetores-data-frames/">/posts/02-dados-vetores-data-frames/</a>
-    <a href="https://dsre.dev/" class="p-name p-author post-hidden-author h-card" rel="me">map[email:danilo.scorzoni@gmail.com location:São Paulo/SP name:Danilo Scorzoni Ré]</a>
-
-
-    <div class="post-taxonomies">
         
         
-            <ul class="post-tags">
+            <h3 class="read-next-title noselect">Read next</h3>
+            <ul class="read-next-posts noselect">
                 
-                    
-                    <li><a href="/tags/basico/">#Basico</a></li>
+                <li><a href="/posts/04-filtros-vetores-data-frames/">Filtros em vetores e data frames</a></li>
+                
+                <li><a href="/posts/02-dados-vetores-data-frames/">Dados, vetores e data-frames</a></li>
+                
+                <li><a href="/posts/01-introducao-ao-r/">Introdução ao R</a></li>
                 
             </ul>
         
+    
+
+    
         
-    </div>
-</div>
-
-</article>
-
     
-        <article class="post-list h-feed post-card">
-    <div class="post-header">
-        <header>
+    
+    <div class="pagination post-pagination">
+        <div class="left pagination-item ">
             
-            
-            
-            <h1 class="p-name post-title ">
-                <a class="u-url" href="/posts/01-introducao-ao-r/">Introdução ao R</a>
-            </h1>
-        </header>
-        
-
-    </div>
-
-    
-        <div class="content post-summary p-summary">
-            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/qD2hdd5A00I?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
-      ></iframe>
-    </div>
-
-<br />
-<p>Se você está começando a explorar o mundo dos dados, provavelmente já ouviu falar sobre o R, um dos softwares estatísticos mais utilizados para análise de dados. Este post é uma introdução ao R, explicando o que ele é, para que serve e por que você, como estudante de graduação, deveria considerar usá-lo em seus estudos. Mesmo que você ainda não tenha um conhecimento avançado em estatística, o R pode se tornar uma ferramenta poderosa e acessível no seu dia a dia acadêmico.</p>
-        </div>
-    
-
-    
-        <div class="read-more">
-            <a class="u-url" href="/posts/01-introducao-ao-r/">Read more</a>
-        </div>
-    
-
-    
-
-
-
-<div class="post-info noselect">
-    
-        <div class="post-date dt-published">
-            <time datetime="2024-11-13">2024-11-13</time>
+                <a href="/posts/04-filtros-vetores-data-frames/">Filtros em vetores e data frames</a>
             
         </div>
-    
-
-    <a class="post-hidden-url u-url" href="/posts/01-introducao-ao-r/">/posts/01-introducao-ao-r/</a>
-    <a href="https://dsre.dev/" class="p-name p-author post-hidden-author h-card" rel="me">map[email:danilo.scorzoni@gmail.com location:São Paulo/SP name:Danilo Scorzoni Ré]</a>
-
-
-    <div class="post-taxonomies">
-        
-        
-            <ul class="post-tags">
-                
-                    
-                    <li><a href="/tags/basico/">#Basico</a></li>
-                
-            </ul>
-        
-        
+        <div class="right pagination-item ">
+            
+                <a href="/posts/02-dados-vetores-data-frames/">Dados, vetores e data-frames</a>
+            
+        </div>
     </div>
-</div>
 
-</article>
+
+
+
 
     
+
+    
+        
+
+
+
+
+
+
+
+
+
     
 
+    
 
+    
 
         </main>
         

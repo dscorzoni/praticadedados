@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Excel on Prática de Dados</title>
+    <link>/tags/excel/</link>
+    <description>Prática de Dados (Excel)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    
+      
+        <managingEditor>danilo.scorzoni@gmail.com
+          
+            (Danilo Scorzoni Ré)
+          
+        </managingEditor>
+      
+
+      
+    
+
+    
+    <lastBuildDate>Fri, 15 Nov 2024 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="/tags/excel/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Carregando dados do Excel e CSV</title>
+      <link>/posts/05-carregando-dados-csv-excel/</link>
+      <pubDate>Fri, 15 Nov 2024 00:00:00 +0000</pubDate>
+      <author>danilo.scorzoni@gmail.com (Danilo Scorzoni Ré)</author>
+      <guid>/posts/05-carregando-dados-csv-excel/</guid>
+      <description>
+
+    
+    &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen=&#34;allowfullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/-BST5xCFBrQ?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;
+      &gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;br /&gt;
+&lt;p&gt;Neste artigo vamos ver como carregar dados externos no R, seja por arquivos separados por vírgula (.csv - Comma Separated Values) ou por arquivos do Excel (.xlsx). Vamos começar criando um arquivo no Google Sheets para facilitar o acompanhamento deste tutorial:&lt;/p&gt;
+&lt;br /&gt;
+&lt;p&gt;&lt;img src=&#34;google_sheets.png&#34; alt=&#34;Dados em uma planilha do Google Sheets&#34;&gt;&lt;/p&gt;
+&lt;br /&gt;
+&lt;p&gt;Nesta planilha temos dados de nome e salários em duas colunas com 5 registros, semelhante aos dados do artigo anterior, mas são invés de adicionarmos os dados manualmente no R, vamos utilizar um arquivo externo.&lt;/p&gt;
+&lt;p&gt;Após preparar a tabela, você pode exportar o arquivo do Google Sheets escolhando um formato. Para isso, clique no menu Arquivo &amp;gt; Baixar &amp;gt; Valores separados por vírgulas (.csv) &lt;strong&gt;OU&lt;/strong&gt; Microsoft Excel (.xlsx). Nesse artigo vou mostrar como importar nos dois formatos.&lt;/p&gt;
+&lt;br /&gt;
+&lt;p&gt;&lt;img src=&#34;google_exportar.png&#34; alt=&#34;Exportando arquivos no Google Sheets&#34;&gt;&lt;/p&gt;
+&lt;br /&gt;
+&lt;h2 id=&#34;antes-de-carregar-como-encontrar-seus-arquivos&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#antes-de-carregar-como-encontrar-seus-arquivos&#34;&gt;
+        #
+    &lt;/a&gt;
+    Antes de carregar, como encontrar seus arquivos
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;Existe uma função no R que abre uma caixa de diálogo que auxilia você a encontrar um arquivo no seu computador. Trata-se da função &lt;code&gt;file.choose()&lt;/code&gt;. O retorno dela é o caminho completo do arquivo escolhido no computador. Então você pode utilizar essa função em conjunto com as demais funções de carregamento de arquivos.&lt;/p&gt;
+&lt;p&gt;Assista ao vídeo no topo deste artigo para ver essa função em ação.&lt;/p&gt;
+&lt;h2 id=&#34;carregando-arquivos-csv&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#carregando-arquivos-csv&#34;&gt;
+        #
+    &lt;/a&gt;
+    Carregando arquivos CSV
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;Vamos começar carregando o arquivo CSV então. Após baixá-lo do Google Sheets, basta utilizar os seguintes comandos:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; dados_csv &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;read.csv&lt;/span&gt;(&lt;span style=&#34;color:#57c7ff&#34;&gt;file.choose&lt;/span&gt;())
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; dados_csv
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;     nome salario
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt;    João    &lt;span style=&#34;color:#ff9f43&#34;&gt;1000&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt;   Maria    &lt;span style=&#34;color:#ff9f43&#34;&gt;2500&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;3&lt;/span&gt;  Daniel    &lt;span style=&#34;color:#ff9f43&#34;&gt;2000&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;4&lt;/span&gt;   Aline    &lt;span style=&#34;color:#ff9f43&#34;&gt;3000&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;5&lt;/span&gt; Mariana    &lt;span style=&#34;color:#ff9f43&#34;&gt;3500&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;IMPORTANTE:&lt;/strong&gt; Caso seu arquivo possua números com casas decimais, você precisa verificar como está a configuração do seu computador. Abra o arquivo em um editor de textos como o Bloco de Notas e verifique a estrutura do arquivo. Caso as casas decimais sejam representadas por pontos (.) como no sistema inglês de unidades, você pode usar a função &lt;code&gt;read.csv()&lt;/code&gt;, caso as casas decimais sejam representadas por vírgulas (,) como no sistema internacional de unidades, você deve utilizar a função &lt;code&gt;read.csv2()&lt;/code&gt;. Isso é fundamental para evitar que o R misture as vírgulas que separam casas decimais com as vírgulas que separam as colunas. Quando a casa decimal é especificada pela vírgula, as colunas serão separadas por ponto-e-vírgula (;).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Além de verificar se os dados foram carregados de forma correta, é importante também verificar se os tipos estão corretos. Então, para isso, vamos utilizar a função &lt;code&gt;str()&lt;/code&gt; já citada nos artigos anteriores para conhecer a estrutura do data frame:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;str&lt;/span&gt;(dados_csv)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#39;data.frame&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt;	&lt;span style=&#34;color:#ff9f43&#34;&gt;5&lt;/span&gt; obs. of  &lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt; variables&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;$&lt;/span&gt; nome   &lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; chr  &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;João&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Maria&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Daniel&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;Aline&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#ff6ac1&#34;&gt;$&lt;/span&gt; salario&lt;span style=&#34;color:#ff6ac1&#34;&gt;:&lt;/span&gt; int  &lt;span style=&#34;color:#ff9f43&#34;&gt;1000&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;2500&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;2000&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;3000&lt;/span&gt; &lt;span style=&#34;color:#ff9f43&#34;&gt;3500&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Confirmamos então que a coluna nome foi carregada como &lt;code&gt;character&lt;/code&gt; e a coluna salario como &lt;code&gt;integer&lt;/code&gt;, conforme esperado.&lt;/p&gt;
+&lt;h2 id=&#34;carregando-arquivos-do-excel&#34; &gt;
+&lt;div&gt;
+    &lt;a href=&#34;#carregando-arquivos-do-excel&#34;&gt;
+        #
+    &lt;/a&gt;
+    Carregando arquivos do Excel
+&lt;/div&gt;
+&lt;/h2&gt;
+&lt;p&gt;Para carregar arquivos do Excel, faça o Download novamente da sua planilha no Google Sheets escolhendo a opção Microsoft Excel (.xlsx) e siga os comandos abaixo:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-R&#34; data-lang=&#34;R&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;install.packages&lt;/span&gt;(&lt;span style=&#34;color:#5af78e&#34;&gt;&amp;#34;readxl&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#78787e&#34;&gt;# Instala o pacote necessário readxl&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;library&lt;/span&gt;(readxl) &lt;span style=&#34;color:#78787e&#34;&gt;# Carrega o pacote&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; dados_excel &lt;span style=&#34;color:#ff6ac1&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#57c7ff&#34;&gt;read_excel&lt;/span&gt;(&lt;span style=&#34;color:#57c7ff&#34;&gt;file.choose&lt;/span&gt;())
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt; dados_excel
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#78787e&#34;&gt;# A tibble: 5 × 2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  nome    salario
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;&lt;/span&gt;chr&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt;     &lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;lt;&lt;/span&gt;dbl&lt;span style=&#34;color:#ff6ac1&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;1&lt;/span&gt; João       &lt;span style=&#34;color:#ff9f43&#34;&gt;1000&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;2&lt;/span&gt; Maria      &lt;span style=&#34;color:#ff9f43&#34;&gt;2500&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;3&lt;/span&gt; Daniel     &lt;span style=&#34;color:#ff9f43&#34;&gt;2000&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;4&lt;/span&gt; Aline      &lt;span style=&#34;color:#ff9f43&#34;&gt;3000&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff9f43&#34;&gt;5&lt;/span&gt; Mariana    &lt;span style=&#34;color:#ff9f43&#34;&gt;3500&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;No comando acima, primeiro instalamos o pacote &lt;code&gt;readxl&lt;/code&gt; que possui uma função &lt;code&gt;read_excel()&lt;/code&gt; que nos permite trabalhar com arquivos excel. Em seguida, usamos o &lt;code&gt;file.choose()&lt;/code&gt; como já explicado anteriormente para encontrar nosso arquivo excel. Note que quando listamos o conteúdo de &lt;code&gt;dados_excel&lt;/code&gt; algumas informações adicionais aparecem, como a especificação do tipo de objeto &lt;code&gt;tibble&lt;/code&gt; com suas dimensões e os tipos das colunas (&lt;code&gt;&amp;lt;chr&amp;gt;&lt;/code&gt; e &lt;code&gt;&amp;lt;dbl&amp;gt;&lt;/code&gt;). Isso acontece pois a tibble é um formato mais moderno de data frame que gerencia melhor a memória em grandes volumes de dados. Felizmente, nada muda na forma de utilização comparado com o data frame tradicional.&lt;/p&gt;
+&lt;p&gt;&amp;ndash;&lt;/p&gt;
+&lt;p&gt;No próximo artigo vamos ver como calcular estatísticas descritivas do conjunto de dados e fazer uma verificação de qualidade mais profunda.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
