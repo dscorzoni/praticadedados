@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pessoal on Prática de Dados</title>
-    <link>/tags/pessoal/</link>
+    <link>/praticadedados/tags/pessoal/</link>
     <description>Prática de Dados (Pessoal)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
@@ -21,15 +21,15 @@
     
     <lastBuildDate>Wed, 13 Nov 2024 00:00:00 +0000</lastBuildDate>
     
-    <atom:link href="/tags/pessoal/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/praticadedados/tags/pessoal/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Sobre o Prática de Dados</title>
-      <link>/about/me/</link>
+      <link>/praticadedados/about/me/</link>
       <pubDate>Wed, 13 Nov 2024 00:00:00 +0000</pubDate>
       <author>danilo.scorzoni@gmail.com (Danilo Scorzoni Ré)</author>
-      <guid>/about/me/</guid>
+      <guid>/praticadedados/about/me/</guid>
       <description>&lt;p&gt;O &lt;a href=&#34;https://www.youtube.com/c/Pr%C3%A1ticadeDados&#34;&gt;Prática de Dados&lt;/a&gt; é um canal do YouTube com o objetivo de compartilhar conhecimento sobre análise de dados, de maneira geral, e com foco no software R. O canal começou como um projeto durante a pandemia da COVID-19 e conta com vídeos diversos publicados ao longo do tempo.&lt;/p&gt;
 &lt;br /&gt;
 
@@ -50,7 +50,7 @@
     Sobre o Autor
 &lt;/div&gt;
 &lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://praticadedados.dsre.dev/danilo_coliseu.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://dscorzoni.github.io/praticadedados/danilo_coliseu.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h1&gt;Olá,&lt;/h1&gt;
 &lt;p&gt;Me chamo Danilo Scorzoni Ré e esse é o meu portfolio de projetos e site pessoal.&lt;/p&gt;
 &lt;p&gt;Aqui você irá encontrar algumas informações sobre mim, minha experiência profissional, tecnologias que domino e alguns dos meus projetos.&lt;/p&gt;

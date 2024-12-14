@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Google Sheets on Prática de Dados</title>
-    <link>/tags/google-sheets/</link>
+    <link>/praticadedados/tags/google-sheets/</link>
     <description>Prática de Dados (Google Sheets)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
@@ -21,15 +21,15 @@
     
     <lastBuildDate>Fri, 15 Nov 2024 00:00:00 +0000</lastBuildDate>
     
-    <atom:link href="/tags/google-sheets/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/praticadedados/tags/google-sheets/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Carregando dados do Excel e CSV</title>
-      <link>/posts/05-carregando-dados-csv-excel/</link>
+      <link>/praticadedados/posts/05-carregando-dados-csv-excel/</link>
       <pubDate>Fri, 15 Nov 2024 00:00:00 +0000</pubDate>
       <author>danilo.scorzoni@gmail.com (Danilo Scorzoni Ré)</author>
-      <guid>/posts/05-carregando-dados-csv-excel/</guid>
+      <guid>/praticadedados/posts/05-carregando-dados-csv-excel/</guid>
       <description>
 
     

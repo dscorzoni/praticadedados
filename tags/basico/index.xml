@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Basico on Prática de Dados</title>
-    <link>/tags/basico/</link>
+    <link>/praticadedados/tags/basico/</link>
     <description>Prática de Dados (Basico)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
@@ -21,15 +21,15 @@
     
     <lastBuildDate>Fri, 15 Nov 2024 00:00:00 +0000</lastBuildDate>
     
-    <atom:link href="/tags/basico/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/praticadedados/tags/basico/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Carregando dados do Excel e CSV</title>
-      <link>/posts/05-carregando-dados-csv-excel/</link>
+      <link>/praticadedados/posts/05-carregando-dados-csv-excel/</link>
       <pubDate>Fri, 15 Nov 2024 00:00:00 +0000</pubDate>
       <author>danilo.scorzoni@gmail.com (Danilo Scorzoni Ré)</author>
-      <guid>/posts/05-carregando-dados-csv-excel/</guid>
+      <guid>/praticadedados/posts/05-carregando-dados-csv-excel/</guid>
       <description>
 
     
@@ -114,10 +114,10 @@
     
     <item>
       <title>Filtros em vetores e data frames</title>
-      <link>/posts/04-filtros-vetores-data-frames/</link>
+      <link>/praticadedados/posts/04-filtros-vetores-data-frames/</link>
       <pubDate>Thu, 14 Nov 2024 00:00:00 +0000</pubDate>
       <author>danilo.scorzoni@gmail.com (Danilo Scorzoni Ré)</author>
-      <guid>/posts/04-filtros-vetores-data-frames/</guid>
+      <guid>/praticadedados/posts/04-filtros-vetores-data-frames/</guid>
       <description>
 
     
@@ -255,10 +255,10 @@
     
     <item>
       <title>Funções de Agregação em Vetores/Data Frames</title>
-      <link>/posts/03-funcoes-agregacao/</link>
+      <link>/praticadedados/posts/03-funcoes-agregacao/</link>
       <pubDate>Thu, 14 Nov 2024 00:00:00 +0000</pubDate>
       <author>danilo.scorzoni@gmail.com (Danilo Scorzoni Ré)</author>
-      <guid>/posts/03-funcoes-agregacao/</guid>
+      <guid>/praticadedados/posts/03-funcoes-agregacao/</guid>
       <description>
 
     
@@ -340,10 +340,10 @@
     
     <item>
       <title>Dados, vetores e data-frames</title>
-      <link>/posts/02-dados-vetores-data-frames/</link>
+      <link>/praticadedados/posts/02-dados-vetores-data-frames/</link>
       <pubDate>Wed, 13 Nov 2024 00:00:00 +0000</pubDate>
       <author>danilo.scorzoni@gmail.com (Danilo Scorzoni Ré)</author>
-      <guid>/posts/02-dados-vetores-data-frames/</guid>
+      <guid>/praticadedados/posts/02-dados-vetores-data-frames/</guid>
       <description>
 
     
@@ -518,10 +518,10 @@
     
     <item>
       <title>Introdução ao R</title>
-      <link>/posts/01-introducao-ao-r/</link>
+      <link>/praticadedados/posts/01-introducao-ao-r/</link>
       <pubDate>Wed, 13 Nov 2024 00:00:00 +0000</pubDate>
       <author>danilo.scorzoni@gmail.com (Danilo Scorzoni Ré)</author>
-      <guid>/posts/01-introducao-ao-r/</guid>
+      <guid>/praticadedados/posts/01-introducao-ao-r/</guid>
       <description>
 
     

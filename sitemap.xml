@@ -2,53 +2,53 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-        <loc>https://praticadedados.dsre.dev/about/me/</loc>
+        <loc>https://dscorzoni.github.io/praticadedados/about/me/</loc>
         <lastmod>2024-11-13T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://praticadedados.dsre.dev/tags/basico/</loc>
+        <loc>https://dscorzoni.github.io/praticadedados/tags/basico/</loc>
         <lastmod>2024-11-15T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://praticadedados.dsre.dev/posts/05-carregando-dados-csv-excel/</loc>
+        <loc>https://dscorzoni.github.io/praticadedados/posts/05-carregando-dados-csv-excel/</loc>
         <lastmod>2024-11-15T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://praticadedados.dsre.dev/tags/excel/</loc>
+        <loc>https://dscorzoni.github.io/praticadedados/tags/excel/</loc>
         <lastmod>2024-11-15T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://praticadedados.dsre.dev/tags/google-sheets/</loc>
+        <loc>https://dscorzoni.github.io/praticadedados/tags/google-sheets/</loc>
         <lastmod>2024-11-15T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://praticadedados.dsre.dev/posts/</loc>
+        <loc>https://dscorzoni.github.io/praticadedados/posts/</loc>
         <lastmod>2024-11-15T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://praticadedados.dsre.dev/</loc>
+        <loc>https://dscorzoni.github.io/praticadedados/</loc>
         <lastmod>2024-11-15T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://praticadedados.dsre.dev/tags/</loc>
+        <loc>https://dscorzoni.github.io/praticadedados/tags/</loc>
         <lastmod>2024-11-15T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://praticadedados.dsre.dev/posts/04-filtros-vetores-data-frames/</loc>
+        <loc>https://dscorzoni.github.io/praticadedados/posts/04-filtros-vetores-data-frames/</loc>
         <lastmod>2024-11-14T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://praticadedados.dsre.dev/posts/03-funcoes-agregacao/</loc>
+        <loc>https://dscorzoni.github.io/praticadedados/posts/03-funcoes-agregacao/</loc>
         <lastmod>2024-11-14T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://praticadedados.dsre.dev/about/</loc>
+        <loc>https://dscorzoni.github.io/praticadedados/about/</loc>
         <lastmod>2024-11-13T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://praticadedados.dsre.dev/posts/02-dados-vetores-data-frames/</loc>
+        <loc>https://dscorzoni.github.io/praticadedados/posts/02-dados-vetores-data-frames/</loc>
         <lastmod>2024-11-13T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://praticadedados.dsre.dev/posts/01-introducao-ao-r/</loc>
+        <loc>https://dscorzoni.github.io/praticadedados/posts/01-introducao-ao-r/</loc>
         <lastmod>2024-11-13T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://praticadedados.dsre.dev/tags/pessoal/</loc>
+        <loc>https://dscorzoni.github.io/praticadedados/tags/pessoal/</loc>
         <lastmod>2024-11-13T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://praticadedados.dsre.dev/tags/sobre/</loc>
+        <loc>https://dscorzoni.github.io/praticadedados/tags/sobre/</loc>
         <lastmod>2024-11-13T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://praticadedados.dsre.dev/authors/</loc>
+        <loc>https://dscorzoni.github.io/praticadedados/authors/</loc>
       </url><url>
-        <loc>https://praticadedados.dsre.dev/categories/</loc>
+        <loc>https://dscorzoni.github.io/praticadedados/categories/</loc>
       </url>
 </urlset>
