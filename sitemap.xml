@@ -2,53 +2,53 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-        <loc>https://dsre.dev/about/me/</loc>
+        <loc>https://dados.dsre.dev/about/me/</loc>
         <lastmod>2024-11-13T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://dsre.dev/tags/basico/</loc>
+        <loc>https://dados.dsre.dev/tags/basico/</loc>
         <lastmod>2024-11-15T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://dsre.dev/posts/05-carregando-dados-csv-excel/</loc>
+        <loc>https://dados.dsre.dev/posts/05-carregando-dados-csv-excel/</loc>
         <lastmod>2024-11-15T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://dsre.dev/tags/excel/</loc>
+        <loc>https://dados.dsre.dev/tags/excel/</loc>
         <lastmod>2024-11-15T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://dsre.dev/tags/google-sheets/</loc>
+        <loc>https://dados.dsre.dev/tags/google-sheets/</loc>
         <lastmod>2024-11-15T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://dsre.dev/posts/</loc>
+        <loc>https://dados.dsre.dev/posts/</loc>
         <lastmod>2024-11-15T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://dsre.dev/</loc>
+        <loc>https://dados.dsre.dev/</loc>
         <lastmod>2024-11-15T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://dsre.dev/tags/</loc>
+        <loc>https://dados.dsre.dev/tags/</loc>
         <lastmod>2024-11-15T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://dsre.dev/posts/04-filtros-vetores-data-frames/</loc>
+        <loc>https://dados.dsre.dev/posts/04-filtros-vetores-data-frames/</loc>
         <lastmod>2024-11-14T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://dsre.dev/posts/03-funcoes-agregacao/</loc>
+        <loc>https://dados.dsre.dev/posts/03-funcoes-agregacao/</loc>
         <lastmod>2024-11-14T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://dsre.dev/about/</loc>
+        <loc>https://dados.dsre.dev/about/</loc>
         <lastmod>2024-11-13T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://dsre.dev/posts/02-dados-vetores-data-frames/</loc>
+        <loc>https://dados.dsre.dev/posts/02-dados-vetores-data-frames/</loc>
         <lastmod>2024-11-13T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://dsre.dev/posts/01-introducao-ao-r/</loc>
+        <loc>https://dados.dsre.dev/posts/01-introducao-ao-r/</loc>
         <lastmod>2024-11-13T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://dsre.dev/tags/pessoal/</loc>
+        <loc>https://dados.dsre.dev/tags/pessoal/</loc>
         <lastmod>2024-11-13T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://dsre.dev/tags/sobre/</loc>
+        <loc>https://dados.dsre.dev/tags/sobre/</loc>
         <lastmod>2024-11-13T00:00:00+00:00</lastmod>
       </url><url>
-        <loc>https://dsre.dev/authors/</loc>
+        <loc>https://dados.dsre.dev/authors/</loc>
       </url><url>
-        <loc>https://dsre.dev/categories/</loc>
+        <loc>https://dados.dsre.dev/categories/</loc>
       </url>
 </urlset>
